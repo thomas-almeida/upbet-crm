@@ -1,11 +1,7 @@
 import api from "./route.js"
-
-import { fileUrlToPath } from 'url'
-import path from 'path'
 import express from 'express'
 import cors from 'cors'
 
-const __dirname = path.dirname(fileUrlToPath(import.meta.url))
 const app = express()
 const PORT = 3002
 
