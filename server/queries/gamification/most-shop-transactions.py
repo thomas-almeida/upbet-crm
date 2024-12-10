@@ -5,7 +5,7 @@ import os
 from datetime import datetime
 
 # Caminho para o arquivo de credenciais JSON
-credentials_path = "../utils/credentials.json"
+credentials_path = "../../utils/credentials.json"
 
 # Cria credenciais a partir do arquivo JSON
 credentials = service_account.Credentials.from_service_account_file(credentials_path)
@@ -29,9 +29,10 @@ LEFT JOIN
     dwh_ext_12023.dm_shop_item AS s
     ON t.shop_item_id = s.item_id -- Chave de ligação entre as tabelas
 WHERE 
-    t.create_date BETWEEN TIMESTAMP('2024-12-01 00:00:00 UTC') AND TIMESTAMP('2024-12-05 23:59:59 UTC')
-LIMIT 100000;
+    TIMESTAMP(t.create_date) BETWEEN TIMESTAMP('2024-11-30 00:00:00-03:00') AND TIMESTAMP('2024-12-09 23:59:59-03:00')
+LIMIT 1000000;
 """
+
 
 # Caminho da pasta onde o CSV será salvo
 csv_dir = './db/csv'
