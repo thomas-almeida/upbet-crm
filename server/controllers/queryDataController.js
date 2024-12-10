@@ -9,53 +9,41 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const dashDB = path.join(__dirname, '..', 'db', 'dash-data.json')
 
 let dashes = []
-
 async function convertCSVQuery(req, res) {
   try {
-
-    const { csvPath, range } = req.body
-    const itemsMap = {}
+    const { csvPath, range, dashName } = req.body
 
     const data = fs.readFileSync(dashDB, 'utf-8')
     dashes = data ? JSON.parse(data) : []
 
-    fs.createReadStream(`${csvPath}`)
+    let csvFiltered = []
+
+    fs.createReadStream(csvPath)
       .pipe(csvParser())
       .on('data', (row) => {
-        const shopItemId = row.shop_item_id
-        const itemname = row.item_name
-        const pointsAmount = parseInt(row.points_amount)
-
-        if (itemsMap[shopItemId]) {
-          itemsMap[shopItemId].totalPoints += pointsAmount
-          itemsMap[shopItemId].count += 1
-        } else {
-          itemsMap[shopItemId] = {
-            shopItemId,
-            itemname,
-            pointsAmount,
-            totalPoints: pointsAmount,
-            count: 1,
-          }
-        }
+        csvFiltered.push(row)
       })
       .on('end', () => {
+        
         const resultsData = {
           id: idGenerator.generateExtensiveId(dashes),
-          results: Object.values(itemsMap),
-          range: range
+          name: dashName,
+          range: range,
+          results: csvFiltered
         }
-        resultsData.results.sort((a, b) => b.totalPoints - a.totalPoints)
+
         res.status(200).json({
-          mesage: 'success',
+          message: 'success',
           data: resultsData
         })
 
         dashes.push(resultsData)
         fs.writeFileSync(dashDB, JSON.stringify(dashes, null, 2))
       })
+
   } catch (error) {
     console.error(error)
+    res.status(500).json({ message: 'An error occurred', error })
   }
 }
 

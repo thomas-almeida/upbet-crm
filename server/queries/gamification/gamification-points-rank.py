@@ -13,31 +13,24 @@ credentials = service_account.Credentials.from_service_account_file(credentials_
 # Configura o cliente do BigQuery
 client = bigquery.Client(credentials=credentials)
 
-# Consulta SQL ajustada para agrupar por shop_item_id
+# Consulta SQL para consolidar os dados
 query = """
 SELECT 
-    t.shop_item_id,
-    s.item_name,
-    SUM(t.points_amount) AS total_points_amount, -- Soma dos pontos por item
-    COUNT(t.transaction_id) AS transaction_count -- Número de transações por item
+    t.user_ext_id,
+    SUM(t.points_collected) AS total_points_collected,
+    MAX(t.user_points_ever) AS max_points_ever,
+    MAX(t.user_points_balance) AS current_points_balance
 FROM 
-    dwh_ext_12023.g_shop_transactions AS t
-LEFT JOIN 
-    dwh_ext_12023.dm_shop_item AS s
-    ON t.shop_item_id = s.item_id
+    dwh_ext_12023.g_ach_points_change_log AS t
 WHERE 
     TIMESTAMP(t.create_date) BETWEEN TIMESTAMP('2024-11-30 00:00:00-03:00') AND TIMESTAMP('2024-12-09 23:59:59-03:00')
 GROUP BY 
-    t.shop_item_id, s.item_name
-ORDER BY 
-    total_points_amount DESC
+    t.user_ext_id
 LIMIT 1000000;
 """
 
 # Caminho da pasta onde o CSV será salvo
 csv_dir = './db/csv'
-
-# Certifica-se de que o diretório existe
 os.makedirs(csv_dir, exist_ok=True)
 
 try:
@@ -50,7 +43,6 @@ try:
     rows = list(results)
     print(f"Número de linhas retornadas: {len(rows)}")
 
-    # Verifica se há dados retornados
     if len(rows) == 0:
         print("Nenhum dado encontrado.")
     else:
@@ -62,14 +54,14 @@ try:
         with open(csv_file_path, 'w', newline='', encoding='utf-8') as csvfile:
             writer = csv.writer(csvfile)
 
-            # Escreve o cabeçalho (nomes das colunas)
-            writer.writerow(['shop_item_id', 'item_name', 'total_points_amount', 'transaction_count'])
+            # Escreve o cabeçalho
+            writer.writerow(['user_ext_id', 'total_points_collected', 'max_points_ever', 'current_points_balance'])
 
             # Escreve os dados
             for row in rows:
                 print(f"Processando linha: {row}")  # Log para debug
-                writer.writerow([row.shop_item_id, row.item_name, row.total_points_amount, row.transaction_count])
-        
+                writer.writerow([row.user_ext_id, row.total_points_collected, row.max_points_ever, row.current_points_balance])
+
         print(f"Dados exportados para {csv_file_path} com sucesso.")
 
 except Exception as e:
