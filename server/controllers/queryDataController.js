@@ -1,5 +1,5 @@
 import idGenerator from "../utils/idGenerator.js"
-import fs from 'fs'
+import fs, { futimesSync } from 'fs'
 import csvParser from 'csv-parser'
 
 import path from "path"
@@ -11,7 +11,7 @@ const dashDB = path.join(__dirname, '..', 'db', 'dash-data.json')
 let dashes = []
 async function convertCSVQuery(req, res) {
   try {
-    const { csvPath, range, dashName } = req.body
+    const { csvPath, range, dashName, metricLabel, label, value, headers } = req.body
 
     const data = fs.readFileSync(dashDB, 'utf-8')
     dashes = data ? JSON.parse(data) : []
@@ -24,11 +24,17 @@ async function convertCSVQuery(req, res) {
         csvFiltered.push(row)
       })
       .on('end', () => {
-        
+
         const resultsData = {
           id: idGenerator.generateExtensiveId(dashes),
           name: dashName,
           range: range,
+          metricLabel: metricLabel,
+          guides: {
+            label: label,
+            value: value
+          },
+          headers,
           results: csvFiltered
         }
 
@@ -47,7 +53,7 @@ async function convertCSVQuery(req, res) {
   }
 }
 
-async function getDashData(req, res) {
+async function getDashById(req, res) {
   try {
 
     const id = req.params.id
@@ -68,7 +74,24 @@ async function getDashData(req, res) {
   }
 }
 
+async function getDashData(req, res) {
+  try {
+
+    const dashData = fs.readFileSync(dashDB, 'utf-8')
+    dashes = dashData ? JSON.parse(dashData) : []
+
+    res.status(200).json({
+      message: 'success',
+      dashData: dashes
+    })
+
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 export default {
   convertCSVQuery,
+  getDashById,
   getDashData
 }
