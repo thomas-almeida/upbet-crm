@@ -8,7 +8,7 @@ from tqdm import tqdm
 
 # Defina a URL da API e a chave de API
 url = "https://api.mailgun.net/v3/campaigns.upbet.com/messages"
-api_key = "56e2433636725885e6581e59da84fb7d-0996409b-c187dd04"  # Substitua pela sua chave de API real
+api_key = ""  # Substitua pela sua chave de API real
 
 # Função para carregar emails do CSV
 def load_emails_from_csv(file_path):
