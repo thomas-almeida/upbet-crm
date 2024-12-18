@@ -20,7 +20,7 @@ export default function Menu({
     <>
       <div className={visible ? 'flex items-center justify-center' : 'hidden'}>
         <div className="w-[75vw] text-center h-[85vh]">
-          <div>
+          <div >
             <h1 className="font-semibold text-2xl text-left mt-6">
               Bem-vindo {userData?.name}
             </h1>
@@ -31,7 +31,7 @@ export default function Menu({
                 options.map((option, index) => (
                   <div
                     key={option[index]}
-                    className="border-2 p-4 m-2 text-left w-[300px] h-[180px] rounded-md shadow-md relative cursor-pointer transition hover:scale-[1.02] hover:text-[#008181] hover:border-[#008181]"
+                    className="bg-white border-2 p-4 m-2 text-left w-[300px] h-[180px] rounded-md shadow-sm relative cursor-pointer transition hover:scale-[1.02] hover:text-[#008181] hover:border-[#008181]"
                     onClick={() => setItem(option.activeScreen, option.category)}
                   >
                     <div className="absolute bottom-4">

@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="border p-2">
+      <div className="border p-2 bg-[#eef0f2]">
         <div className="flex justify-center items-center p-2">
           <div>
             <Sidebar

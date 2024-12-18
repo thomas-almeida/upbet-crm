@@ -36,7 +36,7 @@ export default function Category({
                   dashItem?.metricLabel === category ? (
                     <div
                       key={dashItem?.id}
-                      className="border-2 text-left p-6 w-[300px] h-[160px] m-2 rounded-md cursor-pointer shadow-md transition hover:scale-[1.02] hover:border-[#008181] hover:text-[#008181] flex justify-start items-center"
+                      className="bg-white border-2 text-left p-6 w-[300px] h-[160px] m-2 rounded-md cursor-pointer shadow-sm transition hover:scale-[1.02] hover:border-[#008181] hover:text-[#008181] flex justify-start items-center"
                       onClick={() => openChart(dashItem?.id)}
                     >
                       <div>
