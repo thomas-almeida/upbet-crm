@@ -11,7 +11,17 @@ const dashDB = path.join(__dirname, '..', 'db', 'dash-data.json')
 let dashes = []
 async function convertCSVQuery(req, res) {
   try {
-    const { csvPath, range, dashName, metricLabel, label, value, headers } = req.body
+    const {
+      csvPath,
+      createdAt,
+      dashName,
+      metricLabel,
+      label,
+      value,
+      headers,
+      filter,
+      chartType,
+    } = req.body
 
     const data = fs.readFileSync(dashDB, 'utf-8')
     dashes = data ? JSON.parse(data) : []
@@ -28,8 +38,10 @@ async function convertCSVQuery(req, res) {
         const resultsData = {
           id: idGenerator.generateExtensiveId(dashes),
           name: dashName,
-          range: range,
+          createdAt: createdAt,
           metricLabel: metricLabel,
+          chartType: chartType,
+          filter: filter,
           guides: {
             label: label,
             value: value
