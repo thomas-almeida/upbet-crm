@@ -92,6 +92,7 @@ export default function CBar({
                                     stroke='blue'
                                 />
                             }
+                            className="cursor-pointer"
                         >
                             <LabelList
                                 dataKey={currentHeader || value}

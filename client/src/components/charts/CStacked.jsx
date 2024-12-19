@@ -12,7 +12,7 @@ export default function CStacked({
 }) {
 
     const [currentHeader, setHeader] = useState('')
-    const colors = ["#008181", "#8d8d8d"]
+    const colors = ["#8d8d8d", "#008181"]
 
     return (
         <>
@@ -52,6 +52,7 @@ export default function CStacked({
                                     dataKey={itemValue}
                                     stackId={itemValue}
                                     fill={colors[index]}
+                                    className="cursor-pointer"
                                 >
                                     <LabelList
                                         dataKey={itemValue}
