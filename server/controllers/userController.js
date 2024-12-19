@@ -66,7 +66,7 @@ async function signIn(req, res) {
     }
 
     return res.status(200).json({
-      message: 'usuário ou senha incorretos'
+      message: 'error'
     })
 
   } catch (error) {
