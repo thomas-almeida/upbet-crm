@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BarChart, Bar, Cell, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LabelList } from 'recharts'
 
 export default function CBar({
@@ -7,20 +7,41 @@ export default function CBar({
     textColor,
     label,
     value,
-    headers
+    headers,
+    filter
 }) {
 
     const [currentHeader, setHeader] = useState('')
+    const [currentFilterBy, setFilterBy] = useState('')
+    const [sortedResults, setSortedResults] = useState('')
     const sortedData = data
         ?.slice()
-        ?.sort((a, b) => b[currentHeader] - a[currentHeader])
-
-    const maxTick = Math.max(...(sortedData?.map((item) => item[currentHeader] || 0) || [0]))
+        ?.sort((a, b) =>b [currentHeader] - a[currentHeader])
 
 
     function toggleHeader(header) {
         setHeader(header)
     }
+
+    async function getSortedData(dataResults) {
+
+        if (filter) {
+            const filterBy = currentFilterBy ? currentFilterBy : dataResults[0][filter?.label]
+            const dataFilteredByLabel = dataResults.filter((dataFiltered) => dataFiltered[filter?.label] === filterBy)
+            const newSortedData = await dataFilteredByLabel
+                ?.slice()
+                ?.sort((a, b) => b[currentHeader] - a[currentHeader])
+            setSortedResults(newSortedData)
+        }
+
+    }
+    const maxTick = Math.max(...(sortedData?.map((item) => item[currentHeader] || 0) || [0]))
+
+    useEffect(() => {
+        if (data) {
+            getSortedData(data)
+        }
+    }, [data, filter, currentFilterBy, currentHeader])
 
     return (
         <>
@@ -33,7 +54,7 @@ export default function CBar({
                         <div>
                             <h2>Ordenar Por</h2>
                         </div>
-                        <div className='flex justify-start items-center my-1'>
+                        <div className='flex justify-start items-center my-1 border relative'>
                             {
                                 headers?.map((headerOption, index) => (
                                     <div
@@ -49,6 +70,15 @@ export default function CBar({
                                     </div>
                                 ))
                             }
+                            {
+                                filter ? (
+                                    <div className='p-1 absolute right-2'>
+                                        <select className='px-4 py-1 rounded-md border-2 cursor-pointer'>
+                                            <option value="">Selecione</option>
+                                        </select>
+                                    </div>
+                                ) : ''
+                            }
                         </div>
                     </div>
                 ) : ''
@@ -56,12 +86,12 @@ export default function CBar({
             <div className='rounded-lg overflow-y-scroll h-[460px]'>
                 <ResponsiveContainer
                     width={1000}
-                    height={sortedData.length * 45}
+                    height={sortedResults.length * 45}
                 >
                     <BarChart
                         barSize={25}
                         layout='vertical'
-                        data={sortedData}
+                        data={sortedResults}
                         margin={{
                             top: 15,
                             right: 30,
