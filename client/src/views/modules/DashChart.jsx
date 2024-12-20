@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import CBar from "../../components/charts/cBar"
+import CBar from "../../components/charts/CBar"
 import CStacked from "../../components/charts/CStacked"
 
 export default function DashChart({
