@@ -19,7 +19,7 @@ api.get('/user/get-user-by-id/:id', userController.getUserById)
 //query
 api.get('/update-dash-data/:id', routinesController.updateDashInLoopById)
 
-cron.schedule('0 3 * * *', async () => {
+cron.schedule('0 15 * * *', async () => {
     const dashId = 'hejtxd981'
     const response = await routinesController.updateDashInLoopById(dashId)
     console.log('CRON JOB: 03 AM', response.message)

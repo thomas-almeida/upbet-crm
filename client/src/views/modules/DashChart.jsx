@@ -41,6 +41,7 @@ export default function DashChart({
                   label={chartData?.guides?.label}
                   value={chartData?.guides?.value}
                   headers={chartData?.headers}
+                  filter={chartData?.filter}
                 />
               }
               {
