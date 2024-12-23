@@ -29,7 +29,7 @@ export default function Category({
               Aqui estão todos os dashboards desta categoria
             </p>
           </div>
-          <div className="flex justify-start items-center py-10">
+          <div className="grid grid-cols-3 justify-start items-center py-10">
             {
               dashData !== undefined ?
                 dashData?.map((dashItem) => (

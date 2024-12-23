@@ -8,11 +8,13 @@ export default function CStacked({
     textColor,
     label,
     value,
-    headers
+    headers,
+    stackId
 }) {
 
     const [currentHeader, setHeader] = useState('')
-    const colors = ["#8d8d8d", "#008181"]
+    const colors = ["#8d8d8d", "#009191", "#005151"]
+    
 
     return (
         <>
@@ -50,14 +52,15 @@ export default function CStacked({
                                 <Bar
                                     key={itemValue[itemValue]}
                                     dataKey={itemValue}
-                                    stackId={itemValue}
+                                    stackId={stackId !== "pill" ? itemValue : stackId}
                                     fill={colors[index]}
                                     className="cursor-pointer"
+                                    barSize={25}
                                 >
                                     <LabelList
                                         dataKey={itemValue}
                                         fill={textColor}
-                                        className='font-semibold'
+                                        className='font-semibold text-sm'
                                     />
                                 </Bar>
                             ))
