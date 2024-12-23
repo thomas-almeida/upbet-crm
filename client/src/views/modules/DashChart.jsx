@@ -53,6 +53,7 @@ export default function DashChart({
                   label={chartData?.guides?.label}
                   value={chartData?.guides?.value}
                   headers={chartData?.headers}
+                  stackId={chartData?.guides?.stackType}
                 />
               }
             </div>

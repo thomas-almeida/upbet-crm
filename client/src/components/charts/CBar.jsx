@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { BarChart, Bar, Cell, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LabelList } from 'recharts'
+import convertDates from '../../utils/convertDates'
 
 export default function CBar({
     data,
@@ -14,9 +15,10 @@ export default function CBar({
     const [currentHeader, setHeader] = useState('')
     const [currentFilterBy, setFilterBy] = useState('')
     const [sortedResults, setSortedResults] = useState('')
+    const [selectFilterItems, setSelectFilterItems] = useState('')
     const sortedData = data
         ?.slice()
-        ?.sort((a, b) =>b [currentHeader] - a[currentHeader])
+        ?.sort((a, b) => b[currentHeader] - a[currentHeader])
 
 
     function toggleHeader(header) {
@@ -32,9 +34,25 @@ export default function CBar({
                 ?.slice()
                 ?.sort((a, b) => b[currentHeader] - a[currentHeader])
             setSortedResults(newSortedData)
+
+            const dates = dataResults?.map((date) => (date[filter?.label]))
+            const optionDates = dates.filter((date, index) => {
+                return dates.indexOf(date) === index
+            })
+
+            setSelectFilterItems(optionDates)
+        } else {
+
+            const allData = await data
+                ?.slice()
+                ?.sort((a, b), b[currentHeader] - a[currentHeader])
+            setSortedResults(allData)
         }
 
     }
+
+
+
     const maxTick = Math.max(...(sortedData?.map((item) => item[currentHeader] || 0) || [0]))
 
     useEffect(() => {
@@ -42,6 +60,22 @@ export default function CBar({
             getSortedData(data)
         }
     }, [data, filter, currentFilterBy, currentHeader])
+
+    useEffect(() => {
+
+        async function undoFilter() {
+
+            if (currentFilterBy === 'all') {
+                const allData = await data
+                    ?.slice()
+                    ?.sort((a, b) => b[currentHeader] - a[currentHeader])
+                setSortedResults(allData)
+            }
+        }
+
+        undoFilter()
+    }, [data, filter, currentFilterBy, currentHeader])
+
 
     return (
         <>
@@ -73,8 +107,25 @@ export default function CBar({
                             {
                                 filter ? (
                                     <div className='p-1 absolute right-2'>
-                                        <select className='px-4 py-1 rounded-md border-2 cursor-pointer'>
+                                        <select
+                                            className='px-4 py-1 rounded-md border-2 cursor-pointer'
+                                            onChange={(e) => setFilterBy(e.target.value)}
+                                        >
                                             <option value="">Selecione</option>
+                                            <option value="all">Todas</option>
+
+                                            {
+                                                selectFilterItems !== '' ? (
+                                                    selectFilterItems?.map((dateOption) => (
+                                                        <option
+                                                            value={dateOption}
+                                                        >
+                                                            {dateOption}
+                                                        </option>
+                                                    ))
+                                                ) : ''
+                                            }
+
                                         </select>
                                     </div>
                                 ) : ''

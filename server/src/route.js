@@ -18,6 +18,7 @@ api.get('/user/get-user-by-id/:id', userController.getUserById)
 
 //query
 api.get('/update-dash-data/:id', routinesController.updateDashInLoopById)
+api.post('/sheets/get-sheets-data', queryDataController.getSheetsData)
 
 cron.schedule('0 15 * * *', async () => {
     const dashId = 'hejtxd981'
