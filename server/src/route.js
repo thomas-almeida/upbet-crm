@@ -3,6 +3,7 @@ import queryDataController from "../controllers/queryDataController.js"
 import userController from "../controllers/userController.js"
 import routinesController from "../controllers/routinesController.js"
 import cron from 'node-cron'
+import kpiController from "../controllers/kpi-controller.js"
 
 const api = Router()
 
@@ -20,6 +21,11 @@ api.get('/user/get-user-by-id/:id', userController.getUserById)
 api.get('/update-dash-data/:id', routinesController.updateDashInLoopById)
 api.post('/sheets/get-sheets-data', queryDataController.getSheetsData)
 
+// KPIs
+api.post('/kpi/create-kpi', kpiController.createKPI)
+api.get('/kpi/get-all-kpis', kpiController.getAllKPIs)
+
+// Cron Jobs
 cron.schedule('0 15 * * *', async () => {
     const dashId = 'hejtxd981'
     const response = await routinesController.updateDashInLoopById(dashId)

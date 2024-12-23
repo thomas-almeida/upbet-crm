@@ -9,6 +9,7 @@ export default function Home() {
 
   const redirect = useNavigate()
   const [dashData, setDashData] = useState('')
+  const [kpiData, setKPIData] = useState('')
   const [userData, setUserData] = useState('')
   const [activeScreen, setActiveScreen] = useState('menu')
   const [category, setCategory] = useState('')
@@ -27,14 +28,21 @@ export default function Home() {
     setDashData(response?.dashData)
   }
 
+  async function getKPIData() {
+    const response = await service.getKPIs()
+    setKPIData(response.data)
+  }
+
   async function refreshData() {
     await getUserData()
     await getDashData()
+    await getKPIData()
   }
 
   useEffect(() => {
     getUserData()
     getDashData()
+    getKPIData()
   }, [])
 
   return (
@@ -61,6 +69,7 @@ export default function Home() {
               activeScreen={activeScreen}
               userData={userData}
               dashData={dashData}
+              kpiData={kpiData}
               refreshData={refreshData}
               setCategory={setCategory}
               category={category}

@@ -5,6 +5,7 @@ export default function Category({
   visible,
   userData,
   dashData,
+  kpiData,
   setActiveScreen,
   setCategory,
   category,
@@ -29,28 +30,44 @@ export default function Category({
               Aqui estão todos os dashboards desta categoria
             </p>
           </div>
-          <div className="grid grid-cols-3 justify-start items-center py-10">
-            {
-              dashData !== undefined ?
-                dashData?.map((dashItem) => (
-                  dashItem?.metricLabel === category ? (
-                    <div
-                      key={dashItem?.id}
-                      className="bg-white border-2 text-left p-6 w-[300px] h-[160px] m-2 rounded-md cursor-pointer shadow-sm transition hover:scale-[1.02] hover:border-[#008181] hover:text-[#008181] flex justify-start items-center"
-                      onClick={() => openChart(dashItem?.id)}
-                    >
-                      <div>
-                        <img src="/trending-up-outline.svg" className="w-[40px] p-1" alt="" />
-                        <b className="text-slate-400 font-medium text-sm">ID: {dashItem?.id}</b>
-                        <br />
-                        <h2 className="font-semibold py-2 text-lg">
-                          {dashItem?.name}
-                        </h2>
+          <div>
+            <div className="grid grid-cols-4 justify-start items-center">
+              {
+                kpiData?.map((kpiItem) => (
+                  <div
+                    key={kpiItem?.id}
+                    className="p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left"
+                  >
+                    <p className="text-sm">{kpiItem?.name}</p>
+                    <h2 className="text-2xl font-semibold p-2">{kpiItem?.value}</h2>
+                  </div>
+                )
+                )
+              }
+            </div>
+            <div className="grid grid-cols-3 justify-start items-center py-10">
+              {
+                dashData !== undefined ?
+                  dashData?.map((dashItem) => (
+                    dashItem?.metricLabel === category ? (
+                      <div
+                        key={dashItem?.id}
+                        className="bg-white border-2 text-left p-6 w-[300px] h-[160px] m-2 rounded-md cursor-pointer shadow-sm transition hover:scale-[1.02] hover:border-[#008181] hover:text-[#008181] flex justify-start items-center"
+                        onClick={() => openChart(dashItem?.id)}
+                      >
+                        <div>
+                          <img src="/trending-up-outline.svg" className="w-[40px] p-1" alt="" />
+                          <b className="text-slate-400 font-medium text-sm">ID: {dashItem?.id}</b>
+                          <br />
+                          <h2 className="font-semibold py-2 text-lg">
+                            {dashItem?.name}
+                          </h2>
+                        </div>
                       </div>
-                    </div>
-                  ) : ''
-                )) : ''
-            }
+                    ) : ''
+                  )) : ''
+              }
+            </div>
           </div>
         </div>
       </div>

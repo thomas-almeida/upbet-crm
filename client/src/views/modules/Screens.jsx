@@ -8,6 +8,7 @@ export default function Screens({
   setActiveScreen,
   userData,
   dashData,
+  kpiData,
   refreshData,
   setCategory,
   category
@@ -37,6 +38,7 @@ export default function Screens({
           visible={true}
           userData={userData}
           dashData={dashData}
+          kpiData={kpiData}
           activeScreen={activeScreen}
           setActiveScreen={setActiveScreen}
           refreshData={refreshData}

@@ -39,9 +39,21 @@ const getDashById = async (dashId) => {
   return response.data
 }
 
+const getKPIs = async () => {
+  const response = await axios.get(
+    `${baseUrl.production}/kpi/get-all-kpis`, {
+    headers: {
+      "ngrok-skip-browser-warning": "true"
+    }
+  }
+  )
+  return response.data
+}
+
 export default {
   signIn,
   getUserById,
   getDashById,
-  getDashData
+  getDashData,
+  getKPIs
 }
