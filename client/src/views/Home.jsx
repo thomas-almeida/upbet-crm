@@ -11,6 +11,7 @@ export default function Home() {
   const [dashData, setDashData] = useState('')
   const [kpiData, setKPIData] = useState('')
   const [userData, setUserData] = useState('')
+  const [campaignData, setCampaignData] = useState('')
   const [activeScreen, setActiveScreen] = useState('menu')
   const [category, setCategory] = useState('')
 
@@ -33,16 +34,23 @@ export default function Home() {
     setKPIData(response.data)
   }
 
+  async function getCampaingData() {
+    const response = await service.getAllCampaings()
+    setCampaignData(response.data)
+  }
+
   async function refreshData() {
     await getUserData()
     await getDashData()
     await getKPIData()
+    await getCampaingData()
   }
 
   useEffect(() => {
     getUserData()
     getDashData()
     getKPIData()
+    getCampaingData()
   }, [])
 
   return (
@@ -56,6 +64,7 @@ export default function Home() {
               setActiveScreen={setActiveScreen}
               setCategory={setCategory}
               category={category}
+              refreshData={refreshData}
             />
           </div>
           <div className="flex justify-center flex-col items-center h-[95vh] w-full">
@@ -70,6 +79,7 @@ export default function Home() {
               userData={userData}
               dashData={dashData}
               kpiData={kpiData}
+              campaignData={campaignData}
               refreshData={refreshData}
               setCategory={setCategory}
               category={category}

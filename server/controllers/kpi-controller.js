@@ -4,26 +4,26 @@ import path from "path"
 import { fileURLToPath } from "url"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const dashDB = path.join(__dirname, '..', 'db', 'dash-data.json')
+const campaignDB = path.join(__dirname, '..', 'db', 'campaign-data.json')
 const kpiDB = path.join(__dirname, '..', 'db', 'kpi-data.json')
 
-let dashes = []
+let campaigns = []
 let KPIs = []
 
 async function createKPI(req, res) {
     try {
 
-        const { dashId, label, calcOptions, kpiName, type, category } = req.body
+        const { dashId, label, calcOptions, kpiName, type, category, date } = req.body
 
         let calculatedItems
-        const dashData = fs.readFileSync(dashDB, 'utf-8')
-        dashes = dashData ? JSON.parse(dashData) : []
+        const campaignData = fs.readFileSync(campaignDB, 'utf-8')
+        campaigns = campaignData ? JSON.parse(campaignData) : []
 
         const kpiData = fs.readFileSync(kpiDB, 'utf-8')
         KPIs = kpiData ? JSON.parse(kpiData) : []
 
-        const selectedDash = dashes.find((dash) => dash.id === dashId)
-        const itemsToCalc = selectedDash?.results?.map((filteredItem) => parseFloat(filteredItem[label]))
+        const selectedDash = campaigns.find((dash) => dash.id === dashId)
+        const itemsToCalc = selectedDash?.campaigns?.map((filteredItem) => parseFloat(filteredItem[label]))
 
         if (calcOptions === 'soma') {
             calculatedItems = itemsToCalc?.reduce((acc, value) => {
@@ -39,7 +39,8 @@ async function createKPI(req, res) {
             referenceDashId: dashId,
             type: type,
             category: category,
-            value: calculatedItems
+            value: calculatedItems,
+            date: date
         }
 
         KPIs.push(kpiObject)

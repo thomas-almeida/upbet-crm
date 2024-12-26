@@ -21,6 +21,10 @@ api.get('/user/get-user-by-id/:id', userController.getUserById)
 api.get('/update-dash-data/:id', routinesController.updateDashInLoopById)
 api.post('/sheets/get-sheets-data', queryDataController.getSheetsData)
 
+//Campaigns
+api.post('/campaigns/get-campaigns-by-date', queryDataController.getCampaignData)
+api.get('/campaigns/get-all-campaigns', queryDataController.getAllCampaings)
+
 // KPIs
 api.post('/kpi/create-kpi', kpiController.createKPI)
 api.get('/kpi/get-all-kpis', kpiController.getAllKPIs)

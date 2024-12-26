@@ -9,6 +9,7 @@ export default function Screens({
   userData,
   dashData,
   kpiData,
+  campaignData,
   refreshData,
   setCategory,
   category
@@ -39,6 +40,7 @@ export default function Screens({
           userData={userData}
           dashData={dashData}
           kpiData={kpiData}
+          campaignData={campaignData}
           activeScreen={activeScreen}
           setActiveScreen={setActiveScreen}
           refreshData={refreshData}

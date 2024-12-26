@@ -4,7 +4,8 @@ import options from "../utils/options.js"
 export default function Sidebar({
   setActiveScreen,
   setCategory,
-  userData
+  userData,
+  refreshData
 }) {
 
   const redirect = useNavigate()
@@ -12,6 +13,12 @@ export default function Sidebar({
   function setItem(activeScreen, category) {
     setActiveScreen(activeScreen)
     setCategory(category)
+    refreshData()
+  }
+
+  function setHomeScreen() {
+    setActiveScreen('menu')
+    refreshData()
   }
 
   function logOut() {
@@ -21,6 +28,13 @@ export default function Sidebar({
   return (
     <>
       <div className="h-[95vh] w-[240px] p-4 rounded-md">
+
+        <div>
+          <img 
+            src="/logo.png"
+            className="w-[100px] mt-2 mb-6"
+          />
+        </div>
 
         <div className="flex justify-start items-center border-2 p-2 rounded-md shadow-sm bg-white">
           <img
@@ -37,7 +51,7 @@ export default function Sidebar({
           <ul className="my-2">
             <li
               className="py-2 cursor-pointer hover:text-[#008181] hover:font-semibold text-lg flex justify-start items-center transition hover:scale-[1.02]"
-              onClick={() => setActiveScreen('menu')}
+              onClick={() => setHomeScreen()}
             >
               <img src="/home.svg" className="w-[15px] mr-1" alt="" />
               <p>Home</p>

@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export default function Category({
@@ -6,6 +6,7 @@ export default function Category({
   userData,
   dashData,
   kpiData,
+  campaignData,
   setActiveScreen,
   setCategory,
   category,
@@ -13,10 +14,23 @@ export default function Category({
   refreshData
 }) {
 
+  const [currentMonthReference, setCurrentMonthReference] = useState('')
+
   function openChart(chartId) {
     setActiveScreen('chart')
     localStorage.setItem('chartId', chartId)
   }
+
+  useEffect(() => {
+    function getMonthReference() {
+      if (campaignData?.length > 0) {
+        const firstMonthReference = campaignData[0].referenceMonth
+        setCurrentMonthReference(firstMonthReference)
+      }
+    }
+
+    getMonthReference()
+  }, [])
 
   return (
     <>
@@ -31,28 +45,56 @@ export default function Category({
             </p>
           </div>
           <div>
+            {
+              campaignData?.length > 0 ? (
+                <div className="p-2 text-left">
+                  <p className="font-semibold mb-1">Mês de Referência</p>
+                  <select
+                    className="p-1 rounded-md border-2 px-2 cursor-pointer w-[140px]"
+                    onChange={(e) => setCurrentMonthReference(e.target.value)}
+                  >
+                    {
+                      campaignData?.map((campaign) => (
+                        <option value={campaign?.referenceMonth}>
+                          {campaign?.referenceMonth}
+                        </option>
+                      ))
+                    }
+                  </select>
+                </div>
+              ) : ''
+            }
             <div className="grid grid-cols-4 justify-start items-center">
               {
                 kpiData?.map((kpiItem) => (
-                  <div
-                    key={kpiItem?.id}
-                    className="p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left"
-                  >
-                    <p className="text-sm">{kpiItem?.name}</p>
-                    <h2 className="text-2xl font-semibold p-2">{kpiItem?.value}</h2>
-                  </div>
-                )
-                )
+                  kpiItem?.category === category ? (
+                    kpiItem?.date === currentMonthReference ?
+                      (
+                        <div
+                          key={kpiItem?.id}
+                          className="p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left"
+                        >
+                          <p className="text-sm font-semibold p-1">{kpiItem?.name}</p>
+                          <h2 className="text-3xl font-semibold p-2">
+                            {
+                              kpiItem?.type === 'currency'
+                                ? new Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(kpiItem?.value / 100)
+                                : new Intl.NumberFormat('pt-br', { useGrouping: true }).format(kpiItem?.value)}
+                          </h2>
+                        </div>
+                      ) : ''
+                  ) : ''
+                ))
               }
             </div>
-            <div className="grid grid-cols-3 justify-start items-center py-10">
+            <div className="grid grid-cols-4 justify-start items-center py-10">
               {
                 dashData !== undefined ?
                   dashData?.map((dashItem) => (
                     dashItem?.metricLabel === category ? (
                       <div
                         key={dashItem?.id}
-                        className="bg-white border-2 text-left p-6 w-[300px] h-[160px] m-2 rounded-md cursor-pointer shadow-sm transition hover:scale-[1.02] hover:border-[#008181] hover:text-[#008181] flex justify-start items-center"
+                        className="bg-white border-2 text-left p-6 w-[250px] h-[160px] m-2 rounded-md cursor-pointer shadow-sm transition hover:scale-[1.02] hover:border-[#008181] hover:text-[#008181] flex justify-start items-center"
                         onClick={() => openChart(dashItem?.id)}
                       >
                         <div>
