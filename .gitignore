@@ -7,3 +7,4 @@ server/db/users.json
 server/queries/mail/mailgun.py
 server/utils/sheets-credentials.json
 server/db/kpi-data.json
+server/queries/gamification/
