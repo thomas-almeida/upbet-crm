@@ -40,7 +40,7 @@ export default function SignIn() {
 
   return (
     <>
-      <div className="flex justify-center items-center h-screen bg-[#1a1a1a]">
+      <div className="flex justify-center items-center h-screen bg-[#ffffff]">
         <div className="w-[35%] p-4">
           <form
             className="p-2 flex flex-col"

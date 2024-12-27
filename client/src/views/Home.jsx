@@ -9,7 +9,9 @@ export default function Home() {
 
   const redirect = useNavigate()
   const [dashData, setDashData] = useState('')
+  const [kpiData, setKPIData] = useState('')
   const [userData, setUserData] = useState('')
+  const [campaignData, setCampaignData] = useState('')
   const [activeScreen, setActiveScreen] = useState('menu')
   const [category, setCategory] = useState('')
 
@@ -27,19 +29,33 @@ export default function Home() {
     setDashData(response?.dashData)
   }
 
+  async function getKPIData() {
+    const response = await service.getKPIs()
+    setKPIData(response.data)
+  }
+
+  async function getCampaingData() {
+    const response = await service.getAllCampaings()
+    setCampaignData(response.data)
+  }
+
   async function refreshData() {
     await getUserData()
     await getDashData()
+    await getKPIData()
+    await getCampaingData()
   }
 
   useEffect(() => {
     getUserData()
     getDashData()
+    getKPIData()
+    getCampaingData()
   }, [])
 
   return (
     <>
-      <div className="border p-2 bg-[#eef0f2]">
+      <div className="border p-2 bg-[#eef0f2] font-[SF Pro Display]">
         <div className="flex justify-center items-center p-2">
           <div>
             <Sidebar
@@ -48,6 +64,7 @@ export default function Home() {
               setActiveScreen={setActiveScreen}
               setCategory={setCategory}
               category={category}
+              refreshData={refreshData}
             />
           </div>
           <div className="flex justify-center flex-col items-center h-[95vh] w-full">
@@ -61,6 +78,8 @@ export default function Home() {
               activeScreen={activeScreen}
               userData={userData}
               dashData={dashData}
+              kpiData={kpiData}
+              campaignData={campaignData}
               refreshData={refreshData}
               setCategory={setCategory}
               category={category}
