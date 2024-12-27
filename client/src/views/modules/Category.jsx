@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import CountUp from "react-countup"
+import { Tooltip as ReactTooltip } from "react-tooltip"
 import { useNavigate } from "react-router-dom"
 
 export default function Category({
@@ -76,7 +77,15 @@ export default function Category({
                           className="p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left"
                         >
                           <p className="text-sm font-semibold p-1">{kpiItem?.name}</p>
-                          <h2 className="text-3xl font-semibold p-2 fadeInUp-animation">
+                          <h2
+                            className="text-3xl font-semibold p-2 fadeInUp-animation overflow-clip text-ellipsis whitespace-nowrap cursor-pointer"
+                            data-tooltip-id={`tooltip-${kpiItem?.id}`}
+                            data-tooltip-content={
+                              kpiItem?.type === 'currency'
+                                ? `R$ ${(kpiItem?.value / 100).toFixed(2).replace('.', ',')}`
+                                : kpiItem?.value
+                            }
+                          >
                             {
                               kpiItem?.type === 'currency' ? (
                                 <CountUp
@@ -98,12 +107,14 @@ export default function Category({
                               )
                             }
                           </h2>
+                          <ReactTooltip id={`tooltip-${kpiItem?.id}`} place="bottom" />
                         </div>
                       ) : ''
                   ) : ''
                 ))
               }
             </div>
+
             <div className="grid grid-cols-4 justify-start items-center py-10">
               {
                 dashData !== undefined ?
