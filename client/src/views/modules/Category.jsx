@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import CountUp from "react-countup"
 import { useNavigate } from "react-router-dom"
 
 export default function Category({
@@ -75,11 +76,27 @@ export default function Category({
                           className="p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left"
                         >
                           <p className="text-sm font-semibold p-1">{kpiItem?.name}</p>
-                          <h2 className="text-3xl font-semibold p-2">
+                          <h2 className="text-3xl font-semibold p-2 fadeInUp-animation">
                             {
-                              kpiItem?.type === 'currency'
-                                ? new Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(kpiItem?.value / 100)
-                                : new Intl.NumberFormat('pt-br', { useGrouping: true }).format(kpiItem?.value)}
+                              kpiItem?.type === 'currency' ? (
+                                <CountUp
+                                  start={0}
+                                  end={kpiItem?.value / 100}
+                                  duration={2.5}
+                                  prefix="R$ "
+                                  decimals={2}
+                                  decimal=","
+                                  separator="."
+                                />
+                              ) : (
+                                <CountUp
+                                  start={0}
+                                  end={kpiItem?.value}
+                                  duration={0.5}
+                                  separator="."
+                                />
+                              )
+                            }
                           </h2>
                         </div>
                       ) : ''
