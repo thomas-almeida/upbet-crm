@@ -2,22 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes fadeInUp {
-    0% {
-      transform: translateX(10%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0%);
-      opacity: 1;
-    }
-  }
-  
-  .fadeInUp-animation {
-    animation: 1.2s fadeInUp;
-  }
-
-  @font-face {
+@font-face {
     font-family: 'SF Pro Display';
     src: url('./fonts/sf-pro-display/SFPRODISPLAYREGULAR.OTF') format('opentype'),
       url('./fonts/sf-pro-display/SFPRODISPLAYBOLD.OTF') format('opentype');
@@ -33,7 +18,22 @@
     /* Bold */
     font-style: normal;
   }
+
+@keyframes fadeInUp {
+    0% {
+      transform: translateX(10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
   
+  .fadeInUp-animation {
+    animation: 1.2s fadeInUp;
+  }
+
   
   body {
     font-family: 'SF Pro Display' !important;
