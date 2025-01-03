@@ -17,6 +17,12 @@ const options = [
     activeScreen: 'category',
     category: 'campaign',
     icon:'/campaign.svg'
+  },
+  {
+    name: 'Scripts',
+    activeScreen: 'docs',
+    category: 'wiki',
+    icon: '/docs.svg'
   }
 ]
 export default options
