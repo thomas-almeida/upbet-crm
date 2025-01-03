@@ -4,6 +4,8 @@ import userController from "../controllers/userController.js"
 import routinesController from "../controllers/routinesController.js"
 import cron from 'node-cron'
 import kpiController from "../controllers/kpi-controller.js"
+import docsCotroller from "../controllers/docsCotroller.js"
+import multer from '../utils/multer.js'
 
 const api = Router()
 
@@ -29,10 +31,12 @@ api.get('/campaigns/get-all-campaigns', queryDataController.getAllCampaings)
 api.post('/kpi/create-kpi', kpiController.createKPI)
 api.get('/kpi/get-all-kpis', kpiController.getAllKPIs)
 
-
+//DOCS
+api.post('/docs/upload-script-file', multer.upload.single('file'), docsCotroller.uploadFile)
+api.post('/docs/create-new-script-doc', docsCotroller.createScriptDoc)
+api.get('/docs/get-docs', docsCotroller.getScriptDocs)
 
 // Cron Jobs
-
 cron.schedule('41 16 * * *', async () => {
 
     const date = '12/2024'
