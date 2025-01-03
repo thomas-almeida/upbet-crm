@@ -2,13 +2,13 @@ import axios from "axios"
 import baseUrl from '../utils/baseUrl.js'
 
 const signIn = async (payload) => {
-  const response = await axios.post(`${baseUrl.production}/user/sign-in`, payload)
+  const response = await axios.post(`${baseUrl.localhost}/user/sign-in`, payload)
   return response.data
 }
 
 const getUserById = async (userId) => {
   const response = await axios.get(
-    `${baseUrl.production}/user/get-user-by-id/${userId}`, {
+    `${baseUrl.localhost}/user/get-user-by-id/${userId}`, {
     headers: {
       "ngrok-skip-browser-warning": "true"
     }
@@ -19,7 +19,7 @@ const getUserById = async (userId) => {
 
 const getDashData = async () => {
   const response = await axios.get(
-    `${baseUrl.production}/get-dash-data`, {
+    `${baseUrl.localhost}/get-dash-data`, {
     headers: {
       "ngrok-skip-browser-warning": "true"
     }
@@ -30,7 +30,7 @@ const getDashData = async () => {
 
 const getDashById = async (dashId) => {
   const response = await axios.get(
-    `${baseUrl.production}/get-dash-by-id/${dashId}`, {
+    `${baseUrl.localhost}/get-dash-by-id/${dashId}`, {
     headers: {
       "ngrok-skip-browser-warning": "true"
     }
@@ -41,7 +41,7 @@ const getDashById = async (dashId) => {
 
 const getKPIs = async () => {
   const response = await axios.get(
-    `${baseUrl.production}/kpi/get-all-kpis`, {
+    `${baseUrl.localhost}/kpi/get-all-kpis`, {
     headers: {
       "ngrok-skip-browser-warning": "true"
     }
@@ -52,7 +52,7 @@ const getKPIs = async () => {
 
 const getAllCampaings = async () => {
   const response = await axios.get(
-    `${baseUrl.production}/campaigns/get-all-campaigns`, {
+    `${baseUrl.localhost}/campaigns/get-all-campaigns`, {
     headers: {
       "ngrok-skip-browser-warning": "true"
     }
@@ -62,11 +62,36 @@ const getAllCampaings = async () => {
   return response.data
 }
 
+const getDocsData = async () => {
+  const response = await axios.get(
+    `${baseUrl.localhost}/docs/get-docs`, {
+    headers: {
+      "ngrok-skip-browser-warning": "true"
+    }
+  }
+  )
+
+  return response.data
+}
+
+const uploadScriptFile = async () => {
+  const response = await axios.post(`${baseUrl.localhost}/docs/upload-script-file/:file`)
+  return response.data
+}
+
+const createScriptDoc = async () => {
+  const response = await axios.post(`${baseUrl.localhost}/docs/create-new-script-doc`, payload)
+  return response.data
+}
+
 export default {
   signIn,
   getUserById,
   getDashById,
   getDashData,
   getKPIs,
-  getAllCampaings
+  getAllCampaings,
+  getDocsData,
+  uploadScriptFile,
+  createScriptDoc
 }
