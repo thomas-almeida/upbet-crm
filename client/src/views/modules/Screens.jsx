@@ -3,7 +3,6 @@ import Menu from "./Menu"
 import Category from "./Category"
 import DashChart from "./DashChart"
 import Docs from "./Docs"
-import DocViewer from "./DocViewer"
 
 export default function Screens({
   activeScreen,
