@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import Menu from "./Menu"
 import Category from "./Category"
 import DashChart from "./DashChart"
+import Docs from "./Docs"
 
 export default function Screens({
   activeScreen,
@@ -9,6 +10,7 @@ export default function Screens({
   userData,
   dashData,
   kpiData,
+  docsData,
   campaignData,
   refreshData,
   setCategory,
@@ -56,6 +58,17 @@ export default function Screens({
           activeScreen={activeScreen}
           setActiveScreen={setActiveScreen}
           refreshData={refreshData}
+        />
+      }
+      {
+        activeScreen === 'docs' &&
+        <Docs
+          visible={true}
+          activeScreen={activeScreen}
+          setActiveScreen={setActiveScreen}
+          refreshData={refreshData}
+          userData={userData}
+          docsData={docsData}
         />
       }
     </>

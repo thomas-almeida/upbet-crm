@@ -8,3 +8,5 @@ server/queries/mail/mailgun.py
 server/utils/sheets-credentials.json
 server/db/kpi-data.json
 server/queries/gamification/
+server/queries/campaign/
+server/uploads/

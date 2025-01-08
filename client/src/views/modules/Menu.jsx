@@ -29,21 +29,24 @@ export default function Menu({
             <div className="flex justify-start items-center py-10">
               {
                 options.map((option, index) => (
-                  <div
-                    key={option[index]}
-                    className="bg-white border-2 p-4 m-2 text-left w-[300px] h-[180px] rounded-md shadow-sm relative cursor-pointer transition hover:scale-[1.02] hover:text-[#008181] hover:border-[#008181]"
-                    onClick={() => setItem(option.activeScreen, option.category)}
-                  >
-                    <div className="absolute bottom-4">
-                      <img src={option.icon} className="w-[40px] my-2" alt="" />
-                      <p>Veja visões de</p>
-                      <h3 className="text-2xl font-semibold">
-                        {
-                          option.name
-                        }
-                      </h3>
+                  option.activeScreen !== 'docs' ? (
+                    <div
+                      key={option[index]}
+                      className="bg-white border-2 p-4 m-2 text-left w-[300px] h-[180px] rounded-md shadow-sm relative cursor-pointer transition hover:scale-[1.02] hover:text-[#008181] hover:border-[#008181]"
+                      onClick={() => setItem(option.activeScreen, option.category)}
+                    >
+                      <div className="absolute bottom-4">
+                        <img src={option.icon} className="w-[40px] my-2" alt="" />
+                        <p>Veja visões de</p>
+                        <h3 className="text-2xl font-semibold">
+                          {
+                            option.name
+                          }
+                        </h3>
+                      </div>
                     </div>
-                  </div>
+
+                  ) : ''
                 ))
               }
             </div>
