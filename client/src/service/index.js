@@ -74,12 +74,20 @@ const getDocsData = async () => {
   return response.data
 }
 
-const uploadScriptFile = async () => {
-  const response = await axios.post(`${baseUrl.localhost}/docs/upload-script-file/:file`)
+const uploadScriptFile = async (file) => {
+  
+  const formData = new FormData()
+  formData.append('file', file)
+
+  const response = await axios.post(`${baseUrl.localhost}/docs/upload-script-file`, formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  })
   return response.data
 }
 
-const createScriptDoc = async () => {
+const createScriptDoc = async (payload) => {
   const response = await axios.post(`${baseUrl.localhost}/docs/create-new-script-doc`, payload)
   return response.data
 }
