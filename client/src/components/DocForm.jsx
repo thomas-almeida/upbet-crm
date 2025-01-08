@@ -1,11 +1,14 @@
 import { useState } from "react"
+import service from "../service"
 
-export default function DocForm({ visible, closeModal, userData }) {
+export default function DocForm({ visible, closeModal, userData, setActiveScreen, refreshData }) {
     const [name, setName] = useState("")
     const [details, setDetails] = useState("")
     const [preTag, setPreTag] = useState("")
     const [tags, setTags] = useState([])
     const [file, setFile] = useState("")
+    const [selectedFile, setSelectedFile] = useState([])
+    const [filename, setFileName] = useState('')
 
     function addDocumentTag(tag) {
         if (tag.trim() !== "") {
@@ -16,6 +19,49 @@ export default function DocForm({ visible, closeModal, userData }) {
 
     function removeDocumentTag(index) {
         setTags((prevTags) => prevTags.filter((_, i) => i !== index));
+    }
+
+    const handleFileChange = (event) => {
+        const files = Array.from(event.target.files)
+        setFileName(files[0].name)
+        setSelectedFile(files[0])
+    }
+
+    async function uploadFile() {
+        const response = await service.uploadScriptFile(selectedFile)
+        return response.data
+    }
+
+
+    function clearInputs() {
+        setName('')
+        setDetails('')
+        setTags([])
+        setSelectedFile([])
+        setFile('')
+        setPreTag('')
+        setFileName('')
+    }
+
+    async function craeteDocument() {
+
+        const fileResponse = await uploadFile()
+
+        const payload = {
+            name: name,
+            details: details,
+            tags: tags,
+            userId: userData.id,
+            file: fileResponse
+        }
+
+        const response = await service.createScriptDoc(payload)
+        console.log(response.data)
+        setActiveScreen('docs')
+        closeModal(visible)
+        clearInputs()
+        refreshData(refreshData)
+        
     }
 
     return (
@@ -76,7 +122,7 @@ export default function DocForm({ visible, closeModal, userData }) {
                                     </div>
                                     <ul className="py-1 flex justify-start items-center">
                                         {tags.map((tag, index) => (
-                                            <li 
+                                            <li
                                                 key={index} className="text-md font-semibold border p-1 px-2 mr-1 rounded-md shadow-sm cursor-pointer text-[#008181]"
                                                 onClick={() => removeDocumentTag(index)}
                                             >
@@ -91,7 +137,11 @@ export default function DocForm({ visible, closeModal, userData }) {
                                             htmlFor="script-file"
                                             className="cursor-pointer w-full text-center p-4 py-6 border-dashed border-2 rounded-md hover:border-[#008181]"
                                         >
-                                            Arraste o arquivo aqui ou, <b className="text-[#008181]">Escolha do Computador</b>
+                                            {
+                                                filename !== ''
+                                                    ? (<p>Você Selecionou:  <b className="text-[#008181]">{filename}</b></p>)
+                                                    : (<p>Arraste o arquivo aqui ou, <b className="text-[#008181]">Escolha do Computador</b></p>)
+                                            }
                                         </label>
                                     </div>
                                     <input
@@ -99,10 +149,14 @@ export default function DocForm({ visible, closeModal, userData }) {
                                         value={file}
                                         id="script-file"
                                         className="hidden"
+                                        onChange={handleFileChange}
                                     />
                                 </div>
                                 <div>
-                                    <button className="p-2 py-3 border-2 text-lg rounded-md w-full bg-[#008181] text-white">
+                                    <button
+                                        className="p-2 py-3 border-2 text-lg rounded-md w-full bg-[#008181] text-white"
+                                        onClick={() => craeteDocument()}
+                                    >
                                         Criar nova documentação
                                     </button>
                                 </div>
@@ -110,7 +164,7 @@ export default function DocForm({ visible, closeModal, userData }) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }

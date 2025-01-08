@@ -99,6 +99,8 @@ export default function Docs({
                 visible={modalVisible}
                 closeModal={closeModal}
                 userData={userData}
+                setActiveScreen={setActiveScreen}
+                refreshData={refreshData}
             />
         </>
     )
