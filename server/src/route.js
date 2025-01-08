@@ -6,6 +6,7 @@ import cron from 'node-cron'
 import kpiController from "../controllers/kpi-controller.js"
 import docsCotroller from "../controllers/docsCotroller.js"
 import multer from '../utils/multer.js'
+import sheetsController from "../controllers/sheets-controller.js"
 
 const api = Router()
 
@@ -36,22 +37,25 @@ api.post('/docs/upload-script-file', multer.upload.single('file'), docsCotroller
 api.post('/docs/create-new-script-doc', docsCotroller.createScriptDoc)
 api.get('/docs/get-docs', docsCotroller.getScriptDocs)
 
-// Cron Jobs
-cron.schedule('41 16 * * *', async () => {
+//SHEETS DEPOSITS
+api.get('/sheets/get-deposit/:campaignId/:startDate/:endDate', sheetsController.getDepositByDate)
 
-    const date = '12/2024'
+// Cron Jobs
+cron.schedule('0 11 * * *', async () => {
+
+    const date = '1/2025'
     const spreadsheetId = '14P77Z0lbIo06JqXFiYyTPaUIV5yjuF41H9G5Nuc2x20'
-    const range = 'resumo!A1:Q36'
-    const campaignId = 'zyjwyt691'
+    const range = 'resumo!A1:Q51'
+    const campaignId = 'inppsm502'
 
     const response = await routinesController.updateCampaigns(date, spreadsheetId, range, campaignId)
     console.log('CRON JOB: CAMPAIGNS', response.message)
 })
 
-cron.schedule('42 16 * * *', async () => {
+cron.schedule('1 11 * * *', async () => {
 
-    const dashId = 'zyjwyt691'
-    const date = '12/2024'
+    const dashId = 'inppsm502'
+    const date = '1/2025'
 
     const response = await routinesController.updateKPIs(dashId, date)
     console.log('CRON JOB: UPDATE KPIs', response.message)
