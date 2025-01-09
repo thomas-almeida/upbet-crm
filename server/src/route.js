@@ -7,6 +7,7 @@ import kpiController from "../controllers/kpi-controller.js"
 import docsCotroller from "../controllers/docsCotroller.js"
 import multer from '../utils/multer.js'
 import sheetsController from "../controllers/sheets-controller.js"
+import depositController from "../controllers/depositController.js"
 
 const api = Router()
 
@@ -39,6 +40,10 @@ api.get('/docs/get-docs', docsCotroller.getScriptDocs)
 
 //SHEETS DEPOSITS
 api.get('/sheets/get-deposit/:campaignId/:startDate/:endDate', sheetsController.getDepositByDate)
+
+//DEPOSITS
+api.get('/deposits/get-deposits-by-period/:start_date/:end_date', depositController.getDepositsByCurrentMonth)
+api.get('/deposits/get-withdrawals-by-period/:start_date/:end_date', depositController.getWhitdrawalsByCurrentMonth)
 
 // Cron Jobs
 cron.schedule('0 11 * * *', async () => {
