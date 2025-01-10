@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import CountUp from "react-countup"
 import { Tooltip as ReactTooltip } from "react-tooltip"
-import { useNavigate } from "react-router-dom"
+import { ArrowUp, ArrowDown } from 'react-ionicons'
 
 export default function Category({
   visible,
@@ -21,6 +21,28 @@ export default function Category({
   function openChart(chartId) {
     setActiveScreen('chart')
     localStorage.setItem('chartId', chartId)
+  }
+
+  function compareMonths(currentDate, value, label) {
+
+    let previousDate = currentDate.split('/')
+    let previousMonth = parseInt(previousDate[0]) - 1
+    let previousyear = parseInt(previousDate[1])
+
+    if (previousMonth === 0) {
+      previousMonth = 12
+      previousyear = parseInt(previousDate[1] - 1)
+    }
+
+    let fullPreviousDate = `${previousMonth}/${previousyear}`
+    let prevKPI = kpiData.find((kpi) => kpi.date === fullPreviousDate && kpi.label === label)
+
+    if (prevKPI === undefined) {
+      return
+    }
+
+    return value >= prevKPI.value ? true : false
+
   }
 
   useEffect(() => {
@@ -68,6 +90,7 @@ export default function Category({
             }
             <div className="grid grid-cols-4 justify-start items-center">
               {
+
                 kpiData?.map((kpiItem) => (
                   kpiItem?.category === category ? (
                     kpiItem?.date === currentMonthReference ?
@@ -76,13 +99,39 @@ export default function Category({
                           key={kpiItem?.id}
                           className="p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left"
                         >
-                          <p className="text-sm font-semibold p-1">{kpiItem?.name}</p>
+                          <div className="flex justify-start items-center relative">
+                            <p className="text-sm font-semibold p-1">{kpiItem?.name}</p>
+                            <p className="absolute right-0 cursor-pointer rotate-45"
+                              data-tooltip-id={`tooltip-${kpiItem?.id}`}
+                              data-tooltip-content={
+                                compareMonths(kpiItem?.date, kpiItem?.value, kpiItem?.label) ?
+                                  "Acima do mês anterior" :
+                                  "Abaixo do mês anterior"
+                              }
+                            >
+                              {
+                                compareMonths(kpiItem?.date, kpiItem?.value, kpiItem?.label) ?
+
+                                  <ArrowUp
+                                    color={kpiItem.label.includes('Custo') ? '#ff0000' : '#008181'}
+                                    height="20px"
+                                    width="20px"
+                                  /> :
+                                  <ArrowDown
+                                    color={kpiItem.label.includes('Custo') ? '#008181' : '#ff0000'}
+                                    height="20px"
+                                    width="20px"
+                                  />
+                              }
+                            </p>
+                          </div>
+
                           <h2
                             className="text-3xl font-semibold p-2 fadeInUp-animation overflow-clip text-ellipsis whitespace-nowrap cursor-pointer"
                             data-tooltip-id={`tooltip-${kpiItem?.id}`}
                             data-tooltip-content={
                               kpiItem?.type === 'currency'
-                                ? `R$ ${(kpiItem?.value / 100).toFixed(2).replace('.', ',')}`
+                                ? `R$ ${kpiItem?.value.toFixed(2).replace('.', ',')}`
                                 : kpiItem?.value
                             }
                           >
@@ -90,7 +139,7 @@ export default function Category({
                               kpiItem?.type === 'currency' ? (
                                 <CountUp
                                   start={0}
-                                  end={kpiItem?.value / 100}
+                                  end={kpiItem?.value}
                                   duration={2.5}
                                   prefix="R$ "
                                   decimals={2}
