@@ -3,10 +3,8 @@ server/utils/credentials.json
 server/queries/gamification/db/csv
 server/db/dash-data.json
 server/queries/campaign/db/csv
-server/db/users.json
 server/queries/mail/mailgun.py
 server/utils/sheets-credentials.json
-server/db/kpi-data.json
 server/queries/gamification/
 server/queries/campaign/
 server/uploads/
