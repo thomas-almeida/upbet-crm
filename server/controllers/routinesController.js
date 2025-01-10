@@ -87,11 +87,10 @@ async function updateCampaigns(date, spreadsheetId, range, campaingId) {
         const [sheetHeaders, ...data] = rows
         const jsonData = data.map(row => {
             return sheetHeaders.reduce((acc, header, index) => {
-
                 let value = row[index] || 0
-
+            
                 if (typeof value === 'string' && value.includes('R$')) {
-                    value = parseFloat(value.replace(/[^\d]/g, ''), 10) || 0
+                    value = parseFloat(value.replace('.', '').replace(',', '.').replace(/[^\d.]/g, '')) || 0
                 }
                 acc[header] = value
                 return acc
