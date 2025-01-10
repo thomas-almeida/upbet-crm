@@ -6,10 +6,10 @@ import axios from 'axios'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const depositsDB = path.join(__dirname, '..', 'db', 'deposits-data.json')
-const withdrawalsDB = path.join(__dirname, '..', 'db', 'withdrawals-data.json')
+const withdrawsDB = path.join(__dirname, '..', 'db', 'withdraws-data.json')
 
 let deposits = []
-let withdrawals = []
+let withdraws = []
 
 async function getDepositsByCurrentMonth(req, res) {
     try {
@@ -76,14 +76,14 @@ async function getDepositsByCurrentMonth(req, res) {
     }
 }
 
-async function getWhitdrawalsByCurrentMonth(req, res) {
+async function getWhitdrawsByCurrentMonth(req, res) {
     try {
 
         const { start_date, end_date } = req.params
 
         const getDepositUrl = `https://api.originals.upsports.app:3000/sportingtech/transactions/balance?start_date=${start_date}&end_date=${end_date}`
-        const data = fs.readFileSync(withdrawalsDB, 'utf-8')
-        withdrawals = data ? JSON.parse(data) : []
+        const data = fs.readFileSync(withdrawsDB, 'utf-8')
+        withdraws = data ? JSON.parse(data) : []
 
         const response = await axios.get(getDepositUrl, {
             headers: {
@@ -93,48 +93,48 @@ async function getWhitdrawalsByCurrentMonth(req, res) {
 
         const currentDate = new Date
         const currentReferenceMonth = `${currentDate.getUTCMonth()}/${currentDate.getFullYear()}`
-        const withdrawalItemItemExist = withdrawals.some((withdrawalItem) => withdrawalItem.referenceMonth === currentReferenceMonth)
+        const withdrawItemItemExist = withdraws.some((withdrawItem) => withdrawItem.referenceMonth === currentReferenceMonth)
 
-        const withdrawalObject = {
+        const withdrawObject = {
             id: idGenerator.generateExtensiveId(deposits),
             referenceMonth: currentReferenceMonth,
-            withdrawalsItemCount: response.data.withdrawals_count,
-            withdrawalsItemSum: response.data.withdrawals_sum,
+            withdrawsItemCount: response.data.withdraws_count,
+            withdrawsItemSum: response.data.withdraws_sum,
         }
 
-        if (withdrawalItemItemExist) {
+        if (withdrawItemItemExist) {
 
-            let currentwithdrawalItem = withdrawals.find((depositItem) => depositItem.referenceMonth === currentReferenceMonth)
-            currentwithdrawalItem.withdrawalCount = response.data.withdrawals_count
-            currentwithdrawalItem.withdrawalSum = response.data.withdrawals_sum
+            let currentwithdrawItem = withdraws.find((depositItem) => depositItem.referenceMonth === currentReferenceMonth)
+            currentwithdrawItem.withdrawCount = response.data.withdraws_count
+            currentwithdrawItem.withdrawsum = response.data.withdraws_sum
 
-            console.log(withdrawals)
+            console.log(withdraws)
 
 
             res.status(200).json({
                 message: 'success',
                 data: {
-                    withdrawalsCount: response.data.withdrawals_count,
-                    withdrawalsSum: response.data.withdrawals_sum,
+                    withdrawsCount: response.data.withdraws_count,
+                    withdrawsSum: response.data.withdraws_sum,
                 }
             })
 
-            fs.writeFileSync(withdrawalsDB, JSON.stringify(withdrawals, null, 2))
+            fs.writeFileSync(withdrawsDB, JSON.stringify(withdraws, null, 2))
             console.log(`Depositos de ${referenceMonth} atualizados com sucesso`)
             return
         }
 
-        deposits.push(withdrawalObject)
+        deposits.push(withdrawObject)
 
         res.status(200).json({
             message: 'success',
             data: {
-                withdrawalsCount: response.data.withdrawals_count,
-                withdrawalsSum: response.data.withdrawals_sum,
+                withdrawsCount: response.data.withdraws_count,
+                withdrawsSum: response.data.withdraws_sum,
             }
         })
 
-        fs.writeFileSync(withdrawalsDB, JSON.stringify(withdrawals, null, 2))
+        fs.writeFileSync(withdrawsDB, JSON.stringify(withdraws, null, 2))
 
     } catch (err) {
         console.error(err)
@@ -144,5 +144,5 @@ async function getWhitdrawalsByCurrentMonth(req, res) {
 
 export default {
     getDepositsByCurrentMonth,
-    getWhitdrawalsByCurrentMonth
+    getWhitdrawsByCurrentMonth
 }
