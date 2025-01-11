@@ -75,7 +75,7 @@ const getDocsData = async () => {
 }
 
 const uploadScriptFile = async (file) => {
-  
+
   const formData = new FormData()
   formData.append('file', file)
 
@@ -101,5 +101,5 @@ export default {
   getAllCampaings,
   getDocsData,
   uploadScriptFile,
-  createScriptDoc
+  createScriptDoc,
 }

@@ -7,6 +7,7 @@ import kpiController from "../controllers/kpi-controller.js"
 import docsCotroller from "../controllers/docsCotroller.js"
 import multer from '../utils/multer.js'
 import sheetsController from "../controllers/sheets-controller.js"
+import depositController from "../controllers/depositController.js"
 
 const api = Router()
 
@@ -38,21 +39,28 @@ api.post('/docs/create-new-script-doc', docsCotroller.createScriptDoc)
 api.get('/docs/get-docs', docsCotroller.getScriptDocs)
 
 //SHEETS DEPOSITS
-api.get('/sheets/get-deposit/:campaignId/:startDate/:endDate', sheetsController.getDepositByDate)
+api.get('/sheets/get-deposit/:campaignDataId/:campaignId/:startDate/:endDate/:type', sheetsController.getDepositByDate)
+api.get('/sheets/get-users-target/:campaignDataId/:campaignId/:startDate/:endDate', sheetsController.getUsersTarget)
+api.get('/sheets/get-deposit-by-campaing-id/:campaignDataId/:campaignId/:type', sheetsController.getDepositByCampaignId)
+api.get('/sheets/get-user-target-by-campaign-id/:campaignDataId/:campaignId', sheetsController.getUsersTargetByCampaignId)
+
+//DEPOSITS
+api.get('/deposits/get-deposits-by-period/:start_date/:end_date', depositController.getDepositsByCurrentMonth)
+api.get('/deposits/get-withdrawals-by-period/:start_date/:end_date', depositController.getWhitdrawsByCurrentMonth)
 
 // Cron Jobs
-cron.schedule('0 11 * * *', async () => {
+cron.schedule('13 15 * * *', async () => {
 
     const date = '1/2025'
     const spreadsheetId = '14P77Z0lbIo06JqXFiYyTPaUIV5yjuF41H9G5Nuc2x20'
-    const range = 'resumo!A1:Q51'
+    const range = 'resumo!A1:Q65'
     const campaignId = 'inppsm502'
 
     const response = await routinesController.updateCampaigns(date, spreadsheetId, range, campaignId)
     console.log('CRON JOB: CAMPAIGNS', response.message)
 })
 
-cron.schedule('1 11 * * *', async () => {
+cron.schedule('14 15 * * *', async () => {
 
     const dashId = 'inppsm502'
     const date = '1/2025'
