@@ -65,17 +65,7 @@
     "value": 152680.71000000002,
     "date": "11/2024"
   },
-  {
-    "id": "dlmoed002",
-    "name": "Depósitos Após 7 Dias",
-    "label": "Dep. 7 dias pos campanha",
-    "calcOptions": "soma",
-    "referenceDashId": "zmyfrn714",
-    "type": "currency",
-    "category": "campaign",
-    "value": 293616.99,
-    "date": "11/2024"
-  },
+  
   {
     "id": "ehvmiv499",
     "name": "Custo Total",
@@ -142,17 +132,7 @@
     "value": 1618557.1700000002,
     "date": "12/2024"
   },
-  {
-    "id": "evcclx673",
-    "name": "Depósitos Após 7 Dias",
-    "label": "Dep. 7 dias pos campanha",
-    "calcOptions": "soma",
-    "referenceDashId": "zyjwyt691",
-    "type": "currency",
-    "category": "campaign",
-    "value": 2549471.5599999996,
-    "date": "12/2024"
-  },
+  
   {
     "id": "nisqew659",
     "name": "FTDs",
@@ -241,17 +221,7 @@
     "value": 960036.86,
     "date": "1/2025"
   },
-  {
-    "id": "lrruzl894",
-    "name": "Depósitos Após 7 Dias",
-    "label": "Dep. 7 dias pos campanha",
-    "calcOptions": "soma",
-    "referenceDashId": "inppsm502",
-    "type": "currency",
-    "category": "campaign",
-    "value": 3328017.13,
-    "date": "1/2025"
-  },
+  
   {
     "id": "sntsxf596",
     "name": "FTDs",
