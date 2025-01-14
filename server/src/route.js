@@ -43,6 +43,7 @@ api.get('/sheets/get-deposit/:campaignDataId/:campaignId/:startDate/:endDate/:ty
 api.get('/sheets/get-users-target/:campaignDataId/:campaignId/:startDate/:endDate', sheetsController.getUsersTarget)
 api.get('/sheets/get-deposit-by-campaing-id/:campaignDataId/:campaignId/:type', sheetsController.getDepositByCampaignId)
 api.get('/sheets/get-user-target-by-campaign-id/:campaignDataId/:campaignId', sheetsController.getUsersTargetByCampaignId)
+api.get('/sheets/get-mails-by-campaign/:campaignDataId/:campaignId/:factTypeId', sheetsController.getMailsByCampaign)
 
 //DEPOSITS
 api.get('/deposits/get-deposits-by-period/:start_date/:end_date', depositController.getDepositsByCurrentMonth)

@@ -401,6 +401,47 @@ async function getMailsByCampaignId(campaignDataId, campaignId, factTypeId) {
 
 }
 
+async function getMailsByCampaign(req, res) {
+    try {
+
+        let campaignData = []
+        campaignData = JSON.parse(fs.readFileSync(campaignDB, 'utf-8'))
+
+        const { campaignDataId, campaignId, factTypeId } = req.params
+
+        const selectedCampaignItem = campaignData.find((campaignData) => campaignData.id === campaignDataId)
+
+        if (!selectedCampaignItem) {
+            return res.status(404).json({ message: 'Campaign data not found' })
+        }
+
+        const targetCampaign = selectedCampaignItem.campaigns.find(
+            (target) => target['Campaing ID'] === campaignId
+        )
+
+        if (!targetCampaign) {
+            return res.status(404).json({ message: 'Campaign ID not found' })
+        }
+
+        let mails = ''
+
+        if (factTypeId == 2) {
+            mails = targetCampaign['Enviados']
+        } else if (factTypeId == 4) {
+            mails = targetCampaign['Clicados']
+        }
+
+        res.status(200).json({
+            message: 'success',
+            data: mails
+        })
+
+    } catch (err) {
+        console.error(err)
+        res.status(500).json({ message: 'Internal server error' })
+    }
+}
+
 export default {
     getDepositByDate,
     getDepositByCampaignId,
@@ -408,5 +449,6 @@ export default {
     getUsersTargetByCampaignId,
     getUsersImpact,
     getDepositsByRange,
-    getMailsByCampaignId
+    getMailsByCampaignId,
+    getMailsByCampaign
 }
