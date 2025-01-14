@@ -378,11 +378,35 @@ async function getDepositsByRange(campaignDataId, campaignId, range) {
     }
 }
 
+async function getMailsByCampaignId(campaignDataId, campaignId, factTypeId) {
+
+    let campaignData = []
+    campaignData = JSON.parse(fs.readFileSync(campaignDB, 'utf-8'))
+
+    const sqlQuery = query.mails_by_campaign_id(campaignId, factTypeId)
+    const queryResults = await queryExtId.getTotalItems(sqlQuery)
+    const totalMails = queryResults?.total
+
+    const selectedCampaignData = campaignData.find((campaign) => campaign.id === campaignDataId)
+    const targetCampaign = selectedCampaignData.campaigns.find((target) => target['Campaing ID'] === campaignId)
+
+    if (factTypeId === 2) {
+        targetCampaign['Enviados'] = totalMails
+    } else if (factTypeId === 4) {
+        targetCampaign['Clicados'] = totalMails
+    }
+
+    fs.writeFileSync(campaignDB, JSON.stringify(campaignData, null, 2))
+    console.log(factTypeId === 1 ? `${campaignDataId}:${campaignId} - Emails Enviados: ${totalMails}` : `${campaignDataId}:${campaignId} - Emails Clicados: ${totalMails}`)
+
+}
+
 export default {
     getDepositByDate,
     getDepositByCampaignId,
     getUsersTarget,
     getUsersTargetByCampaignId,
     getUsersImpact,
-    getDepositsByRange
+    getDepositsByRange,
+    getMailsByCampaignId
 }
