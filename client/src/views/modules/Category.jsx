@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import CountUp from "react-countup"
 import { Tooltip as ReactTooltip } from "react-tooltip"
 import { ArrowUp, ArrowDown } from 'react-ionicons'
+import callendar from "../../utils/callendar.js"
+
 
 export default function Category({
   visible,
@@ -74,13 +76,15 @@ export default function Category({
                 <div className="p-2 text-left">
                   <p className="font-semibold mb-1">Mês de Referência</p>
                   <select
-                    className="p-1 rounded-md border-2 px-2 cursor-pointer w-[140px]"
+                    className="p-1 rounded-md border-2 px-2 cursor-pointer w-[180px]"
                     onChange={(e) => setCurrentMonthReference(e.target.value)}
                   >
                     {
                       campaignData?.map((campaign) => (
                         <option value={campaign?.referenceMonth}>
-                          {campaign?.referenceMonth}
+                          {
+                            callendar.translateMonth(campaign?.referenceMonth)
+                          }
                         </option>
                       ))
                     }
