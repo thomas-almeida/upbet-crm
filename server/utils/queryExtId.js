@@ -36,7 +36,25 @@ async function executeBigQuery(query) {
   }
 }
 
+async function getTotalItems(query) {
+
+  try {
+    const options = {
+      query: query, // Aqui deve ser a string SQL
+      useLegacySql: false, // Certifique-se de que está usando SQL moderno
+      useQueryCache: false
+    }
+
+    const [rows] = await bigquery.query(options);
+    return rows[0]
+  } catch (err) {
+    console.error("Erro ao consultar:", err.message);
+    throw err;
+  }
+
+}
 
 export default {
-  executeBigQuery
+  executeBigQuery,
+  getTotalItems
 }
