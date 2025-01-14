@@ -390,15 +390,16 @@ async function getMailsByCampaignId(campaignDataId, campaignId, factTypeId) {
     const selectedCampaignData = campaignData.find((campaign) => campaign.id === campaignDataId)
     const targetCampaign = selectedCampaignData.campaigns.find((target) => target['Campaing ID'] === campaignId)
 
-    if (factTypeId === 2) {
-        targetCampaign['Enviados'] = totalMails
-    } else if (factTypeId === 4) {
-        targetCampaign['Clicados'] = totalMails
+    if (factTypeId == 2) {
+        console.log(String(totalMails))
+        targetCampaign['Enviados'] = String(totalMails)
+    } else if (factTypeId == 4) {
+        console.log(String(totalMails))
+        targetCampaign['Clicados'] = String(totalMails)
     }
 
     fs.writeFileSync(campaignDB, JSON.stringify(campaignData, null, 2))
     console.log(factTypeId === 1 ? `${campaignDataId}:${campaignId} - Emails Enviados: ${totalMails}` : `${campaignDataId}:${campaignId} - Emails Clicados: ${totalMails}`)
-
 }
 
 async function getMailsByCampaign(req, res) {
