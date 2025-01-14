@@ -186,14 +186,14 @@ async function getDepositByCampaignId(req, res) {
         }
 
         if (parseInt(type) === 1) {
-            console.log(targetCampaign[types[0].label])
-            result = targetCampaign[types[0].label]
+            console.log(targetCampaign[types[0]])
+            result = targetCampaign[types[0]]
         } else if (parseInt(type) === 2) {
-            console.log(targetCampaign[types[1].label])
-            result = targetCampaign[types[1].label]
+            console.log(targetCampaign[types[1]])
+            result = targetCampaign[types[1]]
         } else if (parseInt(type) === 3) {
-            console.log(targetCampaign[types[2].label])
-            result = targetCampaign[types[2].label]
+            console.log(targetCampaign[types[2]])
+            result = targetCampaign[types[2]]
         }
 
         res.status(200).json({
