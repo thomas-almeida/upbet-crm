@@ -30,5 +30,10 @@ async function loadDeposits(campaignDataId) {
 }
 
 //loadUsersImpact("inppsm502")
-//await sheetsController.getDepositsByRange("inppsm502", "1094772", 1)
-await routinesController.updateKPIs("inppsm502","1/2025")
+//await sheetsController.getDepositsByRange("inppsm502", "1097380", 1)
+//await sheetsController.getDepositsByRange("inppsm502", "1097380", 2)
+//await sheetsController.getDepositsByRange("inppsm502", "1097380", 7)
+//await routinesController.updateKPIs("inppsm502","1/2025")
+//await sheetsController.getMailsByCampaignId("inppsm502", "1097380", 2)
+//await sheetsController.getMailsByCampaignId("inppsm502", "1097380", 4)
+//await routinesController.updateCampaigns("1/2025", "14P77Z0lbIo06JqXFiYyTPaUIV5yjuF41H9G5Nuc2x20", "resumo!A1:Q67", "inppsm502")

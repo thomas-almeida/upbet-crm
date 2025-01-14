@@ -378,11 +378,77 @@ async function getDepositsByRange(campaignDataId, campaignId, range) {
     }
 }
 
+async function getMailsByCampaignId(campaignDataId, campaignId, factTypeId) {
+
+    let campaignData = []
+    campaignData = JSON.parse(fs.readFileSync(campaignDB, 'utf-8'))
+
+    const sqlQuery = query.mails_by_campaign_id(campaignId, factTypeId)
+    const queryResults = await queryExtId.getTotalItems(sqlQuery)
+    const totalMails = queryResults?.total
+
+    const selectedCampaignData = campaignData.find((campaign) => campaign.id === campaignDataId)
+    const targetCampaign = selectedCampaignData.campaigns.find((target) => target['Campaing ID'] === campaignId)
+
+    if (factTypeId === 2) {
+        targetCampaign['Enviados'] = totalMails
+    } else if (factTypeId === 4) {
+        targetCampaign['Clicados'] = totalMails
+    }
+
+    fs.writeFileSync(campaignDB, JSON.stringify(campaignData, null, 2))
+    console.log(factTypeId === 1 ? `${campaignDataId}:${campaignId} - Emails Enviados: ${totalMails}` : `${campaignDataId}:${campaignId} - Emails Clicados: ${totalMails}`)
+
+}
+
+async function getMailsByCampaign(req, res) {
+    try {
+
+        let campaignData = []
+        campaignData = JSON.parse(fs.readFileSync(campaignDB, 'utf-8'))
+
+        const { campaignDataId, campaignId, factTypeId } = req.params
+
+        const selectedCampaignItem = campaignData.find((campaignData) => campaignData.id === campaignDataId)
+
+        if (!selectedCampaignItem) {
+            return res.status(404).json({ message: 'Campaign data not found' })
+        }
+
+        const targetCampaign = selectedCampaignItem.campaigns.find(
+            (target) => target['Campaing ID'] === campaignId
+        )
+
+        if (!targetCampaign) {
+            return res.status(404).json({ message: 'Campaign ID not found' })
+        }
+
+        let mails = ''
+
+        if (factTypeId == 2) {
+            mails = targetCampaign['Enviados']
+        } else if (factTypeId == 4) {
+            mails = targetCampaign['Clicados']
+        }
+
+        res.status(200).json({
+            message: 'success',
+            data: mails
+        })
+
+    } catch (err) {
+        console.error(err)
+        res.status(500).json({ message: 'Internal server error' })
+    }
+}
+
 export default {
     getDepositByDate,
     getDepositByCampaignId,
     getUsersTarget,
     getUsersTargetByCampaignId,
     getUsersImpact,
-    getDepositsByRange
+    getDepositsByRange,
+    getMailsByCampaignId,
+    getMailsByCampaign
 }

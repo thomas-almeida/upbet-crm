@@ -13,6 +13,23 @@ function usrs_by_campaign_id(campaignId) {
     WHERE a.audience_id = ${campaignId}`
 }
 
+function mails_by_campaign_id(campaignId, factTypeId) {
+    return `
+    SELECT 
+	    COUNT(DISTINCT c.user_ext_id) as total
+    FROM dwh_ext_12023.j_communication as c
+    INNER JOIN
+	    dwh_ext_12023.dm_audience as a
+	    ON c.root_audience_id = a.audience_id
+    INNER JOIN
+	    dwh_ext_12023.dm_resource as r
+	    ON c.resource_id = r.resource_id
+    WHERE c.root_audience_id = ${campaignId}
+	    AND r.resource_type_id IN (1)
+	    AND c.fact_type_id IN (${factTypeId})`
+}
+
 export default {
-    usrs_by_campaign_id
+    usrs_by_campaign_id,
+    mails_by_campaign_id
 }
