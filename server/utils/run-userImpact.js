@@ -29,6 +29,20 @@ async function loadDeposits(campaignDataId) {
     })
 }
 
+async function loadMails(campaignDataId) {
+    let campaignData = []
+    campaignData = JSON.parse(fs.readFileSync(campaignDB, 'utf-8'))
+
+    const selectedCampaignData = campaignData.find((campaignData) => campaignData.id === campaignDataId)
+    selectedCampaignData.campaigns.forEach(async (campaign) => {
+        await sheetsController.getMailsByCampaignId(campaignDataId, campaign['Campaing ID'], 2)
+        await sheetsController.getMailsByCampaignId(campaignDataId, campaign['Campaing ID'], 4)
+    })
+    
+}
+
+//await sheetsController.getMailsByCampaignId("inppsm502", "1097380", 2)
+//await sheetsController.getMailsByCampaignId("inppsm502", "1097380", 4)
 //loadUsersImpact("inppsm502")
 //await sheetsController.getDepositsByRange("inppsm502", "1097380", 1)
 //await sheetsController.getDepositsByRange("inppsm502", "1097380", 2)
