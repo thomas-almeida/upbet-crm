@@ -52,11 +52,12 @@ export default function DocViewer({
                     <textarea
                         value={document?.details}
                         className="bg-transparent w-full outline-none text-lg resize-none"
+                        rows={6}
                     ></textarea>
                 </div>
                 <h3 className="font-semibold text-xl mb-1">Script</h3>
                 <div
-                    className="border-2 border-slate-300 p-2 flex justify-center items-center w-[140px] rounded-md shadow-sm cursor-pointer"
+                    className="border-2 border-slate-300 p-2 flex justify-center items-center max-w-[300px] rounded-md shadow-sm cursor-pointer"
                 >
                     <img
                         src="/docs.svg"

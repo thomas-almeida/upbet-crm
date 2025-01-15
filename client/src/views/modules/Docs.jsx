@@ -65,9 +65,9 @@ export default function Docs({
                                 docsData.map((document) => (
                                     <div 
                                         onClick={() => openViewer(document)}
-                                        className="border-2 rounded-md bg-white p-4 w-[300px] mx-2 text-left cursor-pointer shadow-sm transition hover:scale-[1.02] hover:border-[#008181]"
+                                        className="border-2 rounded-md bg-white p-4 w-[400px] mx-2 text-left cursor-pointer shadow-sm transition hover:scale-[1.02] hover:border-[#008181]"
                                     >
-                                        <h3 className="text-xl w-[160px] mt-2 font-semibold">{document.name}</h3>
+                                        <h3 className="text-xl w-auto mt-2 font-semibold">{document.name}</h3>
                                         <p className="w-[145px] text-ellipsis overflow-hidden whitespace-nowrap">{document.details}</p>
                                         <ul className="py-2 flex justify-start items-center">
                                             {
