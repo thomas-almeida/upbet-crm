@@ -100,7 +100,7 @@ export default function DocForm({ visible, closeModal, userData, setActiveScreen
                                         placeholder="Detalhes do Script.."
                                         value={details}
                                         onChange={(e) => setDetails(e.target.value)}
-                                        rows={3}
+                                        rows={6}
                                         className="w-full border-2 p-2 my-1 rounded-md resize-none text-lg outline-[#008181]"
                                     ></textarea>
                                 </div>
