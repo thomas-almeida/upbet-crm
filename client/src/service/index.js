@@ -92,6 +92,16 @@ const createScriptDoc = async (payload) => {
   return response.data
 }
 
+const getTransactionsBalance = async (start_date, end_date) => {
+  const response = await axios.get(`${baseUrl.upsports}/transactions/balance?start_date=${start_date}&end_date=${end_date}`, {
+    headers: {
+      'x-signature': `${baseUrl.upsportsKey}`
+    }
+  })
+
+  return response.data
+} 
+
 export default {
   signIn,
   getUserById,
@@ -102,4 +112,5 @@ export default {
   getDocsData,
   uploadScriptFile,
   createScriptDoc,
+  getTransactionsBalance
 }
