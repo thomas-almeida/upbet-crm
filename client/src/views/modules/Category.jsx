@@ -3,22 +3,27 @@ import CountUp from "react-countup"
 import { Tooltip as ReactTooltip } from "react-tooltip"
 import { ArrowUp, ArrowDown } from 'react-ionicons'
 import callendar from "../../utils/callendar.js"
+import MultiSelect from "../../components/MultiSelect.jsx"
 
 
-export default function Category({
-  visible,
-  userData,
-  dashData,
-  kpiData,
-  campaignData,
-  setActiveScreen,
-  setCategory,
-  category,
-  activeScreen,
-  refreshData
-}) {
+export default function Category
+  ({
+    visible,
+    userData,
+    dashData,
+    kpiData,
+    campaignData,
+    setActiveScreen,
+    setCategory,
+    category,
+    activeScreen,
+    refreshData
+  }) {
 
   const [currentMonthReference, setCurrentMonthReference] = useState('')
+  const [campaigns, setCampaigns] = useState([])
+  const [selectedCampaigns, setSelectedCampaigns] = useState([])
+  const [filteredCampaigns, setFilteredCampaigns] = useState([])
 
   function openChart(chartId) {
     setActiveScreen('chart')
@@ -56,7 +61,75 @@ export default function Category({
     }
 
     getMonthReference()
+
   }, [])
+
+  useEffect(() => {
+
+    function getCampaigns() {
+
+      let campaignIds = []
+      const campaigns = campaignData.find((campaignData) => campaignData.referenceMonth === currentMonthReference)
+
+      campaigns?.campaigns?.forEach((campaign) => {
+        campaignIds.push(campaign['Campaing ID'])
+      })
+
+      setCampaigns(campaignIds)
+
+    }
+
+    getCampaigns()
+
+  }, [currentMonthReference])
+
+  useEffect(() => {
+
+    const filterCampaigns = () => {
+
+      let filteredItems = ''
+      let targetData = {}
+      let targetCampaigns = []
+
+      const currentCampaignData = campaignData.find((campaignData) => campaignData.referenceMonth === currentMonthReference)
+      filteredItems = currentCampaignData
+
+      selectedCampaigns.forEach((id) => {
+        currentCampaignData?.campaigns?.forEach((campaign) => {
+          if (campaign['Campaing ID'] === id) {
+            targetCampaigns.push(campaign)
+          }
+        })
+      })
+
+      targetData = {
+        id: currentCampaignData?.id,
+        referenceMonth: currentCampaignData?.referenceMonth,
+        campaigns: targetCampaigns
+      }
+
+      let arr = []
+      arr.push(targetData)
+      setFilteredCampaigns(arr)
+
+    }
+
+    filterCampaigns()
+  }, [selectedCampaigns])
+
+  function sumAllKPI(campaign, indicator) {
+
+    let itemsToSum = []
+
+    campaign.forEach((campaign) => {
+      itemsToSum.push(parseInt(campaign[indicator]))
+    })
+
+    const sum = itemsToSum.reduce((acc, cv) => acc + cv, 0)
+    return sum
+  }
+
+  const campaignsToRender = selectedCampaigns.length > 0 ? filteredCampaigns : campaignData
 
   return (
     <>
@@ -71,98 +144,332 @@ export default function Category({
             </p>
           </div>
           <div>
-            {
-              campaignData?.length > 0 ? (
-                <div className="p-2 text-left">
-                  <p className="font-semibold mb-1">Mês de Referência</p>
-                  <select
-                    className="p-1 rounded-md border-2 px-2 cursor-pointer w-[180px]"
-                    onChange={(e) => setCurrentMonthReference(e.target.value)}
-                  >
-                    {
-                      campaignData?.map((campaign) => (
-                        <option value={campaign?.referenceMonth}>
-                          {
-                            callendar.translateMonth(campaign?.referenceMonth)
-                          }
-                        </option>
-                      ))
-                    }
-                  </select>
-                </div>
-              ) : ''
-            }
-            <div className="grid grid-cols-4 justify-start items-center">
-              {
+            <div className={category === 'campaign' ? `flex justify-start items-center mb-4` : 'hidden'}>
+              <div className="p-2 text-left">
+                {
+                  campaignData?.length > 0 ? (
+                    <>
+                      <p className="font-semibold mb-1">Mês de Referência</p>
 
-                kpiData?.map((kpiItem) => (
-                  kpiItem?.category === category ? (
-                    kpiItem?.date === currentMonthReference ?
-                      (
-                        <div
-                          key={kpiItem?.id}
-                          className="p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left"
-                        >
-                          <div className="flex justify-start items-center relative">
-                            <p className="text-sm font-semibold p-1">{kpiItem?.name}</p>
-                            <p className="absolute right-0 cursor-pointer rotate-45"
-                              data-tooltip-id={`tooltip-${kpiItem?.id}`}
-                              data-tooltip-content={
-                                compareMonths(kpiItem?.date, kpiItem?.value, kpiItem?.label) ?
-                                  "Acima do mês anterior" :
-                                  "Abaixo do mês anterior"
-                              }
-                            >
+                      <select
+                        className="py-2 rounded-md border-2 px-2 cursor-pointer w-[180px]"
+                        onChange={(e) => setCurrentMonthReference(e.target.value)}
+                      >
+                        {
+                          campaignData?.map((campaign) => (
+                            <option value={campaign?.referenceMonth}>
                               {
-                                compareMonths(kpiItem?.date, kpiItem?.value, kpiItem?.label) ?
-
-                                  <ArrowUp
-                                    color={kpiItem.label.includes('Custo') ? '#ff0000' : '#008181'}
-                                    height="20px"
-                                    width="20px"
-                                  /> :
-                                  <ArrowDown
-                                    color={kpiItem.label.includes('Custo') ? '#008181' : '#ff0000'}
-                                    height="20px"
-                                    width="20px"
-                                  />
+                                callendar.translateMonth(campaign?.referenceMonth)
                               }
-                            </p>
-                          </div>
+                            </option>
+                          ))
+                        }
+                      </select>
+                    </>
+                  ) : ''
+                }
+              </div>
 
-                          <h2
-                            className="text-3xl font-semibold p-2 fadeInUp-animation overflow-clip text-ellipsis whitespace-nowrap cursor-pointer"
-                            data-tooltip-id={`tooltip-${kpiItem?.id}`}
-                            data-tooltip-content={
-                              kpiItem?.type === 'currency'
-                                ? `R$ ${kpiItem?.value.toFixed(2).replace('.', ',')}`
-                                : kpiItem?.value
-                            }
+              <div className="p-2 text-left">
+                <p className="font-semibold mb-1">Filtrar por Campanhas</p>
+                <MultiSelect
+                  items={campaigns}
+                  onSelectionChange={setSelectedCampaigns}
+                />
+              </div>
+
+            </div>
+
+            <div>
+              {
+                campaignsToRender?.map((data) => (
+                  data?.referenceMonth === currentMonthReference &&
+                    category === 'campaign' ? (
+                    <div
+                      className="grid grid-cols-4 justify-start items-center"
+                      key={data?.id}
+                    >
+                      <div
+                        className="p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left"
+                      >
+                        <div className="relative flex justify-start items-center">
+                          <p className="text-sm font-semibold p-1">
+                            Custo Total
+                          </p>
+                          <p className="absolute right-0 cursor-pointer rotate-45"
+                            data-tooltip-id={`tooltip-${data?.id}`}
                           >
                             {
-                              kpiItem?.type === 'currency' ? (
-                                <CountUp
-                                  start={0}
-                                  end={kpiItem?.value}
-                                  duration={2.5}
-                                  prefix="R$ "
-                                  decimals={2}
-                                  decimal=","
-                                  separator="."
+                              compareMonths(data.referenceMonth, sumAllKPI(data?.campaigns, 'Custo Total'), 'Custo Total') ?
+                                <ArrowUp
+                                  color={'#ff0000'}
+                                  height="20px"
+                                  width="20px"
+                                /> :
+                                <ArrowDown
+                                  color={'#008181'}
+                                  height="20px"
+                                  width="20px"
                                 />
-                              ) : (
-                                <CountUp
-                                  start={0}
-                                  end={kpiItem?.value}
-                                  duration={0.5}
-                                  separator="."
-                                />
-                              )
                             }
-                          </h2>
-                          <ReactTooltip id={`tooltip-${kpiItem?.id}`} place="bottom" />
+                          </p>
                         </div>
-                      ) : ''
+                        <h2
+                          className="text-3xl font-semibold p-2 fadeInUp-animation overflow-clip text-ellipsis whitespace-nowrap cursor-pointer"
+                          data-tooltip-content={`R$ ${sumAllKPI(data?.campaigns, 'Custo Total')}`}
+                        >
+                          <CountUp
+                            start={0}
+                            end={sumAllKPI(data?.campaigns, 'Custo Total')}
+                            duration={2.5}
+                            prefix="R$ "
+                            decimals={2}
+                            decimal=","
+                            separator="."
+                          />
+                        </h2>
+                      </div>
+
+                      <div
+                        className="p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left"
+                      >
+                        <div className="relative flex justify-start items-center">
+                          <p className="text-sm font-semibold p-1">
+                            Clientes impactados
+                          </p>
+                          <p className="absolute right-0 cursor-pointer rotate-45"
+                            data-tooltip-id={`tooltip-${data?.id}`}
+                          >
+                            {
+                              compareMonths(data.referenceMonth, sumAllKPI(data?.campaigns, 'Custo Total'), 'Custo Total') ?
+                                <ArrowUp
+                                  color={'#008181'}
+                                  height="20px"
+                                  width="20px"
+                                /> :
+                                <ArrowDown
+                                  color={'#ff0000'}
+                                  height="20px"
+                                  width="20px"
+                                />
+                            }
+                          </p>
+                        </div>
+                        <h2
+                          className="text-3xl font-semibold p-2 fadeInUp-animation overflow-clip text-ellipsis whitespace-nowrap cursor-pointer"
+                          data-tooltip-content={`${sumAllKPI(data?.campaigns, 'Clientes impactados')}`}
+                        >
+                          <CountUp
+                            start={0}
+                            end={sumAllKPI(data?.campaigns, 'Clientes impactados')}
+                            duration={2.5}
+                            separator="."
+                          />
+                        </h2>
+                      </div>
+
+                      <div
+                        className="p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left"
+                      >
+                        <div className="relative flex justify-start items-center">
+                          <p className="text-sm font-semibold p-1">
+                            Custo Total de Email
+                          </p>
+                          <p className="absolute right-0 cursor-pointer rotate-45"
+                            data-tooltip-id={`tooltip-${data?.id}`}
+                          >
+                            {
+                              compareMonths(data.referenceMonth, sumAllKPI(data?.campaigns, 'Custo email'), 'Custo email') ?
+                                <ArrowUp
+                                  color={'#ff0000'}
+                                  height="20px"
+                                  width="20px"
+                                /> :
+                                <ArrowDown
+                                  color={'#008181'}
+                                  height="20px"
+                                  width="20px"
+                                />
+                            }
+                          </p>
+                        </div>
+                        <h2
+                          className="text-3xl font-semibold p-2 fadeInUp-animation overflow-clip text-ellipsis whitespace-nowrap cursor-pointer"
+                          data-tooltip-content={`${sumAllKPI(data?.campaigns, 'Custo email')}`}
+                        >
+                          <CountUp
+                            start={0}
+                            end={sumAllKPI(data?.campaigns, 'Custo email')}
+                            duration={2.5}
+                            prefix="R$ "
+                            decimals={2}
+                            decimal=","
+                            separator="."
+                          />
+                        </h2>
+                      </div>
+
+                      <div
+                        className="p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left"
+                      >
+                        <div className="relative flex justify-start items-center">
+                          <p className="text-sm font-semibold p-1">
+                            Custo Total de SMS
+                          </p>
+                          <p className="absolute right-0 cursor-pointer rotate-45"
+                            data-tooltip-id={`tooltip-${data?.id}`}
+                          >
+                            {
+                              compareMonths(data.referenceMonth, sumAllKPI(data?.campaigns, 'Custo SMS'), 'Custo SMS') ?
+                                <ArrowUp
+                                  color={'#ff0000'}
+                                  height="20px"
+                                  width="20px"
+                                /> :
+                                <ArrowDown
+                                  color={'#008181'}
+                                  height="20px"
+                                  width="20px"
+                                />
+                            }
+                          </p>
+                        </div>
+                        <h2
+                          className="text-3xl font-semibold p-2 fadeInUp-animation overflow-clip text-ellipsis whitespace-nowrap cursor-pointer"
+                          data-tooltip-content={`${sumAllKPI(data?.campaigns, 'Custo SMS')}`}
+                        >
+                          <CountUp
+                            start={0}
+                            end={sumAllKPI(data?.campaigns, 'Custo SMS')}
+                            duration={2.5}
+                            prefix="R$ "
+                            decimals={2}
+                            decimal=","
+                            separator="."
+                          />
+                        </h2>
+                      </div>
+
+                      <div
+                        className="p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left"
+                      >
+                        <div className="relative flex justify-start items-center">
+                          <p className="text-sm font-semibold p-1">
+                            Depósitos Após 24h
+                          </p>
+                          <p className="absolute right-0 cursor-pointer rotate-45"
+                            data-tooltip-id={`tooltip-${data?.id}`}
+                          >
+                            {
+                              compareMonths(data.referenceMonth, sumAllKPI(data?.campaigns, 'Dep. 24hrs pos campanha'), 'Dep. 24hrs pos campanha') ?
+                                <ArrowUp
+                                  color={'#008181'}
+                                  height="20px"
+                                  width="20px"
+                                /> :
+                                <ArrowDown
+                                  color={'#ff0000'}
+                                  height="20px"
+                                  width="20px"
+                                />
+                            }
+                          </p>
+                        </div>
+                        <h2
+                          className="text-3xl font-semibold p-2 fadeInUp-animation overflow-clip text-ellipsis whitespace-nowrap cursor-pointer"
+                          data-tooltip-content={`${sumAllKPI(data?.campaigns, 'Dep. 24hrs pos campanha')}`}
+                        >
+                          <CountUp
+                            start={0}
+                            end={sumAllKPI(data?.campaigns, 'Dep. 24hrs pos campanha')}
+                            duration={2.5}
+                            prefix="R$ "
+                            decimals={2}
+                            decimal=","
+                            separator="."
+                          />
+                        </h2>
+                      </div>
+
+                      <div
+                        className="p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left"
+                      >
+                        <div className="relative flex justify-start items-center">
+                          <p className="text-sm font-semibold p-1">
+                            Depósitos Após 48h
+                          </p>
+                          <p className="absolute right-0 cursor-pointer rotate-45"
+                            data-tooltip-id={`tooltip-${data?.id}`}
+                          >
+                            {
+                              compareMonths(data.referenceMonth, sumAllKPI(data?.campaigns, 'Dep. 48h pos campanha'), 'Dep. 48h pos campanha') ?
+                                <ArrowUp
+                                  color={'#008181'}
+                                  height="20px"
+                                  width="20px"
+                                /> :
+                                <ArrowDown
+                                  color={'#ff0000'}
+                                  height="20px"
+                                  width="20px"
+                                />
+                            }
+                          </p>
+                        </div>
+                        <h2
+                          className="text-3xl font-semibold p-2 fadeInUp-animation overflow-clip text-ellipsis whitespace-nowrap cursor-pointer"
+                          data-tooltip-content={`${sumAllKPI(data?.campaigns, 'Dep. 48h pos campanha')}`}
+                        >
+                          <CountUp
+                            start={0}
+                            end={sumAllKPI(data?.campaigns, 'Dep. 48h pos campanha')}
+                            duration={2.5}
+                            prefix="R$ "
+                            decimals={2}
+                            decimal=","
+                            separator="."
+                          />
+                        </h2>
+                      </div>
+
+                      <div
+                        className="p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left"
+                      >
+                        <div className="relative flex justify-start items-center">
+                          <p className="text-sm font-semibold p-1">
+                            FTD
+                          </p>
+                          <p className="absolute right-0 cursor-pointer rotate-45"
+                            data-tooltip-id={`tooltip-${data?.id}`}
+                          >
+                            {
+                              compareMonths(data.referenceMonth, sumAllKPI(data?.campaigns, 'FTD'), 'FTD') ?
+                                <ArrowUp
+                                  color={'#008181'}
+                                  height="20px"
+                                  width="20px"
+                                /> :
+                                <ArrowDown
+                                  color={'#ff0000'}
+                                  height="20px"
+                                  width="20px"
+                                />
+                            }
+                          </p>
+                        </div>
+                        <h2
+                          className="text-3xl font-semibold p-2 fadeInUp-animation overflow-clip text-ellipsis whitespace-nowrap cursor-pointer"
+                          data-tooltip-content={`${sumAllKPI(data?.campaigns, 'FTD')}`}
+                        >
+                          <CountUp
+                            start={0}
+                            end={sumAllKPI(data?.campaigns, 'FTD')}
+                            duration={2.5}
+                            separator="."
+                          />
+                        </h2>
+                      </div>
+                    </div>
                   ) : ''
                 ))
               }
