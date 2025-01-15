@@ -15,6 +15,7 @@ export default function Home() {
   const [campaignData, setCampaignData] = useState('')
   const [activeScreen, setActiveScreen] = useState('menu')
   const [category, setCategory] = useState('')
+  const [transactionsBalance, setTransactionsBalance] = useState('')
 
   async function getUserData() {
 
@@ -45,7 +46,18 @@ export default function Home() {
     setDocsData(response.data)
   }
 
+  async function getTransactionsBalance() {
+    const date = new Date()
+
+    const todayStartDate = encodeURIComponent(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} 00:00:00`)
+    const todayEndDate = encodeURIComponent(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} 23:59:59`)
+
+    const response = await service.getTransactionsBalance(todayStartDate, todayEndDate)
+    setTransactionsBalance(response)
+  }
+
   async function refreshData() {
+    await getTransactionsBalance()
     await getUserData()
     await getDashData()
     await getKPIData()
@@ -54,6 +66,7 @@ export default function Home() {
   }
 
   useEffect(() => {
+    getTransactionsBalance()
     getUserData()
     getDashData()
     getKPIData()
@@ -92,6 +105,7 @@ export default function Home() {
               refreshData={refreshData}
               setCategory={setCategory}
               category={category}
+              transactionsBalance={transactionsBalance}
             />
           </div>
         </div>

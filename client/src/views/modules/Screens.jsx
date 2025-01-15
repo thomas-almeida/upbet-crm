@@ -14,7 +14,8 @@ export default function Screens({
   campaignData,
   refreshData,
   setCategory,
-  category
+  category,
+  transactionsBalance
 }) {
 
   useEffect(() => {
@@ -33,6 +34,7 @@ export default function Screens({
           refreshData={refreshData}
           setCategory={setCategory}
           category={category}
+          transactionsBalance={transactionsBalance}
         />
       }
       {
