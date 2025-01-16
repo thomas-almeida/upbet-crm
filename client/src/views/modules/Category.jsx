@@ -475,14 +475,14 @@ export default function Category
               }
             </div>
 
-            <div className="grid grid-cols-4 justify-start items-center py-10">
+            <div className="grid grid-cols-2 justify-start items-center py-10">
               {
                 dashData !== undefined ?
                   dashData?.map((dashItem) => (
                     dashItem?.metricLabel === category ? (
                       <div
                         key={dashItem?.id}
-                        className="bg-white border-2 text-left p-6 w-[250px] h-[160px] m-2 rounded-md cursor-pointer shadow-sm transition hover:scale-[1.02] hover:border-[#008181] hover:text-[#008181] flex justify-start items-center"
+                        className="bg-white border-2 text-left p-6 h-[160px] m-2 rounded-md cursor-pointer shadow-sm transition hover:scale-[1.02] hover:border-[#008181] hover:text-[#008181] flex justify-start items-center bg-[url('/grad.png')] bg-cover"
                         onClick={() => openChart(dashItem?.id)}
                       >
                         <div>

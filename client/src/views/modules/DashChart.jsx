@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import CBar from "../../components/charts/CBar"
 import CStacked from "../../components/charts/CStacked"
+import CLineChart from "../../components/charts/CLineChart"
 
 export default function DashChart({
   visible,
@@ -54,6 +55,17 @@ export default function DashChart({
                   value={chartData?.guides?.value}
                   headers={chartData?.headers}
                   stackId={chartData?.guides?.stackType}
+                />
+              }
+              {
+                chartData?.chartType === 'line' &&
+                <CLineChart 
+                  data={chartData?.results}
+                  textColor={"#000"}
+                  label={chartData?.guides?.label}
+                  value={chartData?.guides?.value}
+                  headers={chartData?.headers}
+                  filter={chartData?.filter}
                 />
               }
             </div>

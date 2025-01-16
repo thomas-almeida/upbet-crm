@@ -1,0 +1,734 @@
+[
+  {
+    "id": "hejtxd981",
+    "name": "Jornada Cashback #1070225",
+    "createdAt": "2024-12-16",
+    "metricLabel": "journey",
+    "chartType": "stacked",
+    "filter": "",
+    "guides": {
+      "label": "event_date",
+      "value": [
+        "target_users",
+        "converted_users"
+      ],
+      "stackType": "default"
+    },
+    "headers": "",
+    "results": [
+      {
+        "event_date": "2024-12-16",
+        "target_users": 101,
+        "converted_users": 21
+      },
+      {
+        "event_date": "2024-12-17",
+        "target_users": 1661,
+        "converted_users": 273
+      },
+      {
+        "event_date": "2024-12-18",
+        "target_users": 3186,
+        "converted_users": 630
+      },
+      {
+        "event_date": "2024-12-19",
+        "target_users": 3217,
+        "converted_users": 557
+      },
+      {
+        "event_date": "2024-12-20",
+        "target_users": 4846,
+        "converted_users": 947
+      },
+      {
+        "event_date": "2024-12-21",
+        "target_users": 2907,
+        "converted_users": 243
+      },
+      {
+        "event_date": "2024-12-23",
+        "target_users": 3915,
+        "converted_users": 634
+      },
+      {
+        "event_date": "2024-12-24",
+        "target_users": 3915,
+        "converted_users": 375
+      },
+      {
+        "event_date": "2024-12-26",
+        "target_users": 4159,
+        "converted_users": 858
+      },
+      {
+        "event_date": "2024-12-27",
+        "target_users": 7456,
+        "converted_users": 937
+      },
+      {
+        "event_date": "2024-12-28",
+        "target_users": 7748,
+        "converted_users": 972
+      },
+      {
+        "event_date": "2024-12-29",
+        "target_users": 4550,
+        "converted_users": 741
+      },
+      {
+        "event_date": "2024-12-30",
+        "target_users": 4444,
+        "converted_users": 904
+      },
+      {
+        "event_date": "2024-12-31",
+        "target_users": 4444,
+        "converted_users": 408
+      },
+      {
+        "event_date": "2025-01-07",
+        "target_users": 2018,
+        "converted_users": 545
+      },
+      {
+        "event_date": "2025-01-08",
+        "target_users": 3849,
+        "converted_users": 470
+      },
+      {
+        "event_date": "2025-01-09",
+        "target_users": 4428,
+        "converted_users": 831
+      },
+      {
+        "event_date": "2025-01-10",
+        "target_users": 2736,
+        "converted_users": 272
+      },
+      {
+        "event_date": "2025-01-13",
+        "target_users": 2915,
+        "converted_users": 684
+      },
+      {
+        "event_date": "2025-01-14",
+        "target_users": 4825,
+        "converted_users": 579
+      },
+      {
+        "event_date": "2025-01-15",
+        "target_users": 242,
+        "converted_users": 224
+      }
+    ]
+  },
+  {
+    "id": "eouagi105",
+    "name": "Ranking de Pontos Por Usuário",
+    "createdAt": "2024-12-20",
+    "metricLabel": "gamification",
+    "chartType": "bar",
+    "filter": {
+      "type": "date",
+      "label": "by_date"
+    },
+    "guides": {
+      "label": "user_ext_id",
+      "value": "current_points_balance"
+    },
+    "headers": [
+      "current_points_balance",
+      "max_points_ever",
+      "total_points_collected"
+    ],
+    "results": [
+      {
+        "by_date": "2024-12-20",
+        "user_ext_id": "41212590",
+        "total_points_collected": "5000",
+        "max_points_ever": "8910",
+        "current_points_balance": "1070410"
+      },
+      {
+        "by_date": "2024-12-20",
+        "user_ext_id": "18526656",
+        "total_points_collected": "25000",
+        "max_points_ever": "0",
+        "current_points_balance": "1161400"
+      },
+      {
+        "by_date": "2024-12-20",
+        "user_ext_id": "48074823",
+        "total_points_collected": "2500",
+        "max_points_ever": "0",
+        "current_points_balance": "1170500"
+      },
+      {
+        "by_date": "2024-12-20",
+        "user_ext_id": "39818218",
+        "total_points_collected": "7500",
+        "max_points_ever": "0",
+        "current_points_balance": "1187500"
+      },
+      {
+        "by_date": "2024-12-20",
+        "user_ext_id": "50771817",
+        "total_points_collected": "2500",
+        "max_points_ever": "3390",
+        "current_points_balance": "1245390"
+      },
+      {
+        "by_date": "2024-12-20",
+        "user_ext_id": "14881184",
+        "total_points_collected": "6000",
+        "max_points_ever": "0",
+        "current_points_balance": "1279960"
+      },
+      {
+        "by_date": "2024-12-20",
+        "user_ext_id": "47684834",
+        "total_points_collected": "24010",
+        "max_points_ever": "30020",
+        "current_points_balance": "2210020"
+      },
+      {
+        "by_date": "2024-12-20",
+        "user_ext_id": "55045580",
+        "total_points_collected": "23010",
+        "max_points_ever": "12410",
+        "current_points_balance": "2744410"
+      },
+      {
+        "by_date": "2024-12-20",
+        "user_ext_id": "63406923",
+        "total_points_collected": "60000",
+        "max_points_ever": "13990",
+        "current_points_balance": "4181060"
+      },
+      {
+        "by_date": "2024-12-20",
+        "user_ext_id": "63168168",
+        "total_points_collected": "90000",
+        "max_points_ever": "117550",
+        "current_points_balance": "7730450"
+      },
+      {
+        "by_date": "2024-12-19",
+        "user_ext_id": "39818218",
+        "total_points_collected": "10000",
+        "max_points_ever": "0",
+        "current_points_balance": "1180000"
+      },
+      {
+        "by_date": "2024-12-19",
+        "user_ext_id": "50771817",
+        "total_points_collected": "5090",
+        "max_points_ever": "3390",
+        "current_points_balance": "1242890"
+      },
+      {
+        "by_date": "2024-12-19",
+        "user_ext_id": "14881184",
+        "total_points_collected": "2000",
+        "max_points_ever": "0",
+        "current_points_balance": "1273960"
+      },
+      {
+        "by_date": "2024-12-19",
+        "user_ext_id": "38672804",
+        "total_points_collected": "-35000",
+        "max_points_ever": "0",
+        "current_points_balance": "1491745"
+      },
+      {
+        "by_date": "2024-12-19",
+        "user_ext_id": "47684834",
+        "total_points_collected": "20000",
+        "max_points_ever": "16010",
+        "current_points_balance": "2186010"
+      },
+      {
+        "by_date": "2024-12-19",
+        "user_ext_id": "63613526",
+        "total_points_collected": "71740",
+        "max_points_ever": "59290",
+        "current_points_balance": "2404645"
+      },
+      {
+        "by_date": "2024-12-19",
+        "user_ext_id": "55045580",
+        "total_points_collected": "5000",
+        "max_points_ever": "4400",
+        "current_points_balance": "2721400"
+      },
+      {
+        "by_date": "2024-12-19",
+        "user_ext_id": "63168453",
+        "total_points_collected": "31220",
+        "max_points_ever": "67590",
+        "current_points_balance": "3072890"
+      },
+      {
+        "by_date": "2024-12-19",
+        "user_ext_id": "63406923",
+        "total_points_collected": "93990",
+        "max_points_ever": "13990",
+        "current_points_balance": "4121060"
+      },
+      {
+        "by_date": "2024-12-19",
+        "user_ext_id": "63168168",
+        "total_points_collected": "188950",
+        "max_points_ever": "117550",
+        "current_points_balance": "7640450"
+      },
+      {
+        "by_date": "2024-12-18",
+        "user_ext_id": "50771817",
+        "total_points_collected": "2500",
+        "max_points_ever": "800",
+        "current_points_balance": "1237800"
+      },
+      {
+        "by_date": "2024-12-18",
+        "user_ext_id": "14881184",
+        "total_points_collected": "5000",
+        "max_points_ever": "0",
+        "current_points_balance": "1271960"
+      },
+      {
+        "by_date": "2024-12-18",
+        "user_ext_id": "47684834",
+        "total_points_collected": "5000",
+        "max_points_ever": "16010",
+        "current_points_balance": "2166010"
+      },
+      {
+        "by_date": "2024-12-18",
+        "user_ext_id": "63613526",
+        "total_points_collected": "95550",
+        "max_points_ever": "23550",
+        "current_points_balance": "2332905"
+      },
+      {
+        "by_date": "2024-12-18",
+        "user_ext_id": "55045580",
+        "total_points_collected": "10000",
+        "max_points_ever": "4400",
+        "current_points_balance": "2716400"
+      },
+      {
+        "by_date": "2024-12-18",
+        "user_ext_id": "63168453",
+        "total_points_collected": "30000",
+        "max_points_ever": "66370",
+        "current_points_balance": "3041670"
+      },
+      {
+        "by_date": "2024-12-18",
+        "user_ext_id": "63406923",
+        "total_points_collected": "60000",
+        "max_points_ever": "10000",
+        "current_points_balance": "4027070"
+      },
+      {
+        "by_date": "2024-12-18",
+        "user_ext_id": "44265445",
+        "total_points_collected": "30000",
+        "max_points_ever": "50",
+        "current_points_balance": "4713550"
+      },
+      {
+        "by_date": "2024-12-18",
+        "user_ext_id": "63168168",
+        "total_points_collected": "120000",
+        "max_points_ever": "48600",
+        "current_points_balance": "7451500"
+      },
+      {
+        "by_date": "2024-12-18",
+        "user_ext_id": "45386262",
+        "total_points_collected": "220400",
+        "max_points_ever": "220450",
+        "current_points_balance": "23939500"
+      },
+      {
+        "by_date": "2024-12-17",
+        "user_ext_id": "41212590",
+        "total_points_collected": "5090",
+        "max_points_ever": "2590",
+        "current_points_balance": "1039090"
+      },
+      {
+        "by_date": "2024-12-17",
+        "user_ext_id": "39818218",
+        "total_points_collected": "10000",
+        "max_points_ever": "0",
+        "current_points_balance": "1165000"
+      },
+      {
+        "by_date": "2024-12-17",
+        "user_ext_id": "50771817",
+        "total_points_collected": "13300",
+        "max_points_ever": "800",
+        "current_points_balance": "1235300"
+      },
+      {
+        "by_date": "2024-12-17",
+        "user_ext_id": "14881184",
+        "total_points_collected": "1000",
+        "max_points_ever": "0",
+        "current_points_balance": "1266960"
+      },
+      {
+        "by_date": "2024-12-17",
+        "user_ext_id": "47684834",
+        "total_points_collected": "21010",
+        "max_points_ever": "16010",
+        "current_points_balance": "2161010"
+      },
+      {
+        "by_date": "2024-12-17",
+        "user_ext_id": "63613526",
+        "total_points_collected": "60000",
+        "max_points_ever": "0",
+        "current_points_balance": "2237355"
+      },
+      {
+        "by_date": "2024-12-17",
+        "user_ext_id": "55045580",
+        "total_points_collected": "14400",
+        "max_points_ever": "4400",
+        "current_points_balance": "2706400"
+      },
+      {
+        "by_date": "2024-12-17",
+        "user_ext_id": "63168453",
+        "total_points_collected": "156370",
+        "max_points_ever": "66370",
+        "current_points_balance": "3011670"
+      },
+      {
+        "by_date": "2024-12-17",
+        "user_ext_id": "63406923",
+        "total_points_collected": "10000",
+        "max_points_ever": "10000",
+        "current_points_balance": "3967070"
+      },
+      {
+        "by_date": "2024-12-17",
+        "user_ext_id": "63168168",
+        "total_points_collected": "198600",
+        "max_points_ever": "48600",
+        "current_points_balance": "7331500"
+      },
+      {
+        "by_date": "2024-12-16",
+        "user_ext_id": "41212590",
+        "total_points_collected": "7500",
+        "max_points_ever": "0",
+        "current_points_balance": "1034000"
+      },
+      {
+        "by_date": "2024-12-16",
+        "user_ext_id": "50771817",
+        "total_points_collected": "2500",
+        "max_points_ever": "0",
+        "current_points_balance": "1222000"
+      },
+      {
+        "by_date": "2024-12-16",
+        "user_ext_id": "14881184",
+        "total_points_collected": "2000",
+        "max_points_ever": "0",
+        "current_points_balance": "1265960"
+      },
+      {
+        "by_date": "2024-12-16",
+        "user_ext_id": "47684834",
+        "total_points_collected": "20000",
+        "max_points_ever": "0",
+        "current_points_balance": "2140000"
+      },
+      {
+        "by_date": "2024-12-16",
+        "user_ext_id": "63613526",
+        "total_points_collected": "12000",
+        "max_points_ever": "0",
+        "current_points_balance": "2177355"
+      },
+      {
+        "by_date": "2024-12-16",
+        "user_ext_id": "55045580",
+        "total_points_collected": "15000",
+        "max_points_ever": "0",
+        "current_points_balance": "2692000"
+      },
+      {
+        "by_date": "2024-12-16",
+        "user_ext_id": "63168453",
+        "total_points_collected": "54000",
+        "max_points_ever": "0",
+        "current_points_balance": "2855300"
+      },
+      {
+        "by_date": "2024-12-16",
+        "user_ext_id": "63406923",
+        "total_points_collected": "60000",
+        "max_points_ever": "0",
+        "current_points_balance": "3957070"
+      },
+      {
+        "by_date": "2024-12-16",
+        "user_ext_id": "63168168",
+        "total_points_collected": "150000",
+        "max_points_ever": "0",
+        "current_points_balance": "7132900"
+      },
+      {
+        "by_date": "2024-12-16",
+        "user_ext_id": "45386262",
+        "total_points_collected": "150000",
+        "max_points_ever": "50",
+        "current_points_balance": "23719100"
+      }
+    ]
+  },
+  {
+    "id": "hejtxd982",
+    "name": "Depósitos & Saques",
+    "createdAt": "2025-01-15",
+    "metricLabel": "transactions",
+    "chartType": "line",
+    "filter": {
+      "type": "month",
+      "label": "date"
+    },
+    "guides": {
+      "label": "date",
+      "value": [
+        "deposits_sum",
+        "withdraws_sum"
+      ],
+      "stackType": "default"
+    },
+    "headers": [
+      "deposits_sum",
+      "deposits_count",
+      "withdraws_sum",
+      "withdraws_count"
+    ],
+    "results": [
+      {
+        "date": "2024-12-01",
+        "deposits_count": 9711,
+        "deposits_sum": 529612.8799999999,
+        "withdraws_count": 1878,
+        "withdraws_sum": 433948.62999999995
+      },
+      {
+        "date": "2024-12-02",
+        "deposits_count": 10437,
+        "deposits_sum": 589437.56,
+        "withdraws_count": 2107,
+        "withdraws_sum": 452156.41999999987
+      },
+      {
+        "date": "2024-12-03",
+        "deposits_count": 10940,
+        "deposits_sum": 607019.0399999999,
+        "withdraws_count": 2274,
+        "withdraws_sum": 546562.03
+      },
+      {
+        "date": "2024-12-04",
+        "deposits_count": 10051,
+        "deposits_sum": 612851.62,
+        "withdraws_count": 2167,
+        "withdraws_sum": 461997.18
+      },
+      {
+        "date": "2024-12-05",
+        "deposits_count": 11401,
+        "deposits_sum": 609566.79,
+        "withdraws_count": 2850,
+        "withdraws_sum": 519323.2900000005
+      },
+      {
+        "date": "2024-12-06",
+        "deposits_count": 14209,
+        "deposits_sum": 804315.77,
+        "withdraws_count": 3722,
+        "withdraws_sum": 615723.1700000004
+      },
+      {
+        "date": "2024-12-07",
+        "deposits_count": 13814,
+        "deposits_sum": 703615.6499999999,
+        "withdraws_count": 3795,
+        "withdraws_sum": 638351.7600000001
+      },
+      {
+        "date": "2024-12-08",
+        "deposits_count": 10846,
+        "deposits_sum": 547813.0,
+        "withdraws_count": 2209,
+        "withdraws_sum": 501287.10000000003
+      },
+      {
+        "date": "2024-12-09",
+        "deposits_count": 10587,
+        "deposits_sum": 609931.66,
+        "withdraws_count": 2265,
+        "withdraws_sum": 501947.2799999999
+      },
+      {
+        "date": "2024-12-10",
+        "deposits_count": 11230,
+        "deposits_sum": 640743.5700000002,
+        "withdraws_count": 2493,
+        "withdraws_sum": 587160.54
+      },
+      {
+        "date": "2025-01-13",
+        "deposits_count": 6380,
+        "deposits_sum": 404177.20999999985,
+        "withdraws_count": 1290,
+        "withdraws_sum": 262376.44999999995
+      },
+      {
+        "date": "2025-01-14",
+        "deposits_count": 6970,
+        "deposits_sum": 469841.9300000002,
+        "withdraws_count": 1433,
+        "withdraws_sum": 340881.17000000004
+      },
+      {
+        "date": "2025-01-15",
+        "deposits_count": 3522,
+        "deposits_sum": 294723.85,
+        "withdraws_count": 708,
+        "withdraws_sum": 209001.11999999997
+      }
+    ]
+  },
+  {
+    "id": "hejtxd983",
+    "name": "Depósitos & Saques",
+    "createdAt": "2025-01-15",
+    "metricLabel": "transactions",
+    "chartType": "line",
+    "filter": {
+      "type": "month",
+      "label": "date"
+    },
+    "guides": {
+      "label": "date",
+      "value": [
+        "deposits_sum",
+        "withdraws_sum"
+      ],
+      "stackType": "default"
+    },
+    "headers": [
+      "deposits_sum",
+      "deposits_count",
+      "withdraws_sum",
+      "withdraws_count"
+    ],
+    "results": [
+      {
+        "date": "2024-12-01",
+        "deposits_count": 9711,
+        "deposits_sum": 529612.8799999999,
+        "withdraws_count": 1878,
+        "withdraws_sum": 433948.62999999995
+      },
+      {
+        "date": "2024-12-02",
+        "deposits_count": 10437,
+        "deposits_sum": 589437.56,
+        "withdraws_count": 2107,
+        "withdraws_sum": 452156.41999999987
+      },
+      {
+        "date": "2024-12-03",
+        "deposits_count": 10940,
+        "deposits_sum": 607019.0399999999,
+        "withdraws_count": 2274,
+        "withdraws_sum": 546562.03
+      },
+      {
+        "date": "2024-12-04",
+        "deposits_count": 10051,
+        "deposits_sum": 612851.62,
+        "withdraws_count": 2167,
+        "withdraws_sum": 461997.18
+      },
+      {
+        "date": "2024-12-05",
+        "deposits_count": 11401,
+        "deposits_sum": 609566.79,
+        "withdraws_count": 2850,
+        "withdraws_sum": 519323.2900000005
+      },
+      {
+        "date": "2024-12-06",
+        "deposits_count": 14209,
+        "deposits_sum": 804315.77,
+        "withdraws_count": 3722,
+        "withdraws_sum": 615723.1700000004
+      },
+      {
+        "date": "2024-12-07",
+        "deposits_count": 13814,
+        "deposits_sum": 703615.6499999999,
+        "withdraws_count": 3795,
+        "withdraws_sum": 638351.7600000001
+      },
+      {
+        "date": "2024-12-08",
+        "deposits_count": 10846,
+        "deposits_sum": 547813.0,
+        "withdraws_count": 2209,
+        "withdraws_sum": 501287.10000000003
+      },
+      {
+        "date": "2024-12-09",
+        "deposits_count": 10587,
+        "deposits_sum": 609931.66,
+        "withdraws_count": 2265,
+        "withdraws_sum": 501947.2799999999
+      },
+      {
+        "date": "2024-12-10",
+        "deposits_count": 11230,
+        "deposits_sum": 640743.5700000002,
+        "withdraws_count": 2493,
+        "withdraws_sum": 587160.54
+      },
+      {
+        "date": "2025-01-13",
+        "deposits_count": 6380,
+        "deposits_sum": 404177.20999999985,
+        "withdraws_count": 1290,
+        "withdraws_sum": 262376.44999999995
+      },
+      {
+        "date": "2025-01-14",
+        "deposits_count": 6970,
+        "deposits_sum": 469841.9300000002,
+        "withdraws_count": 1433,
+        "withdraws_sum": 340881.17000000004
+      },
+      {
+        "date": "2025-01-15",
+        "deposits_count": 3522,
+        "deposits_sum": 294723.85,
+        "withdraws_count": 708,
+        "withdraws_sum": 209001.11999999997
+      }
+    ]
+  }
+]
