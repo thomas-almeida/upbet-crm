@@ -1,7 +1,6 @@
 server/node_modules
 server/utils/credentials.json
 server/queries/gamification/db/csv
-server/db/dash-data.json
 server/queries/campaign/db/csv
 server/queries/mail/mailgun.py
 server/utils/sheets-credentials.json
