@@ -77,15 +77,15 @@ export default function Menu({
 
   async function clearFilter() {
 
-      setFilter('')
-      const splitedTodayDate = todayDate.split("/")
+    setFilter('')
+    const splitedTodayDate = todayDate.split("/")
 
-      const startDate = encodeURIComponent(`${splitedTodayDate[2]}-${splitedTodayDate[1]}-${splitedTodayDate[0]} 00:00:00`)
-      const endDate = encodeURIComponent(`${splitedTodayDate[2]}-${splitedTodayDate[1]}-${splitedTodayDate[0]} 23:59:59`)
+    const startDate = encodeURIComponent(`${splitedTodayDate[2]}-${splitedTodayDate[1]}-${splitedTodayDate[0]} 00:00:00`)
+    const endDate = encodeURIComponent(`${splitedTodayDate[2]}-${splitedTodayDate[1]}-${splitedTodayDate[0]} 23:59:59`)
 
-      const response = await service.getTransactionsBalance(startDate, endDate)
-      setTransactionsValue(response)
-      setIsFiltering(false)
+    const response = await service.getTransactionsBalance(startDate, endDate)
+    setTransactionsValue(response)
+    setIsFiltering(false)
 
   }
 
@@ -112,7 +112,7 @@ export default function Menu({
                       <div className="flex justify-start items-center absolute right-2">
                         <p className="mx-4 font-semibold">Filtrar por data</p>
                         <button
-                          className={ isFiltering ? "px-2 p-1 border-2 rounded-sm cursor-pointer shadow-sm bg-white hover:transtion hover:scale-[1.05] mr-1" : "hidden"}
+                          className={isFiltering ? "px-2 p-1 border-2 rounded-sm cursor-pointer shadow-sm bg-white hover:transtion hover:scale-[1.05] mr-1" : "hidden"}
                           onClick={() => clearFilter()}
                         >
                           <img
@@ -140,10 +140,12 @@ export default function Menu({
 
                       <div
                         className="border-2 shadow-sm p-6 bg-white mx-2 cursor-pointer ml-0 rounded-md hover:text-[#008181] hover:border-[#008181] bg-[url('/grad.png')] bg-cover relative"
-
+                        onClick={() => setItem('category', 'transactions')}
                       >
 
-                        <div className="flex justify-start items-center">
+                        <div
+                          className="flex justify-start items-center"
+                        >
                           <p>Total em Depósitos</p>
                           <p className="text-slate-400 text-sm ml-2">
                             {
@@ -166,8 +168,11 @@ export default function Menu({
 
                       <div
                         className="border-2 shadow-sm p-6 bg-white mx-2 cursor-pointer rounded-md hover:text-[#008181] hover:border-[#008181] bg-[url('/grad.png')] bg-cover relative"
+                        onClick={() => setItem('category', 'transactions')}
                       >
-                        <div className="flex justify-start items-center">
+                        <div
+                          className="flex justify-start items-center"
+                        >
                           <p>Total em Saques</p>
                           <p className="text-slate-400 text-sm ml-2">
                             {
@@ -206,24 +211,21 @@ export default function Menu({
               <div className="grid justify-start grid-cols-3">
                 {
                   options.map((option, index) => (
-                    option.activeScreen !== 'docs' ? (
-                      <div
-                        key={option[index]}
-                        className="bg-white border-2 p-4 mx-2 ml-0 text-left h-[180px] rounded-md shadow-sm relative cursor-pointer transition hover:scale-[1.02] hover:text-[#008181] hover:border-[#008181] bg-[url('/grad.png')]"
-                        onClick={() => setItem(option.activeScreen, option.category)}
-                      >
-                        <div className="absolute bottom-4">
-                          <img src={option.icon} className="w-[40px] my-2" alt="" />
-                          <p>Veja visões de</p>
-                          <h3 className="text-2xl font-semibold">
-                            {
-                              option.name
-                            }
-                          </h3>
-                        </div>
+                    <div
+                      key={option[index]}
+                      className="bg-white border-2 p-4 mx-2 my-2 ml-0 text-left h-[180px] rounded-md shadow-sm relative cursor-pointer transition hover:scale-[1.02] hover:text-[#008181] hover:border-[#008181] bg-[url('/grad.png')]"
+                      onClick={() => setItem(option.activeScreen, option.category)}
+                    >
+                      <div className="absolute bottom-4">
+                        <img src={option.icon} className="w-[40px] my-2" alt="" />
+                        <p>Veja visões de</p>
+                        <h3 className="text-2xl font-semibold">
+                          {
+                            option.name
+                          }
+                        </h3>
                       </div>
-
-                    ) : ''
+                    </div>
                   ))
                 }
               </div>

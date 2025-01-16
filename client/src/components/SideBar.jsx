@@ -62,7 +62,6 @@ export default function Sidebar({
             <li className="font-semibold text-lg">Visões</li>
             {
               options.map((option, index) => (
-                option.activeScreen === 'category' ? (
                   <li
                     key={option[index]}
                     className={`py-2 cursor-pointer transition hover:text-[#008181] hover:bg-slate-100 rounded-xl text-lg flex justify-start items-center`}
@@ -71,24 +70,6 @@ export default function Sidebar({
                     <img src={option.icon} className="w-[15px] mr-1" alt="" />
                     <p>{option.name}</p>
                   </li>
-                ) : ''
-              ))
-            }
-          </ul>
-          <ul>
-            <li className="font-semibold text-lg mt-4">Docs</li>
-            {
-              options.map((option, index) => (
-                option.activeScreen === 'docs' ? (
-                  <li
-                    key={option[index]}
-                    className={`py-2 cursor-pointer transition hover:text-[#008181] hover:bg-slate-100 rounded-xl text-lg flex justify-start items-center`}
-                    onClick={() => setItem(option.activeScreen, option.category)}
-                  >
-                    <img src={option.icon} className="w-[15px] mr-1" alt="" />
-                    <p>{option.name}</p>
-                  </li>
-                ) : ''
               ))
             }
           </ul>
