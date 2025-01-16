@@ -50,6 +50,11 @@ const months = [
 
 ]
 
+function getMonthById(monthId) {
+    let targetMonth = months.find((month) => month.id === monthId)
+    return targetMonth !== undefined ? targetMonth.name : ''
+}
+
 function translateMonth(date) {
     const splitedDate = date.split("/")
     const targetMonth = months.find((month) => month.id === parseInt(splitedDate[0]))
@@ -57,5 +62,6 @@ function translateMonth(date) {
 }
 
 export default {
-    translateMonth
+    translateMonth,
+    getMonthById
 }
