@@ -3,23 +3,29 @@ const options = [
     name: 'Gamification',
     activeScreen: 'category',
     category: 'gamification',
-    icon:'/gamification.svg'
+    icon: '/gamification.svg'
   },
-  
+
   {
     name: 'Jornadas',
     activeScreen: 'category',
     category: 'journey',
-    icon:'/journey.svg'
+    icon: '/journey.svg'
   },
   {
     name: 'Campanhas',
     activeScreen: 'category',
     category: 'campaign',
-    icon:'/campaign.svg'
+    icon: '/campaign.svg'
   },
   {
-    name: 'Scripts',
+    name: 'Transações',
+    activeScreen: 'category',
+    category: 'transactions',
+    icon: '/swap-outline.svg'
+  },
+  {
+    name: 'Documentações',
     activeScreen: 'docs',
     category: 'wiki',
     icon: '/docs.svg'
