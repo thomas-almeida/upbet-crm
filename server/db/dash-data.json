@@ -114,12 +114,17 @@
       {
         "event_date": "2025-01-14",
         "target_users": 4825,
-        "converted_users": 579
+        "converted_users": 521
       },
       {
         "event_date": "2025-01-15",
-        "target_users": 242,
-        "converted_users": 224
+        "target_users": 4333,
+        "converted_users": 942
+      },
+      {
+        "event_date": "2025-01-16",
+        "target_users": 154,
+        "converted_users": 153
       }
     ]
   },
@@ -521,6 +526,2351 @@
     ],
     "results": [
       {
+        "date": "2024-01-01",
+        "deposits_count": 2871,
+        "deposits_sum": 94399,
+        "withdraws_count": 321,
+        "withdraws_sum": 75183.08999999998
+      },
+      {
+        "date": "2024-01-02",
+        "deposits_count": 3556,
+        "deposits_sum": 142082,
+        "withdraws_count": 399,
+        "withdraws_sum": 97475.27000000002
+      },
+      {
+        "date": "2024-01-03",
+        "deposits_count": 3570,
+        "deposits_sum": 156478,
+        "withdraws_count": 435,
+        "withdraws_sum": 100822.29
+      },
+      {
+        "date": "2024-01-04",
+        "deposits_count": 3746,
+        "deposits_sum": 127981,
+        "withdraws_count": 466,
+        "withdraws_sum": 84062.09
+      },
+      {
+        "date": "2024-01-05",
+        "deposits_count": 4180,
+        "deposits_sum": 165931,
+        "withdraws_count": 645,
+        "withdraws_sum": 212442.97999999995
+      },
+      {
+        "date": "2024-01-06",
+        "deposits_count": 4681,
+        "deposits_sum": 181455,
+        "withdraws_count": 559,
+        "withdraws_sum": 133618.96999999997
+      },
+      {
+        "date": "2024-01-07",
+        "deposits_count": 4123,
+        "deposits_sum": 133387,
+        "withdraws_count": 451,
+        "withdraws_sum": 85794.54999999999
+      },
+      {
+        "date": "2024-01-08",
+        "deposits_count": 3982,
+        "deposits_sum": 166247,
+        "withdraws_count": 469,
+        "withdraws_sum": 98081.86000000002
+      },
+      {
+        "date": "2024-01-09",
+        "deposits_count": 4103,
+        "deposits_sum": 141927,
+        "withdraws_count": 520,
+        "withdraws_sum": 116801.43999999999
+      },
+      {
+        "date": "2024-01-10",
+        "deposits_count": 4043,
+        "deposits_sum": 170305,
+        "withdraws_count": 476,
+        "withdraws_sum": 107524.56999999998
+      },
+      {
+        "date": "2024-01-11",
+        "deposits_count": 3919,
+        "deposits_sum": 130017,
+        "withdraws_count": 460,
+        "withdraws_sum": 90465.73999999999
+      },
+      {
+        "date": "2024-01-12",
+        "deposits_count": 4358,
+        "deposits_sum": 150703,
+        "withdraws_count": 616,
+        "withdraws_sum": 136530.74000000002
+      },
+      {
+        "date": "2024-01-13",
+        "deposits_count": 4380,
+        "deposits_sum": 143533,
+        "withdraws_count": 442,
+        "withdraws_sum": 108385.08
+      },
+      {
+        "date": "2024-01-14",
+        "deposits_count": 3914,
+        "deposits_sum": 114243,
+        "withdraws_count": 482,
+        "withdraws_sum": 77766.17000000003
+      },
+      {
+        "date": "2024-01-15",
+        "deposits_count": 5001,
+        "deposits_sum": 193554,
+        "withdraws_count": 1001,
+        "withdraws_sum": 150812.35
+      },
+      {
+        "date": "2024-01-16",
+        "deposits_count": 4514,
+        "deposits_sum": 173113,
+        "withdraws_count": 693,
+        "withdraws_sum": 151829.35
+      },
+      {
+        "date": "2024-01-17",
+        "deposits_count": 4514,
+        "deposits_sum": 165598,
+        "withdraws_count": 632,
+        "withdraws_sum": 134686.39
+      },
+      {
+        "date": "2024-01-18",
+        "deposits_count": 4545,
+        "deposits_sum": 164774,
+        "withdraws_count": 656,
+        "withdraws_sum": 114968.35
+      },
+      {
+        "date": "2024-01-19",
+        "deposits_count": 4638,
+        "deposits_sum": 194023,
+        "withdraws_count": 936,
+        "withdraws_sum": 172546.34000000003
+      },
+      {
+        "date": "2024-01-20",
+        "deposits_count": 4876,
+        "deposits_sum": 190016,
+        "withdraws_count": 819,
+        "withdraws_sum": 190676.13999999996
+      },
+      {
+        "date": "2024-01-21",
+        "deposits_count": 4129,
+        "deposits_sum": 155374,
+        "withdraws_count": 602,
+        "withdraws_sum": 127363.90000000002
+      },
+      {
+        "date": "2024-01-22",
+        "deposits_count": 3815,
+        "deposits_sum": 162500,
+        "withdraws_count": 498,
+        "withdraws_sum": 79507.29
+      },
+      {
+        "date": "2024-01-23",
+        "deposits_count": 4017,
+        "deposits_sum": 174600,
+        "withdraws_count": 546,
+        "withdraws_sum": 122770.89000000001
+      },
+      {
+        "date": "2024-01-24",
+        "deposits_count": 4441,
+        "deposits_sum": 159538,
+        "withdraws_count": 728,
+        "withdraws_sum": 112197.14999999998
+      },
+      {
+        "date": "2024-01-25",
+        "deposits_count": 4319,
+        "deposits_sum": 187526,
+        "withdraws_count": 721,
+        "withdraws_sum": 102846.93000000001
+      },
+      {
+        "date": "2024-01-26",
+        "deposits_count": 4015,
+        "deposits_sum": 150926,
+        "withdraws_count": 696,
+        "withdraws_sum": 126979.38000000002
+      },
+      {
+        "date": "2024-01-27",
+        "deposits_count": 4476,
+        "deposits_sum": 164398,
+        "withdraws_count": 592,
+        "withdraws_sum": 105704.93
+      },
+      {
+        "date": "2024-01-28",
+        "deposits_count": 3808,
+        "deposits_sum": 141122,
+        "withdraws_count": 499,
+        "withdraws_sum": 79757.59
+      },
+      {
+        "date": "2024-01-29",
+        "deposits_count": 3280,
+        "deposits_sum": 151065,
+        "withdraws_count": 529,
+        "withdraws_sum": 129887.38000000003
+      },
+      {
+        "date": "2024-01-30",
+        "deposits_count": 3689,
+        "deposits_sum": 151145,
+        "withdraws_count": 497,
+        "withdraws_sum": 104569.6
+      },
+      {
+        "date": "2024-01-31",
+        "deposits_count": 5586,
+        "deposits_sum": 210568,
+        "withdraws_count": 751,
+        "withdraws_sum": 151146.15000000002
+      },
+      {
+        "date": "2024-02-01",
+        "deposits_count": 4372,
+        "deposits_sum": 268708,
+        "withdraws_count": 634,
+        "withdraws_sum": 133753.19
+      },
+      {
+        "date": "2024-02-02",
+        "deposits_count": 4436,
+        "deposits_sum": 176762,
+        "withdraws_count": 727,
+        "withdraws_sum": 147018.77000000002
+      },
+      {
+        "date": "2024-02-03",
+        "deposits_count": 4525,
+        "deposits_sum": 177220,
+        "withdraws_count": 616,
+        "withdraws_sum": 129045.22000000002
+      },
+      {
+        "date": "2024-02-04",
+        "deposits_count": 4175,
+        "deposits_sum": 153865,
+        "withdraws_count": 718,
+        "withdraws_sum": 134630.15999999974
+      },
+      {
+        "date": "2024-02-05",
+        "deposits_count": 3801,
+        "deposits_sum": 152841,
+        "withdraws_count": 610,
+        "withdraws_sum": 123626.36999999988
+      },
+      {
+        "date": "2024-02-06",
+        "deposits_count": 4447,
+        "deposits_sum": 202145,
+        "withdraws_count": 639,
+        "withdraws_sum": 139240.46999999997
+      },
+      {
+        "date": "2024-02-07",
+        "deposits_count": 4692,
+        "deposits_sum": 191314,
+        "withdraws_count": 662,
+        "withdraws_sum": 142321.93999999994
+      },
+      {
+        "date": "2024-02-08",
+        "deposits_count": 6364,
+        "deposits_sum": 245144,
+        "withdraws_count": 929,
+        "withdraws_sum": 180393.14999999997
+      },
+      {
+        "date": "2024-02-09",
+        "deposits_count": 4830,
+        "deposits_sum": 194769,
+        "withdraws_count": 773,
+        "withdraws_sum": 176511.15999999997
+      },
+      {
+        "date": "2024-02-10",
+        "deposits_count": 4653,
+        "deposits_sum": 182342,
+        "withdraws_count": 651,
+        "withdraws_sum": 160395.97
+      },
+      {
+        "date": "2024-02-11",
+        "deposits_count": 3943,
+        "deposits_sum": 154318,
+        "withdraws_count": 482,
+        "withdraws_sum": 112970.09999999998
+      },
+      {
+        "date": "2024-02-12",
+        "deposits_count": 3986,
+        "deposits_sum": 133431,
+        "withdraws_count": 572,
+        "withdraws_sum": 110274.67999999996
+      },
+      {
+        "date": "2024-02-13",
+        "deposits_count": 3771,
+        "deposits_sum": 117289,
+        "withdraws_count": 518,
+        "withdraws_sum": 107318.31999999999
+      },
+      {
+        "date": "2024-02-14",
+        "deposits_count": 4196,
+        "deposits_sum": 138708,
+        "withdraws_count": 513,
+        "withdraws_sum": 96461.10999999996
+      },
+      {
+        "date": "2024-02-15",
+        "deposits_count": 4484,
+        "deposits_sum": 153282,
+        "withdraws_count": 638,
+        "withdraws_sum": 139850.37999999998
+      },
+      {
+        "date": "2024-02-16",
+        "deposits_count": 4460,
+        "deposits_sum": 148135,
+        "withdraws_count": 567,
+        "withdraws_sum": 121971.39000000003
+      },
+      {
+        "date": "2024-02-17",
+        "deposits_count": 4566,
+        "deposits_sum": 169953,
+        "withdraws_count": 568,
+        "withdraws_sum": 158909.48
+      },
+      {
+        "date": "2024-02-18",
+        "deposits_count": 4001,
+        "deposits_sum": 138647,
+        "withdraws_count": 555,
+        "withdraws_sum": 114100.29000000004
+      },
+      {
+        "date": "2024-02-19",
+        "deposits_count": 3972,
+        "deposits_sum": 141878,
+        "withdraws_count": 602,
+        "withdraws_sum": 153548.94999999998
+      },
+      {
+        "date": "2024-02-20",
+        "deposits_count": 4332,
+        "deposits_sum": 171608,
+        "withdraws_count": 581,
+        "withdraws_sum": 127220.24999999997
+      },
+      {
+        "date": "2024-02-21",
+        "deposits_count": 4226,
+        "deposits_sum": 138249,
+        "withdraws_count": 575,
+        "withdraws_sum": 117767.53
+      },
+      {
+        "date": "2024-02-22",
+        "deposits_count": 4416,
+        "deposits_sum": 172142,
+        "withdraws_count": 754,
+        "withdraws_sum": 147619.97
+      },
+      {
+        "date": "2024-02-23",
+        "deposits_count": 4767,
+        "deposits_sum": 173633,
+        "withdraws_count": 783,
+        "withdraws_sum": 144255.00000000003
+      },
+      {
+        "date": "2024-02-24",
+        "deposits_count": 4821,
+        "deposits_sum": 173482,
+        "withdraws_count": 838,
+        "withdraws_sum": 152574.46999999997
+      },
+      {
+        "date": "2024-02-25",
+        "deposits_count": 3878,
+        "deposits_sum": 122166,
+        "withdraws_count": 606,
+        "withdraws_sum": 110421.14000000001
+      },
+      {
+        "date": "2024-02-26",
+        "deposits_count": 4557,
+        "deposits_sum": 187466,
+        "withdraws_count": 871,
+        "withdraws_sum": 150743.46999999997
+      },
+      {
+        "date": "2024-02-27",
+        "deposits_count": 3741,
+        "deposits_sum": 157544,
+        "withdraws_count": 588,
+        "withdraws_sum": 135343.93000000002
+      },
+      {
+        "date": "2024-02-28",
+        "deposits_count": 4437,
+        "deposits_sum": 157968,
+        "withdraws_count": 613,
+        "withdraws_sum": 119661.19
+      },
+      {
+        "date": "2024-02-29",
+        "deposits_count": 4524,
+        "deposits_sum": 182847,
+        "withdraws_count": 668,
+        "withdraws_sum": 141377.80000000002
+      },
+      {
+        "date": "2024-03-01",
+        "deposits_count": 4981,
+        "deposits_sum": 186368,
+        "withdraws_count": 686,
+        "withdraws_sum": 165945.43000000005
+      },
+      {
+        "date": "2024-03-02",
+        "deposits_count": 5248,
+        "deposits_sum": 193150,
+        "withdraws_count": 765,
+        "withdraws_sum": 151981.91999999995
+      },
+      {
+        "date": "2024-03-03",
+        "deposits_count": 4152,
+        "deposits_sum": 152614,
+        "withdraws_count": 583,
+        "withdraws_sum": 134691.99000000002
+      },
+      {
+        "date": "2024-03-04",
+        "deposits_count": 3988,
+        "deposits_sum": 172413,
+        "withdraws_count": 643,
+        "withdraws_sum": 145336.32999999996
+      },
+      {
+        "date": "2024-03-05",
+        "deposits_count": 4601,
+        "deposits_sum": 192307,
+        "withdraws_count": 662,
+        "withdraws_sum": 159891.71000000002
+      },
+      {
+        "date": "2024-03-06",
+        "deposits_count": 5204,
+        "deposits_sum": 206797,
+        "withdraws_count": 818,
+        "withdraws_sum": 156327.58000000002
+      },
+      {
+        "date": "2024-03-07",
+        "deposits_count": 4855,
+        "deposits_sum": 203025,
+        "withdraws_count": 646,
+        "withdraws_sum": 166060.57999999993
+      },
+      {
+        "date": "2024-03-08",
+        "deposits_count": 4961,
+        "deposits_sum": 242517,
+        "withdraws_count": 776,
+        "withdraws_sum": 160456.58
+      },
+      {
+        "date": "2024-03-09",
+        "deposits_count": 5099,
+        "deposits_sum": 220193,
+        "withdraws_count": 621,
+        "withdraws_sum": 141803.18
+      },
+      {
+        "date": "2024-03-10",
+        "deposits_count": 4564,
+        "deposits_sum": 169193,
+        "withdraws_count": 575,
+        "withdraws_sum": 113180.41000000005
+      },
+      {
+        "date": "2024-03-11",
+        "deposits_count": 4228,
+        "deposits_sum": 165569,
+        "withdraws_count": 578,
+        "withdraws_sum": 112545.81999999995
+      },
+      {
+        "date": "2024-03-12",
+        "deposits_count": 3874,
+        "deposits_sum": 169182,
+        "withdraws_count": 517,
+        "withdraws_sum": 107371.74000000003
+      },
+      {
+        "date": "2024-03-13",
+        "deposits_count": 4336,
+        "deposits_sum": 146700,
+        "withdraws_count": 527,
+        "withdraws_sum": 122568.61000000002
+      },
+      {
+        "date": "2024-03-14",
+        "deposits_count": 3894,
+        "deposits_sum": 125772,
+        "withdraws_count": 502,
+        "withdraws_sum": 119576.55999999998
+      },
+      {
+        "date": "2024-03-15",
+        "deposits_count": 5222,
+        "deposits_sum": 191695,
+        "withdraws_count": 748,
+        "withdraws_sum": 176037.96999999997
+      },
+      {
+        "date": "2024-03-16",
+        "deposits_count": 4941,
+        "deposits_sum": 186429,
+        "withdraws_count": 707,
+        "withdraws_sum": 167353.76
+      },
+      {
+        "date": "2024-03-17",
+        "deposits_count": 3973,
+        "deposits_sum": 125261,
+        "withdraws_count": 610,
+        "withdraws_sum": 130090.09
+      },
+      {
+        "date": "2024-03-18",
+        "deposits_count": 3933,
+        "deposits_sum": 178821,
+        "withdraws_count": 599,
+        "withdraws_sum": 140856.61
+      },
+      {
+        "date": "2024-03-19",
+        "deposits_count": 4073,
+        "deposits_sum": 204729,
+        "withdraws_count": 530,
+        "withdraws_sum": 124892.33000000002
+      },
+      {
+        "date": "2024-03-20",
+        "deposits_count": 4730,
+        "deposits_sum": 217175,
+        "withdraws_count": 599,
+        "withdraws_sum": 144692.96
+      },
+      {
+        "date": "2024-03-21",
+        "deposits_count": 4475,
+        "deposits_sum": 162132,
+        "withdraws_count": 586,
+        "withdraws_sum": 121650.00999999998
+      },
+      {
+        "date": "2024-03-22",
+        "deposits_count": 4339,
+        "deposits_sum": 212218,
+        "withdraws_count": 679,
+        "withdraws_sum": 152419.77000000002
+      },
+      {
+        "date": "2024-03-23",
+        "deposits_count": 4675,
+        "deposits_sum": 170660,
+        "withdraws_count": 610,
+        "withdraws_sum": 129060.85
+      },
+      {
+        "date": "2024-03-24",
+        "deposits_count": 3641,
+        "deposits_sum": 149622,
+        "withdraws_count": 486,
+        "withdraws_sum": 105220.42
+      },
+      {
+        "date": "2024-03-25",
+        "deposits_count": 3594,
+        "deposits_sum": 152031,
+        "withdraws_count": 524,
+        "withdraws_sum": 114906.76
+      },
+      {
+        "date": "2024-03-26",
+        "deposits_count": 3681,
+        "deposits_sum": 148799,
+        "withdraws_count": 450,
+        "withdraws_sum": 107947.03000000001
+      },
+      {
+        "date": "2024-03-27",
+        "deposits_count": 4072,
+        "deposits_sum": 151081,
+        "withdraws_count": 552,
+        "withdraws_sum": 101806.74
+      },
+      {
+        "date": "2024-03-28",
+        "deposits_count": 4508,
+        "deposits_sum": 205770,
+        "withdraws_count": 561,
+        "withdraws_sum": 144610.02
+      },
+      {
+        "date": "2024-03-29",
+        "deposits_count": 4153,
+        "deposits_sum": 165253,
+        "withdraws_count": 696,
+        "withdraws_sum": 157008.91000000003
+      },
+      {
+        "date": "2024-03-30",
+        "deposits_count": 3990,
+        "deposits_sum": 151040,
+        "withdraws_count": 530,
+        "withdraws_sum": 104459.91999999997
+      },
+      {
+        "date": "2024-03-31",
+        "deposits_count": 3195,
+        "deposits_sum": 182345,
+        "withdraws_count": 439,
+        "withdraws_sum": 110809.88999999998
+      },
+      {
+        "date": "2024-04-01",
+        "deposits_count": 3590,
+        "deposits_sum": 152873,
+        "withdraws_count": 463,
+        "withdraws_sum": 98746.62999999999
+      },
+      {
+        "date": "2024-04-02",
+        "deposits_count": 4291,
+        "deposits_sum": 158822,
+        "withdraws_count": 578,
+        "withdraws_sum": 145303.36000000002
+      },
+      {
+        "date": "2024-04-03",
+        "deposits_count": 4281,
+        "deposits_sum": 180945,
+        "withdraws_count": 545,
+        "withdraws_sum": 115530.85
+      },
+      {
+        "date": "2024-04-04",
+        "deposits_count": 4218,
+        "deposits_sum": 194148,
+        "withdraws_count": 626,
+        "withdraws_sum": 129725.01000000005
+      },
+      {
+        "date": "2024-04-05",
+        "deposits_count": 5278,
+        "deposits_sum": 234647,
+        "withdraws_count": 792,
+        "withdraws_sum": 179498.62000000002
+      },
+      {
+        "date": "2024-04-06",
+        "deposits_count": 5385,
+        "deposits_sum": 221522,
+        "withdraws_count": 774,
+        "withdraws_sum": 138634.65
+      },
+      {
+        "date": "2024-04-07",
+        "deposits_count": 4908,
+        "deposits_sum": 189971,
+        "withdraws_count": 798,
+        "withdraws_sum": 163621.1200000002
+      },
+      {
+        "date": "2024-04-08",
+        "deposits_count": 3868,
+        "deposits_sum": 155181,
+        "withdraws_count": 683,
+        "withdraws_sum": 137210.12
+      },
+      {
+        "date": "2024-04-09",
+        "deposits_count": 4729,
+        "deposits_sum": 189320,
+        "withdraws_count": 682,
+        "withdraws_sum": 138546.94999999998
+      },
+      {
+        "date": "2024-04-10",
+        "deposits_count": 4728,
+        "deposits_sum": 184188,
+        "withdraws_count": 700,
+        "withdraws_sum": 124008.28000000003
+      },
+      {
+        "date": "2024-04-11",
+        "deposits_count": 3976,
+        "deposits_sum": 163970,
+        "withdraws_count": 706,
+        "withdraws_sum": 156982.73000000004
+      },
+      {
+        "date": "2024-04-12",
+        "deposits_count": 5255,
+        "deposits_sum": 286227,
+        "withdraws_count": 768,
+        "withdraws_sum": 134709.34
+      },
+      {
+        "date": "2024-04-13",
+        "deposits_count": 5688,
+        "deposits_sum": 277837,
+        "withdraws_count": 922,
+        "withdraws_sum": 158751.42000000004
+      },
+      {
+        "date": "2024-04-14",
+        "deposits_count": 6876,
+        "deposits_sum": 364250,
+        "withdraws_count": 1397,
+        "withdraws_sum": 244039.49000000002
+      },
+      {
+        "date": "2024-04-15",
+        "deposits_count": 3940,
+        "deposits_sum": 142635,
+        "withdraws_count": 745,
+        "withdraws_sum": 179586.08000000002
+      },
+      {
+        "date": "2024-04-16",
+        "deposits_count": 4177,
+        "deposits_sum": 151600,
+        "withdraws_count": 661,
+        "withdraws_sum": 177893.72000000003
+      },
+      {
+        "date": "2024-04-17",
+        "deposits_count": 4160,
+        "deposits_sum": 158534,
+        "withdraws_count": 557,
+        "withdraws_sum": 162544.10999999993
+      },
+      {
+        "date": "2024-04-18",
+        "deposits_count": 3886,
+        "deposits_sum": 151954,
+        "withdraws_count": 637,
+        "withdraws_sum": 163169.21
+      },
+      {
+        "date": "2024-04-19",
+        "deposits_count": 4576,
+        "deposits_sum": 229504,
+        "withdraws_count": 769,
+        "withdraws_sum": 215744.14
+      },
+      {
+        "date": "2024-04-20",
+        "deposits_count": 4590,
+        "deposits_sum": 185726,
+        "withdraws_count": 674,
+        "withdraws_sum": 180619.65
+      },
+      {
+        "date": "2024-04-21",
+        "deposits_count": 3743,
+        "deposits_sum": 124023,
+        "withdraws_count": 541,
+        "withdraws_sum": 154579.15
+      },
+      {
+        "date": "2024-04-22",
+        "deposits_count": 3989,
+        "deposits_sum": 173625,
+        "withdraws_count": 542,
+        "withdraws_sum": 134384.87999999998
+      },
+      {
+        "date": "2024-04-23",
+        "deposits_count": 4407,
+        "deposits_sum": 190820,
+        "withdraws_count": 578,
+        "withdraws_sum": 150323.37
+      },
+      {
+        "date": "2024-04-24",
+        "deposits_count": 4506,
+        "deposits_sum": 167494,
+        "withdraws_count": 620,
+        "withdraws_sum": 110302.46999999997
+      },
+      {
+        "date": "2024-04-25",
+        "deposits_count": 4247,
+        "deposits_sum": 166563,
+        "withdraws_count": 562,
+        "withdraws_sum": 122643.61
+      },
+      {
+        "date": "2024-04-26",
+        "deposits_count": 4133,
+        "deposits_sum": 164093,
+        "withdraws_count": 659,
+        "withdraws_sum": 139839.04000000004
+      },
+      {
+        "date": "2024-04-27",
+        "deposits_count": 4424,
+        "deposits_sum": 175197,
+        "withdraws_count": 577,
+        "withdraws_sum": 140959.16000000003
+      },
+      {
+        "date": "2024-04-28",
+        "deposits_count": 3739,
+        "deposits_sum": 126604,
+        "withdraws_count": 494,
+        "withdraws_sum": 75626.42
+      },
+      {
+        "date": "2024-04-29",
+        "deposits_count": 3639,
+        "deposits_sum": 169653,
+        "withdraws_count": 478,
+        "withdraws_sum": 97017.24
+      },
+      {
+        "date": "2024-04-30",
+        "deposits_count": 4174,
+        "deposits_sum": 202297,
+        "withdraws_count": 531,
+        "withdraws_sum": 123420.89
+      },
+      {
+        "date": "2024-05-01",
+        "deposits_count": 4106,
+        "deposits_sum": 189886,
+        "withdraws_count": 545,
+        "withdraws_sum": 123500.94
+      },
+      {
+        "date": "2024-05-02",
+        "deposits_count": 3941,
+        "deposits_sum": 187587,
+        "withdraws_count": 541,
+        "withdraws_sum": 137244.72000000003
+      },
+      {
+        "date": "2024-05-03",
+        "deposits_count": 4559,
+        "deposits_sum": 237886,
+        "withdraws_count": 660,
+        "withdraws_sum": 162034.98
+      },
+      {
+        "date": "2024-05-04",
+        "deposits_count": 4472,
+        "deposits_sum": 192843,
+        "withdraws_count": 582,
+        "withdraws_sum": 138294.68000000002
+      },
+      {
+        "date": "2024-05-05",
+        "deposits_count": 4057,
+        "deposits_sum": 145174,
+        "withdraws_count": 525,
+        "withdraws_sum": 119783.41000000002
+      },
+      {
+        "date": "2024-05-06",
+        "deposits_count": 3958,
+        "deposits_sum": 169824,
+        "withdraws_count": 571,
+        "withdraws_sum": 121456.44999999997
+      },
+      {
+        "date": "2024-05-07",
+        "deposits_count": 4695,
+        "deposits_sum": 198790,
+        "withdraws_count": 617,
+        "withdraws_sum": 169171.6
+      },
+      {
+        "date": "2024-05-08",
+        "deposits_count": 4853,
+        "deposits_sum": 221959,
+        "withdraws_count": 653,
+        "withdraws_sum": 150296.44
+      },
+      {
+        "date": "2024-05-09",
+        "deposits_count": 4765,
+        "deposits_sum": 200946,
+        "withdraws_count": 679,
+        "withdraws_sum": 148449.40999999997
+      },
+      {
+        "date": "2024-05-10",
+        "deposits_count": 4227,
+        "deposits_sum": 164868,
+        "withdraws_count": 720,
+        "withdraws_sum": 146410.87999999998
+      },
+      {
+        "date": "2024-05-11",
+        "deposits_count": 4372,
+        "deposits_sum": 182373,
+        "withdraws_count": 567,
+        "withdraws_sum": 147715.18
+      },
+      {
+        "date": "2024-05-12",
+        "deposits_count": 3817,
+        "deposits_sum": 144284,
+        "withdraws_count": 522,
+        "withdraws_sum": 120331.21999999999
+      },
+      {
+        "date": "2024-05-13",
+        "deposits_count": 3838,
+        "deposits_sum": 140453,
+        "withdraws_count": 556,
+        "withdraws_sum": 134019.59
+      },
+      {
+        "date": "2024-05-14",
+        "deposits_count": 3941,
+        "deposits_sum": 150408,
+        "withdraws_count": 514,
+        "withdraws_sum": 101849.04999999999
+      },
+      {
+        "date": "2024-05-15",
+        "deposits_count": 4437,
+        "deposits_sum": 201964,
+        "withdraws_count": 667,
+        "withdraws_sum": 156673.97000000003
+      },
+      {
+        "date": "2024-05-16",
+        "deposits_count": 4311,
+        "deposits_sum": 172367,
+        "withdraws_count": 613,
+        "withdraws_sum": 138359.91
+      },
+      {
+        "date": "2024-05-17",
+        "deposits_count": 4820,
+        "deposits_sum": 181555,
+        "withdraws_count": 746,
+        "withdraws_sum": 144632.49000000002
+      },
+      {
+        "date": "2024-05-18",
+        "deposits_count": 4506,
+        "deposits_sum": 159271,
+        "withdraws_count": 586,
+        "withdraws_sum": 146794.46999999997
+      },
+      {
+        "date": "2024-05-19",
+        "deposits_count": 3990,
+        "deposits_sum": 140666,
+        "withdraws_count": 544,
+        "withdraws_sum": 109867.21999999997
+      },
+      {
+        "date": "2024-05-20",
+        "deposits_count": 4003,
+        "deposits_sum": 143167,
+        "withdraws_count": 556,
+        "withdraws_sum": 114881.48999999999
+      },
+      {
+        "date": "2024-05-21",
+        "deposits_count": 4260,
+        "deposits_sum": 181057,
+        "withdraws_count": 584,
+        "withdraws_sum": 156977.88
+      },
+      {
+        "date": "2024-05-22",
+        "deposits_count": 4138,
+        "deposits_sum": 171044,
+        "withdraws_count": 513,
+        "withdraws_sum": 76747.43999999999
+      },
+      {
+        "date": "2024-05-23",
+        "deposits_count": 3982,
+        "deposits_sum": 147534,
+        "withdraws_count": 565,
+        "withdraws_sum": 120813.41
+      },
+      {
+        "date": "2024-05-24",
+        "deposits_count": 4259,
+        "deposits_sum": 181540,
+        "withdraws_count": 648,
+        "withdraws_sum": 142163.16
+      },
+      {
+        "date": "2024-05-25",
+        "deposits_count": 4426,
+        "deposits_sum": 160520,
+        "withdraws_count": 595,
+        "withdraws_sum": 125035.08000000003
+      },
+      {
+        "date": "2024-05-26",
+        "deposits_count": 3865,
+        "deposits_sum": 146335,
+        "withdraws_count": 519,
+        "withdraws_sum": 105682.04000000001
+      },
+      {
+        "date": "2024-05-27",
+        "deposits_count": 3966,
+        "deposits_sum": 175307,
+        "withdraws_count": 554,
+        "withdraws_sum": 119515.15
+      },
+      {
+        "date": "2024-05-28",
+        "deposits_count": 3864,
+        "deposits_sum": 148357,
+        "withdraws_count": 529,
+        "withdraws_sum": 94079.47999999998
+      },
+      {
+        "date": "2024-05-29",
+        "deposits_count": 4324,
+        "deposits_sum": 170640,
+        "withdraws_count": 583,
+        "withdraws_sum": 131500.29
+      },
+      {
+        "date": "2024-05-30",
+        "deposits_count": 4162,
+        "deposits_sum": 200171,
+        "withdraws_count": 563,
+        "withdraws_sum": 140521.97
+      },
+      {
+        "date": "2024-05-31",
+        "deposits_count": 4163,
+        "deposits_sum": 191657,
+        "withdraws_count": 668,
+        "withdraws_sum": 160598.05000000002
+      },
+      {
+        "date": "2024-06-01",
+        "deposits_count": 6771,
+        "deposits_sum": 224311,
+        "withdraws_count": 1599,
+        "withdraws_sum": 212497.86999999994
+      },
+      {
+        "date": "2024-06-02",
+        "deposits_count": 4910,
+        "deposits_sum": 163034,
+        "withdraws_count": 697,
+        "withdraws_sum": 126156.42
+      },
+      {
+        "date": "2024-06-03",
+        "deposits_count": 5348,
+        "deposits_sum": 181667,
+        "withdraws_count": 775,
+        "withdraws_sum": 164174.67999999996
+      },
+      {
+        "date": "2024-06-04",
+        "deposits_count": 5155,
+        "deposits_sum": 194311,
+        "withdraws_count": 637,
+        "withdraws_sum": 151725.72
+      },
+      {
+        "date": "2024-06-05",
+        "deposits_count": 5438,
+        "deposits_sum": 206834,
+        "withdraws_count": 710,
+        "withdraws_sum": 154967.55
+      },
+      {
+        "date": "2024-06-06",
+        "deposits_count": 5186,
+        "deposits_sum": 238335,
+        "withdraws_count": 686,
+        "withdraws_sum": 156573.07
+      },
+      {
+        "date": "2024-06-07",
+        "deposits_count": 5057,
+        "deposits_sum": 222879,
+        "withdraws_count": 716,
+        "withdraws_sum": 226554.55999999997
+      },
+      {
+        "date": "2024-06-08",
+        "deposits_count": 4924,
+        "deposits_sum": 204657,
+        "withdraws_count": 697,
+        "withdraws_sum": 164735.44
+      },
+      {
+        "date": "2024-06-09",
+        "deposits_count": 4155,
+        "deposits_sum": 189600,
+        "withdraws_count": 540,
+        "withdraws_sum": 149859.18000000002
+      },
+      {
+        "date": "2024-06-10",
+        "deposits_count": 4083,
+        "deposits_sum": 155576,
+        "withdraws_count": 571,
+        "withdraws_sum": 111499.76000000001
+      },
+      {
+        "date": "2024-06-11",
+        "deposits_count": 4207,
+        "deposits_sum": 185868,
+        "withdraws_count": 551,
+        "withdraws_sum": 122446.12000000001
+      },
+      {
+        "date": "2024-06-12",
+        "deposits_count": 3907,
+        "deposits_sum": 157139,
+        "withdraws_count": 569,
+        "withdraws_sum": 135459.40000000002
+      },
+      {
+        "date": "2024-06-13",
+        "deposits_count": 3994,
+        "deposits_sum": 152975,
+        "withdraws_count": 572,
+        "withdraws_sum": 174288.83999999997
+      },
+      {
+        "date": "2024-06-14",
+        "deposits_count": 4740,
+        "deposits_sum": 213900,
+        "withdraws_count": 634,
+        "withdraws_sum": 146262.37000000002
+      },
+      {
+        "date": "2024-06-15",
+        "deposits_count": 5096,
+        "deposits_sum": 201539,
+        "withdraws_count": 566,
+        "withdraws_sum": 123945.06999999998
+      },
+      {
+        "date": "2024-06-16",
+        "deposits_count": 4456,
+        "deposits_sum": 203576,
+        "withdraws_count": 593,
+        "withdraws_sum": 131959.08999999997
+      },
+      {
+        "date": "2024-06-17",
+        "deposits_count": 4187,
+        "deposits_sum": 228046,
+        "withdraws_count": 525,
+        "withdraws_sum": 128607.15
+      },
+      {
+        "date": "2024-06-18",
+        "deposits_count": 4040,
+        "deposits_sum": 174763,
+        "withdraws_count": 524,
+        "withdraws_sum": 139038.13999999998
+      },
+      {
+        "date": "2024-06-19",
+        "deposits_count": 3897,
+        "deposits_sum": 154381,
+        "withdraws_count": 494,
+        "withdraws_sum": 116720.51999999996
+      },
+      {
+        "date": "2024-06-20",
+        "deposits_count": 4479,
+        "deposits_sum": 170199,
+        "withdraws_count": 568,
+        "withdraws_sum": 131540.71999999997
+      },
+      {
+        "date": "2024-06-21",
+        "deposits_count": 3509,
+        "deposits_sum": 153216,
+        "withdraws_count": 571,
+        "withdraws_sum": 117121.86000000002
+      },
+      {
+        "date": "2024-06-22",
+        "deposits_count": 3152,
+        "deposits_sum": 143719,
+        "withdraws_count": 560,
+        "withdraws_sum": 119668.31999999999
+      },
+      {
+        "date": "2024-06-23",
+        "deposits_count": 3817,
+        "deposits_sum": 127533,
+        "withdraws_count": 561,
+        "withdraws_sum": 131497.33000000002
+      },
+      {
+        "date": "2024-06-24",
+        "deposits_count": 4540,
+        "deposits_sum": 188194,
+        "withdraws_count": 952,
+        "withdraws_sum": 159781.48999999996
+      },
+      {
+        "date": "2024-06-25",
+        "deposits_count": 4452,
+        "deposits_sum": 214868,
+        "withdraws_count": 788,
+        "withdraws_sum": 143954.64
+      },
+      {
+        "date": "2024-06-26",
+        "deposits_count": 4218,
+        "deposits_sum": 167981,
+        "withdraws_count": 648,
+        "withdraws_sum": 134225.02000000002
+      },
+      {
+        "date": "2024-06-27",
+        "deposits_count": 4115,
+        "deposits_sum": 168393,
+        "withdraws_count": 622,
+        "withdraws_sum": 127556.60999999999
+      },
+      {
+        "date": "2024-06-28",
+        "deposits_count": 4637,
+        "deposits_sum": 220167,
+        "withdraws_count": 725,
+        "withdraws_sum": 156749.57
+      },
+      {
+        "date": "2024-06-29",
+        "deposits_count": 4737,
+        "deposits_sum": 197023,
+        "withdraws_count": 653,
+        "withdraws_sum": 142923.00999999995
+      },
+      {
+        "date": "2024-06-30",
+        "deposits_count": 4032,
+        "deposits_sum": 143528,
+        "withdraws_count": 633,
+        "withdraws_sum": 120208.16999999995
+      },
+      {
+        "date": "2024-07-01",
+        "deposits_count": 4177,
+        "deposits_sum": 152139,
+        "withdraws_count": 640,
+        "withdraws_sum": 136927.37
+      },
+      {
+        "date": "2024-07-02",
+        "deposits_count": 4092,
+        "deposits_sum": 191737,
+        "withdraws_count": 658,
+        "withdraws_sum": 151844.46999999997
+      },
+      {
+        "date": "2024-07-03",
+        "deposits_count": 4169,
+        "deposits_sum": 210870,
+        "withdraws_count": 633,
+        "withdraws_sum": 146200.55999999997
+      },
+      {
+        "date": "2024-07-04",
+        "deposits_count": 4259,
+        "deposits_sum": 186881,
+        "withdraws_count": 707,
+        "withdraws_sum": 175297.32999999996
+      },
+      {
+        "date": "2024-07-05",
+        "deposits_count": 5369,
+        "deposits_sum": 287077,
+        "withdraws_count": 786,
+        "withdraws_sum": 161774.84
+      },
+      {
+        "date": "2024-07-06",
+        "deposits_count": 5922,
+        "deposits_sum": 239024,
+        "withdraws_count": 796,
+        "withdraws_sum": 174036.51
+      },
+      {
+        "date": "2024-07-07",
+        "deposits_count": 4652,
+        "deposits_sum": 181313,
+        "withdraws_count": 796,
+        "withdraws_sum": 164845.11999999994
+      },
+      {
+        "date": "2024-07-08",
+        "deposits_count": 4225,
+        "deposits_sum": 187135,
+        "withdraws_count": 666,
+        "withdraws_sum": 145213.12000000002
+      },
+      {
+        "date": "2024-07-09",
+        "deposits_count": 4207,
+        "deposits_sum": 204719,
+        "withdraws_count": 662,
+        "withdraws_sum": 174564.78
+      },
+      {
+        "date": "2024-07-10",
+        "deposits_count": 4318,
+        "deposits_sum": 193758,
+        "withdraws_count": 634,
+        "withdraws_sum": 149208.19999999995
+      },
+      {
+        "date": "2024-07-11",
+        "deposits_count": 4219,
+        "deposits_sum": 172276,
+        "withdraws_count": 736,
+        "withdraws_sum": 162036.52999999994
+      },
+      {
+        "date": "2024-07-12",
+        "deposits_count": 4233,
+        "deposits_sum": 171603,
+        "withdraws_count": 806,
+        "withdraws_sum": 161325.64000000004
+      },
+      {
+        "date": "2024-07-13",
+        "deposits_count": 4530,
+        "deposits_sum": 198539,
+        "withdraws_count": 738,
+        "withdraws_sum": 147534.62999999998
+      },
+      {
+        "date": "2024-07-14",
+        "deposits_count": 4000,
+        "deposits_sum": 177532,
+        "withdraws_count": 625,
+        "withdraws_sum": 121564.34999999998
+      },
+      {
+        "date": "2024-07-15",
+        "deposits_count": 3607,
+        "deposits_sum": 196311,
+        "withdraws_count": 650,
+        "withdraws_sum": 154003.61000000002
+      },
+      {
+        "date": "2024-07-16",
+        "deposits_count": 3975,
+        "deposits_sum": 177832,
+        "withdraws_count": 657,
+        "withdraws_sum": 134894.21000000002
+      },
+      {
+        "date": "2024-07-17",
+        "deposits_count": 3765,
+        "deposits_sum": 188288,
+        "withdraws_count": 592,
+        "withdraws_sum": 120703.76999999999
+      },
+      {
+        "date": "2024-07-18",
+        "deposits_count": 3807,
+        "deposits_sum": 176311,
+        "withdraws_count": 610,
+        "withdraws_sum": 138819.71
+      },
+      {
+        "date": "2024-07-19",
+        "deposits_count": 4470,
+        "deposits_sum": 192729,
+        "withdraws_count": 692,
+        "withdraws_sum": 159877.34999999995
+      },
+      {
+        "date": "2024-07-20",
+        "deposits_count": 4626,
+        "deposits_sum": 182554,
+        "withdraws_count": 727,
+        "withdraws_sum": 196623.96000000002
+      },
+      {
+        "date": "2024-07-21",
+        "deposits_count": 4127,
+        "deposits_sum": 166271,
+        "withdraws_count": 666,
+        "withdraws_sum": 162758.36999999997
+      },
+      {
+        "date": "2024-07-22",
+        "deposits_count": 3865,
+        "deposits_sum": 210818,
+        "withdraws_count": 630,
+        "withdraws_sum": 126578.84999999999
+      },
+      {
+        "date": "2024-07-23",
+        "deposits_count": 3918,
+        "deposits_sum": 180229,
+        "withdraws_count": 628,
+        "withdraws_sum": 143542.68000000005
+      },
+      {
+        "date": "2024-07-24",
+        "deposits_count": 3820,
+        "deposits_sum": 160325,
+        "withdraws_count": 622,
+        "withdraws_sum": 141377.35000000006
+      },
+      {
+        "date": "2024-07-25",
+        "deposits_count": 3338,
+        "deposits_sum": 142687,
+        "withdraws_count": 577,
+        "withdraws_sum": 150939.26000000004
+      },
+      {
+        "date": "2024-07-26",
+        "deposits_count": 3711,
+        "deposits_sum": 152656,
+        "withdraws_count": 577,
+        "withdraws_sum": 145653.13
+      },
+      {
+        "date": "2024-07-27",
+        "deposits_count": 3644,
+        "deposits_sum": 137479,
+        "withdraws_count": 562,
+        "withdraws_sum": 119462.51
+      },
+      {
+        "date": "2024-07-28",
+        "deposits_count": 3383,
+        "deposits_sum": 120828,
+        "withdraws_count": 601,
+        "withdraws_sum": 132027.74
+      },
+      {
+        "date": "2024-07-29",
+        "deposits_count": 3269,
+        "deposits_sum": 146506,
+        "withdraws_count": 580,
+        "withdraws_sum": 126956.31999999999
+      },
+      {
+        "date": "2024-07-30",
+        "deposits_count": 3700,
+        "deposits_sum": 200518,
+        "withdraws_count": 695,
+        "withdraws_sum": 143854.61000000002
+      },
+      {
+        "date": "2024-07-31",
+        "deposits_count": 4249,
+        "deposits_sum": 233230,
+        "withdraws_count": 698,
+        "withdraws_sum": 176621.18000000005
+      },
+      {
+        "date": "2024-08-01",
+        "deposits_count": 4232,
+        "deposits_sum": 196677,
+        "withdraws_count": 703,
+        "withdraws_sum": 152763.51999999996
+      },
+      {
+        "date": "2024-08-02",
+        "deposits_count": 4226,
+        "deposits_sum": 218436,
+        "withdraws_count": 648,
+        "withdraws_sum": 152397.44999999998
+      },
+      {
+        "date": "2024-08-03",
+        "deposits_count": 4548,
+        "deposits_sum": 217530,
+        "withdraws_count": 669,
+        "withdraws_sum": 142389.11
+      },
+      {
+        "date": "2024-08-04",
+        "deposits_count": 3780,
+        "deposits_sum": 200126,
+        "withdraws_count": 657,
+        "withdraws_sum": 154920.33999999994
+      },
+      {
+        "date": "2024-08-05",
+        "deposits_count": 3844,
+        "deposits_sum": 215032,
+        "withdraws_count": 647,
+        "withdraws_sum": 149719.24
+      },
+      {
+        "date": "2024-08-06",
+        "deposits_count": 4675,
+        "deposits_sum": 231887,
+        "withdraws_count": 751,
+        "withdraws_sum": 177521.90000000002
+      },
+      {
+        "date": "2024-08-07",
+        "deposits_count": 4819,
+        "deposits_sum": 204190,
+        "withdraws_count": 794,
+        "withdraws_sum": 185793.88000000003
+      },
+      {
+        "date": "2024-08-08",
+        "deposits_count": 3985,
+        "deposits_sum": 228958,
+        "withdraws_count": 694,
+        "withdraws_sum": 196714.06
+      },
+      {
+        "date": "2024-08-09",
+        "deposits_count": 4307,
+        "deposits_sum": 182318,
+        "withdraws_count": 744,
+        "withdraws_sum": 187354.35000000003
+      },
+      {
+        "date": "2024-08-10",
+        "deposits_count": 4266,
+        "deposits_sum": 221606,
+        "withdraws_count": 664,
+        "withdraws_sum": 196327.88
+      },
+      {
+        "date": "2024-08-11",
+        "deposits_count": 3811,
+        "deposits_sum": 155794,
+        "withdraws_count": 624,
+        "withdraws_sum": 146559.76
+      },
+      {
+        "date": "2024-08-12",
+        "deposits_count": 3632,
+        "deposits_sum": 165717,
+        "withdraws_count": 567,
+        "withdraws_sum": 143621.62
+      },
+      {
+        "date": "2024-08-13",
+        "deposits_count": 3401,
+        "deposits_sum": 156930,
+        "withdraws_count": 570,
+        "withdraws_sum": 133451.81
+      },
+      {
+        "date": "2024-08-14",
+        "deposits_count": 3812,
+        "deposits_sum": 164302,
+        "withdraws_count": 678,
+        "withdraws_sum": 125254.30000000003
+      },
+      {
+        "date": "2024-08-15",
+        "deposits_count": 4152,
+        "deposits_sum": 192090,
+        "withdraws_count": 709,
+        "withdraws_sum": 136032.19
+      },
+      {
+        "date": "2024-08-16",
+        "deposits_count": 3956,
+        "deposits_sum": 192287,
+        "withdraws_count": 722,
+        "withdraws_sum": 170441.65999999997
+      },
+      {
+        "date": "2024-08-17",
+        "deposits_count": 4315,
+        "deposits_sum": 167073,
+        "withdraws_count": 723,
+        "withdraws_sum": 145216
+      },
+      {
+        "date": "2024-08-18",
+        "deposits_count": 3572,
+        "deposits_sum": 151364,
+        "withdraws_count": 628,
+        "withdraws_sum": 135355.36000000002
+      },
+      {
+        "date": "2024-08-19",
+        "deposits_count": 3544,
+        "deposits_sum": 144475,
+        "withdraws_count": 617,
+        "withdraws_sum": 121894.34
+      },
+      {
+        "date": "2024-08-20",
+        "deposits_count": 4072,
+        "deposits_sum": 188704,
+        "withdraws_count": 718,
+        "withdraws_sum": 153318.7
+      },
+      {
+        "date": "2024-08-21",
+        "deposits_count": 4047,
+        "deposits_sum": 176351,
+        "withdraws_count": 761,
+        "withdraws_sum": 181680.02
+      },
+      {
+        "date": "2024-08-22",
+        "deposits_count": 4032,
+        "deposits_sum": 166379,
+        "withdraws_count": 685,
+        "withdraws_sum": 165175.75000000003
+      },
+      {
+        "date": "2024-08-23",
+        "deposits_count": 4419,
+        "deposits_sum": 200499,
+        "withdraws_count": 892,
+        "withdraws_sum": 177502.78
+      },
+      {
+        "date": "2024-08-24",
+        "deposits_count": 4531,
+        "deposits_sum": 184321,
+        "withdraws_count": 802,
+        "withdraws_sum": 154762.61000000002
+      },
+      {
+        "date": "2024-08-25",
+        "deposits_count": 3502,
+        "deposits_sum": 175986,
+        "withdraws_count": 670,
+        "withdraws_sum": 138948.49000000002
+      },
+      {
+        "date": "2024-08-26",
+        "deposits_count": 3448,
+        "deposits_sum": 167289,
+        "withdraws_count": 688,
+        "withdraws_sum": 135977.3
+      },
+      {
+        "date": "2024-08-27",
+        "deposits_count": 3609,
+        "deposits_sum": 161074,
+        "withdraws_count": 655,
+        "withdraws_sum": 166348.52
+      },
+      {
+        "date": "2024-08-28",
+        "deposits_count": 3608,
+        "deposits_sum": 156486,
+        "withdraws_count": 636,
+        "withdraws_sum": 148464.08999999994
+      },
+      {
+        "date": "2024-08-29",
+        "deposits_count": 3604,
+        "deposits_sum": 178735,
+        "withdraws_count": 662,
+        "withdraws_sum": 144703.14
+      },
+      {
+        "date": "2024-08-30",
+        "deposits_count": 4835,
+        "deposits_sum": 204693,
+        "withdraws_count": 806,
+        "withdraws_sum": 172282.96999999997
+      },
+      {
+        "date": "2024-08-31",
+        "deposits_count": 4734,
+        "deposits_sum": 182395,
+        "withdraws_count": 771,
+        "withdraws_sum": 175734.21000000002
+      },
+      {
+        "date": "2024-09-01",
+        "deposits_count": 3852,
+        "deposits_sum": 141835,
+        "withdraws_count": 602,
+        "withdraws_sum": 127587.9
+      },
+      {
+        "date": "2024-09-02",
+        "deposits_count": 3861,
+        "deposits_sum": 169186,
+        "withdraws_count": 744,
+        "withdraws_sum": 200725.56
+      },
+      {
+        "date": "2024-09-03",
+        "deposits_count": 4354,
+        "deposits_sum": 210385,
+        "withdraws_count": 804,
+        "withdraws_sum": 208545.34999999998
+      },
+      {
+        "date": "2024-09-04",
+        "deposits_count": 4251,
+        "deposits_sum": 200205,
+        "withdraws_count": 926,
+        "withdraws_sum": 222996.50000000006
+      },
+      {
+        "date": "2024-09-05",
+        "deposits_count": 4512,
+        "deposits_sum": 243657,
+        "withdraws_count": 842,
+        "withdraws_sum": 244937.71999999994
+      },
+      {
+        "date": "2024-09-06",
+        "deposits_count": 5607,
+        "deposits_sum": 268566,
+        "withdraws_count": 1069,
+        "withdraws_sum": 251305.09999999998
+      },
+      {
+        "date": "2024-09-07",
+        "deposits_count": 5850,
+        "deposits_sum": 288691,
+        "withdraws_count": 1005,
+        "withdraws_sum": 246368.36999999997
+      },
+      {
+        "date": "2024-09-08",
+        "deposits_count": 4439,
+        "deposits_sum": 245338,
+        "withdraws_count": 866,
+        "withdraws_sum": 211034.21000000002
+      },
+      {
+        "date": "2024-09-09",
+        "deposits_count": 4109,
+        "deposits_sum": 231639,
+        "withdraws_count": 809,
+        "withdraws_sum": 189658.20000000007
+      },
+      {
+        "date": "2024-09-10",
+        "deposits_count": 4548,
+        "deposits_sum": 207448,
+        "withdraws_count": 804,
+        "withdraws_sum": 214039.38000000003
+      },
+      {
+        "date": "2024-09-11",
+        "deposits_count": 4350,
+        "deposits_sum": 194418,
+        "withdraws_count": 506,
+        "withdraws_sum": 111247.73
+      },
+      {
+        "date": "2024-09-12",
+        "deposits_count": 4093,
+        "deposits_sum": 173620,
+        "withdraws_count": 732,
+        "withdraws_sum": 156691.51000000004
+      },
+      {
+        "date": "2024-09-13",
+        "deposits_count": 4597,
+        "deposits_sum": 222783,
+        "withdraws_count": 880,
+        "withdraws_sum": 190811.69999999998
+      },
+      {
+        "date": "2024-09-14",
+        "deposits_count": 5073,
+        "deposits_sum": 238295,
+        "withdraws_count": 927,
+        "withdraws_sum": 211335.4
+      },
+      {
+        "date": "2024-09-15",
+        "deposits_count": 3175,
+        "deposits_sum": 155804,
+        "withdraws_count": 572,
+        "withdraws_sum": 128816.39999999998
+      },
+      {
+        "date": "2024-09-16",
+        "deposits_count": 4247,
+        "deposits_sum": 184793,
+        "withdraws_count": 855,
+        "withdraws_sum": 183719.58
+      },
+      {
+        "date": "2024-09-17",
+        "deposits_count": 5001,
+        "deposits_sum": 195848,
+        "withdraws_count": 913,
+        "withdraws_sum": 183815.51000000004
+      },
+      {
+        "date": "2024-09-18",
+        "deposits_count": 5088,
+        "deposits_sum": 189497,
+        "withdraws_count": 918,
+        "withdraws_sum": 167477.36
+      },
+      {
+        "date": "2024-09-19",
+        "deposits_count": 5610,
+        "deposits_sum": 239132,
+        "withdraws_count": 1054,
+        "withdraws_sum": 231060.94
+      },
+      {
+        "date": "2024-09-20",
+        "deposits_count": 7479,
+        "deposits_sum": 372481,
+        "withdraws_count": 1347,
+        "withdraws_sum": 280217.27
+      },
+      {
+        "date": "2024-09-21",
+        "deposits_count": 8442,
+        "deposits_sum": 369518,
+        "withdraws_count": 1442,
+        "withdraws_sum": 311374.35999999987
+      },
+      {
+        "date": "2024-09-22",
+        "deposits_count": 7696,
+        "deposits_sum": 306103,
+        "withdraws_count": 1393,
+        "withdraws_sum": 247209.98
+      },
+      {
+        "date": "2024-09-23",
+        "deposits_count": 7161,
+        "deposits_sum": 298146,
+        "withdraws_count": 1246,
+        "withdraws_sum": 279632.61
+      },
+      {
+        "date": "2024-09-24",
+        "deposits_count": 6987,
+        "deposits_sum": 310678,
+        "withdraws_count": 1467,
+        "withdraws_sum": 281181.87999999995
+      },
+      {
+        "date": "2024-09-25",
+        "deposits_count": 7419,
+        "deposits_sum": 340063,
+        "withdraws_count": 1412,
+        "withdraws_sum": 310123.9199999999
+      },
+      {
+        "date": "2024-09-26",
+        "deposits_count": 8309,
+        "deposits_sum": 356445,
+        "withdraws_count": 1490,
+        "withdraws_sum": 345246.70999999996
+      },
+      {
+        "date": "2024-09-27",
+        "deposits_count": 10080,
+        "deposits_sum": 460579,
+        "withdraws_count": 1626,
+        "withdraws_sum": 359173.64999999985
+      },
+      {
+        "date": "2024-09-28",
+        "deposits_count": 11060,
+        "deposits_sum": 453516,
+        "withdraws_count": 1759,
+        "withdraws_sum": 341145.84
+      },
+      {
+        "date": "2024-09-29",
+        "deposits_count": 9607,
+        "deposits_sum": 374872,
+        "withdraws_count": 1549,
+        "withdraws_sum": 323060.6500000001
+      },
+      {
+        "date": "2024-09-30",
+        "deposits_count": 11713,
+        "deposits_sum": 508642,
+        "withdraws_count": 1705,
+        "withdraws_sum": 387981.93999999994
+      },
+      {
+        "date": "2024-10-01",
+        "deposits_count": 20229,
+        "deposits_sum": 886322,
+        "withdraws_count": 3694,
+        "withdraws_sum": 740717.1000000001
+      },
+      {
+        "date": "2024-10-02",
+        "deposits_count": 24912,
+        "deposits_sum": 1120794,
+        "withdraws_count": 4853,
+        "withdraws_sum": 1039671.3499999999
+      },
+      {
+        "date": "2024-10-03",
+        "deposits_count": 21681,
+        "deposits_sum": 1087854,
+        "withdraws_count": 4278,
+        "withdraws_sum": 907772.2699999999
+      },
+      {
+        "date": "2024-10-04",
+        "deposits_count": 20283,
+        "deposits_sum": 1038427,
+        "withdraws_count": 4117,
+        "withdraws_sum": 993607.4199999998
+      },
+      {
+        "date": "2024-10-05",
+        "deposits_count": 19542,
+        "deposits_sum": 934126,
+        "withdraws_count": 4290,
+        "withdraws_sum": 821211.7399999999
+      },
+      {
+        "date": "2024-10-06",
+        "deposits_count": 14501,
+        "deposits_sum": 764571,
+        "withdraws_count": 2857,
+        "withdraws_sum": 678910.9000000001
+      },
+      {
+        "date": "2024-10-07",
+        "deposits_count": 14485,
+        "deposits_sum": 750397,
+        "withdraws_count": 3455,
+        "withdraws_sum": 786409.5000000002
+      },
+      {
+        "date": "2024-10-08",
+        "deposits_count": 14532,
+        "deposits_sum": 755713,
+        "withdraws_count": 3427,
+        "withdraws_sum": 856532.81
+      },
+      {
+        "date": "2024-10-09",
+        "deposits_count": 13658,
+        "deposits_sum": 746152,
+        "withdraws_count": 3069,
+        "withdraws_sum": 746250.7
+      },
+      {
+        "date": "2024-10-10",
+        "deposits_count": 13271,
+        "deposits_sum": 743605,
+        "withdraws_count": 3113,
+        "withdraws_sum": 763797.9500000007
+      },
+      {
+        "date": "2024-10-11",
+        "deposits_count": 15120,
+        "deposits_sum": 832263,
+        "withdraws_count": 3230,
+        "withdraws_sum": 743674.7900000003
+      },
+      {
+        "date": "2024-10-12",
+        "deposits_count": 12751,
+        "deposits_sum": 677590,
+        "withdraws_count": 2553,
+        "withdraws_sum": 604239.0799999998
+      },
+      {
+        "date": "2024-10-13",
+        "deposits_count": 11473,
+        "deposits_sum": 606680,
+        "withdraws_count": 2204,
+        "withdraws_sum": 549591.2000000001
+      },
+      {
+        "date": "2024-10-14",
+        "deposits_count": 11425,
+        "deposits_sum": 601449,
+        "withdraws_count": 2401,
+        "withdraws_sum": 592885.3800000001
+      },
+      {
+        "date": "2024-10-15",
+        "deposits_count": 11945,
+        "deposits_sum": 667260,
+        "withdraws_count": 2769,
+        "withdraws_sum": 657225.0899999997
+      },
+      {
+        "date": "2024-10-16",
+        "deposits_count": 11741,
+        "deposits_sum": 615662,
+        "withdraws_count": 2495,
+        "withdraws_sum": 577241.7400000001
+      },
+      {
+        "date": "2024-10-17",
+        "deposits_count": 11038,
+        "deposits_sum": 603649,
+        "withdraws_count": 2252,
+        "withdraws_sum": 519907.42000000016
+      },
+      {
+        "date": "2024-10-18",
+        "deposits_count": 13050,
+        "deposits_sum": 632655,
+        "withdraws_count": 2689,
+        "withdraws_sum": 572057.01
+      },
+      {
+        "date": "2024-10-19",
+        "deposits_count": 12567,
+        "deposits_sum": 637021,
+        "withdraws_count": 2432,
+        "withdraws_sum": 587316.6699999999
+      },
+      {
+        "date": "2024-10-20",
+        "deposits_count": 10585,
+        "deposits_sum": 585296,
+        "withdraws_count": 2153,
+        "withdraws_sum": 493035.83000000013
+      },
+      {
+        "date": "2024-10-21",
+        "deposits_count": 11610,
+        "deposits_sum": 651867,
+        "withdraws_count": 2611,
+        "withdraws_sum": 577794.33
+      },
+      {
+        "date": "2024-10-22",
+        "deposits_count": 12898,
+        "deposits_sum": 654477,
+        "withdraws_count": 2942,
+        "withdraws_sum": 637011.2500000003
+      },
+      {
+        "date": "2024-10-23",
+        "deposits_count": 12181,
+        "deposits_sum": 616656,
+        "withdraws_count": 2718,
+        "withdraws_sum": 626835.2699999998
+      },
+      {
+        "date": "2024-10-24",
+        "deposits_count": 10511,
+        "deposits_sum": 550663,
+        "withdraws_count": 2053,
+        "withdraws_sum": 412815.69
+      },
+      {
+        "date": "2024-10-25",
+        "deposits_count": 11288,
+        "deposits_sum": 578600,
+        "withdraws_count": 2419,
+        "withdraws_sum": 511592.5900000001
+      },
+      {
+        "date": "2024-10-26",
+        "deposits_count": 11281,
+        "deposits_sum": 562416,
+        "withdraws_count": 2234,
+        "withdraws_sum": 512319.49000000005
+      },
+      {
+        "date": "2024-10-27",
+        "deposits_count": 9859,
+        "deposits_sum": 444474,
+        "withdraws_count": 1967,
+        "withdraws_sum": 397434.39999999997
+      },
+      {
+        "date": "2024-10-28",
+        "deposits_count": 9777,
+        "deposits_sum": 476541,
+        "withdraws_count": 2160,
+        "withdraws_sum": 473439.37
+      },
+      {
+        "date": "2024-10-29",
+        "deposits_count": 10346,
+        "deposits_sum": 511617,
+        "withdraws_count": 2533,
+        "withdraws_sum": 519162.21000000025
+      },
+      {
+        "date": "2024-10-30",
+        "deposits_count": 10542,
+        "deposits_sum": 560491,
+        "withdraws_count": 2296,
+        "withdraws_sum": 524787.5200000001
+      },
+      {
+        "date": "2024-10-31",
+        "deposits_count": 11245,
+        "deposits_sum": 607212,
+        "withdraws_count": 2326,
+        "withdraws_sum": 510325.4100000002
+      },
+      {
+        "date": "2024-11-01",
+        "deposits_count": 12304,
+        "deposits_sum": 645027,
+        "withdraws_count": 2670,
+        "withdraws_sum": 578789.2300000001
+      },
+      {
+        "date": "2024-11-02",
+        "deposits_count": 11530,
+        "deposits_sum": 578446,
+        "withdraws_count": 2513,
+        "withdraws_sum": 567650.6000000001
+      },
+      {
+        "date": "2024-11-03",
+        "deposits_count": 9970,
+        "deposits_sum": 534883,
+        "withdraws_count": 2136,
+        "withdraws_sum": 465933.0500000004
+      },
+      {
+        "date": "2024-11-04",
+        "deposits_count": 10257,
+        "deposits_sum": 551860,
+        "withdraws_count": 2379,
+        "withdraws_sum": 516470.7200000001
+      },
+      {
+        "date": "2024-11-05",
+        "deposits_count": 11474,
+        "deposits_sum": 585831,
+        "withdraws_count": 2583,
+        "withdraws_sum": 551835.9199999999
+      },
+      {
+        "date": "2024-11-06",
+        "deposits_count": 12420,
+        "deposits_sum": 675259,
+        "withdraws_count": 2798,
+        "withdraws_sum": 661116.6599999999
+      },
+      {
+        "date": "2024-11-07",
+        "deposits_count": 15068,
+        "deposits_sum": 803154,
+        "withdraws_count": 3320,
+        "withdraws_sum": 627970.7200000004
+      },
+      {
+        "date": "2024-11-08",
+        "deposits_count": 14904,
+        "deposits_sum": 761344,
+        "withdraws_count": 3178,
+        "withdraws_sum": 632762.5700000001
+      },
+      {
+        "date": "2024-11-09",
+        "deposits_count": 12871,
+        "deposits_sum": 668285,
+        "withdraws_count": 2604,
+        "withdraws_sum": 550945.5000000002
+      },
+      {
+        "date": "2024-11-10",
+        "deposits_count": 10682,
+        "deposits_sum": 527426,
+        "withdraws_count": 2155,
+        "withdraws_sum": 468624.9000000001
+      },
+      {
+        "date": "2024-11-11",
+        "deposits_count": 11474,
+        "deposits_sum": 591764,
+        "withdraws_count": 2682,
+        "withdraws_sum": 558579.8499999999
+      },
+      {
+        "date": "2024-11-12",
+        "deposits_count": 11799,
+        "deposits_sum": 579933,
+        "withdraws_count": 2733,
+        "withdraws_sum": 559731.5000000001
+      },
+      {
+        "date": "2024-11-13",
+        "deposits_count": 11324,
+        "deposits_sum": 537769,
+        "withdraws_count": 2560,
+        "withdraws_sum": 532643.2400000002
+      },
+      {
+        "date": "2024-11-14",
+        "deposits_count": 11971,
+        "deposits_sum": 636274,
+        "withdraws_count": 2393,
+        "withdraws_sum": 491091.7499999999
+      },
+      {
+        "date": "2024-11-15",
+        "deposits_count": 12350,
+        "deposits_sum": 617911,
+        "withdraws_count": 2666,
+        "withdraws_sum": 497968.28999999986
+      },
+      {
+        "date": "2024-11-16",
+        "deposits_count": 11495,
+        "deposits_sum": 533473,
+        "withdraws_count": 2124,
+        "withdraws_sum": 441971.89999999973
+      },
+      {
+        "date": "2024-11-17",
+        "deposits_count": 9278,
+        "deposits_sum": 422567,
+        "withdraws_count": 1793,
+        "withdraws_sum": 324343.63000000006
+      },
+      {
+        "date": "2024-11-18",
+        "deposits_count": 10669,
+        "deposits_sum": 549387,
+        "withdraws_count": 2366,
+        "withdraws_sum": 454801.04
+      },
+      {
+        "date": "2024-11-19",
+        "deposits_count": 9858,
+        "deposits_sum": 488552,
+        "withdraws_count": 2385,
+        "withdraws_sum": 476460.1300000002
+      },
+      {
+        "date": "2024-11-20",
+        "deposits_count": 9450,
+        "deposits_sum": 402895,
+        "withdraws_count": 2086,
+        "withdraws_sum": 399246.14999999985
+      },
+      {
+        "date": "2024-11-21",
+        "deposits_count": 7558,
+        "deposits_sum": 375576,
+        "withdraws_count": 1591,
+        "withdraws_sum": 349271.44000000006
+      },
+      {
+        "date": "2024-11-22",
+        "deposits_count": 7786,
+        "deposits_sum": 393245,
+        "withdraws_count": 2272,
+        "withdraws_sum": 340023.22999999986
+      },
+      {
+        "date": "2024-11-23",
+        "deposits_count": 10810,
+        "deposits_sum": 453473,
+        "withdraws_count": 3109,
+        "withdraws_sum": 416630.0300000002
+      },
+      {
+        "date": "2024-11-24",
+        "deposits_count": 8629,
+        "deposits_sum": 351584,
+        "withdraws_count": 2087,
+        "withdraws_sum": 305353.68
+      },
+      {
+        "date": "2024-11-25",
+        "deposits_count": 8833,
+        "deposits_sum": 427156,
+        "withdraws_count": 2096,
+        "withdraws_sum": 417602.56000000006
+      },
+      {
+        "date": "2024-11-26",
+        "deposits_count": 9532,
+        "deposits_sum": 489968,
+        "withdraws_count": 2144,
+        "withdraws_sum": 445123.56999999995
+      },
+      {
+        "date": "2024-11-27",
+        "deposits_count": 8826,
+        "deposits_sum": 439901,
+        "withdraws_count": 1927,
+        "withdraws_sum": 427435.13999999984
+      },
+      {
+        "date": "2024-11-28",
+        "deposits_count": 9200,
+        "deposits_sum": 532291,
+        "withdraws_count": 1803,
+        "withdraws_sum": 438725.8399999999
+      },
+      {
+        "date": "2024-11-29",
+        "deposits_count": 10639,
+        "deposits_sum": 601480,
+        "withdraws_count": 2150,
+        "withdraws_sum": 532998.6700000002
+      },
+      {
+        "date": "2024-11-30",
+        "deposits_count": 10472,
+        "deposits_sum": 568419.6,
+        "withdraws_count": 2033,
+        "withdraws_sum": 448645.62000000005
+      },
+      {
         "date": "2024-12-01",
         "deposits_count": 9711,
         "deposits_sum": 529612.8799999999,
@@ -572,7 +2922,7 @@
       {
         "date": "2024-12-08",
         "deposits_count": 10846,
-        "deposits_sum": 547813.0,
+        "deposits_sum": 547813,
         "withdraws_count": 2209,
         "withdraws_sum": 501287.10000000003
       },
@@ -591,122 +2941,235 @@
         "withdraws_sum": 587160.54
       },
       {
-        "date": "2025-01-13",
-        "deposits_count": 6380,
-        "deposits_sum": 404177.20999999985,
-        "withdraws_count": 1290,
-        "withdraws_sum": 262376.44999999995
+        "date": "2024-12-11",
+        "deposits_count": 10895,
+        "deposits_sum": 593579.6599999999,
+        "withdraws_count": 2217,
+        "withdraws_sum": 546690.0100000001
       },
       {
-        "date": "2025-01-14",
-        "deposits_count": 6970,
-        "deposits_sum": 469841.9300000002,
-        "withdraws_count": 1433,
-        "withdraws_sum": 340881.17000000004
+        "date": "2024-12-12",
+        "deposits_count": 10189,
+        "deposits_sum": 536817.78,
+        "withdraws_count": 2027,
+        "withdraws_sum": 431513.15
       },
       {
-        "date": "2025-01-15",
-        "deposits_count": 3522,
-        "deposits_sum": 294723.85,
-        "withdraws_count": 708,
-        "withdraws_sum": 209001.11999999997
-      }
-    ]
-  },
-  {
-    "id": "hejtxd983",
-    "name": "Depósitos & Saques",
-    "createdAt": "2025-01-15",
-    "metricLabel": "transactions",
-    "chartType": "line",
-    "filter": {
-      "type": "month",
-      "label": "date"
-    },
-    "guides": {
-      "label": "date",
-      "value": [
-        "deposits_sum",
-        "withdraws_sum"
-      ],
-      "stackType": "default"
-    },
-    "headers": [
-      "deposits_sum",
-      "deposits_count",
-      "withdraws_sum",
-      "withdraws_count"
-    ],
-    "results": [
-      {
-        "date": "2024-12-01",
-        "deposits_count": 9711,
-        "deposits_sum": 529612.8799999999,
-        "withdraws_count": 1878,
-        "withdraws_sum": 433948.62999999995
+        "date": "2024-12-13",
+        "deposits_count": 10497,
+        "deposits_sum": 553087.6200000001,
+        "withdraws_count": 2188,
+        "withdraws_sum": 476901.57999999996
       },
       {
-        "date": "2024-12-02",
-        "deposits_count": 10437,
-        "deposits_sum": 589437.56,
-        "withdraws_count": 2107,
-        "withdraws_sum": 452156.41999999987
+        "date": "2024-12-14",
+        "deposits_count": 10748,
+        "deposits_sum": 566779.2400000001,
+        "withdraws_count": 2005,
+        "withdraws_sum": 421371.54000000004
       },
       {
-        "date": "2024-12-03",
-        "deposits_count": 10940,
-        "deposits_sum": 607019.0399999999,
+        "date": "2024-12-15",
+        "deposits_count": 9749,
+        "deposits_sum": 529490.79,
+        "withdraws_count": 1740,
+        "withdraws_sum": 367201.2400000001
+      },
+      {
+        "date": "2024-12-16",
+        "deposits_count": 9037,
+        "deposits_sum": 541736.01,
+        "withdraws_count": 1901,
+        "withdraws_sum": 441572.07999999996
+      },
+      {
+        "date": "2024-12-17",
+        "deposits_count": 9494,
+        "deposits_sum": 522178.0199999999,
+        "withdraws_count": 1954,
+        "withdraws_sum": 426861.82
+      },
+      {
+        "date": "2024-12-18",
+        "deposits_count": 9691,
+        "deposits_sum": 527712.28,
+        "withdraws_count": 1932,
+        "withdraws_sum": 420663.8299999999
+      },
+      {
+        "date": "2024-12-19",
+        "deposits_count": 10359,
+        "deposits_sum": 568956.2999999999,
+        "withdraws_count": 2073,
+        "withdraws_sum": 526625.21
+      },
+      {
+        "date": "2024-12-20",
+        "deposits_count": 12616,
+        "deposits_sum": 743657.3600000001,
+        "withdraws_count": 2704,
+        "withdraws_sum": 620130.51
+      },
+      {
+        "date": "2024-12-21",
+        "deposits_count": 13384,
+        "deposits_sum": 674712.4800000001,
+        "withdraws_count": 3366,
+        "withdraws_sum": 612466.7900000002
+      },
+      {
+        "date": "2024-12-22",
+        "deposits_count": 10933,
+        "deposits_sum": 577620.1100000001,
+        "withdraws_count": 2440,
+        "withdraws_sum": 506824.57999999996
+      },
+      {
+        "date": "2024-12-23",
+        "deposits_count": 10939,
+        "deposits_sum": 585198.54,
+        "withdraws_count": 2400,
+        "withdraws_sum": 534384.8800000001
+      },
+      {
+        "date": "2024-12-24",
+        "deposits_count": 9903,
+        "deposits_sum": 530339.76,
         "withdraws_count": 2274,
-        "withdraws_sum": 546562.03
+        "withdraws_sum": 471212.7099999997
       },
       {
-        "date": "2024-12-04",
-        "deposits_count": 10051,
-        "deposits_sum": 612851.62,
-        "withdraws_count": 2167,
-        "withdraws_sum": 461997.18
+        "date": "2024-12-25",
+        "deposits_count": 9129,
+        "deposits_sum": 468053.74000000005,
+        "withdraws_count": 2087,
+        "withdraws_sum": 462927.8599999999
       },
       {
-        "date": "2024-12-05",
-        "deposits_count": 11401,
-        "deposits_sum": 609566.79,
-        "withdraws_count": 2850,
-        "withdraws_sum": 519323.2900000005
+        "date": "2024-12-26",
+        "deposits_count": 9878,
+        "deposits_sum": 535320.94,
+        "withdraws_count": 2015,
+        "withdraws_sum": 478039.6800000001
       },
       {
-        "date": "2024-12-06",
-        "deposits_count": 14209,
-        "deposits_sum": 804315.77,
-        "withdraws_count": 3722,
-        "withdraws_sum": 615723.1700000004
+        "date": "2024-12-27",
+        "deposits_count": 10622,
+        "deposits_sum": 604027.2100000001,
+        "withdraws_count": 2125,
+        "withdraws_sum": 493705.18000000005
       },
       {
-        "date": "2024-12-07",
-        "deposits_count": 13814,
-        "deposits_sum": 703615.6499999999,
-        "withdraws_count": 3795,
-        "withdraws_sum": 638351.7600000001
+        "date": "2024-12-28",
+        "deposits_count": 11144,
+        "deposits_sum": 682758.9999999999,
+        "withdraws_count": 2211,
+        "withdraws_sum": 477587.8500000001
       },
       {
-        "date": "2024-12-08",
-        "deposits_count": 10846,
-        "deposits_sum": 547813.0,
-        "withdraws_count": 2209,
-        "withdraws_sum": 501287.10000000003
+        "date": "2024-12-29",
+        "deposits_count": 9718,
+        "deposits_sum": 536698.1499999999,
+        "withdraws_count": 1953,
+        "withdraws_sum": 390219.17
       },
       {
-        "date": "2024-12-09",
-        "deposits_count": 10587,
-        "deposits_sum": 609931.66,
-        "withdraws_count": 2265,
-        "withdraws_sum": 501947.2799999999
+        "date": "2024-12-30",
+        "deposits_count": 11135,
+        "deposits_sum": 615770.4500000001,
+        "withdraws_count": 2509,
+        "withdraws_sum": 550301.6800000003
       },
       {
-        "date": "2024-12-10",
-        "deposits_count": 11230,
-        "deposits_sum": 640743.5700000002,
-        "withdraws_count": 2493,
-        "withdraws_sum": 587160.54
+        "date": "2024-12-31",
+        "deposits_count": 10545,
+        "deposits_sum": 545928.6,
+        "withdraws_count": 2789,
+        "withdraws_sum": 538314.89
+      },
+      {
+        "date": "2025-01-01",
+        "deposits_count": 3451,
+        "deposits_sum": 191959,
+        "withdraws_count": 776,
+        "withdraws_sum": 160252.88
+      },
+      {
+        "date": "2025-01-02",
+        "deposits_count": 686,
+        "deposits_sum": 56118.659999999996,
+        "withdraws_count": 186,
+        "withdraws_sum": 46896.409999999996
+      },
+      {
+        "date": "2025-01-03",
+        "deposits_count": 2928,
+        "deposits_sum": 173308.48000000004,
+        "withdraws_count": 1197,
+        "withdraws_sum": 173978.35000000003
+      },
+      {
+        "date": "2025-01-04",
+        "deposits_count": 4623,
+        "deposits_sum": 266391.8900000001,
+        "withdraws_count": 1426,
+        "withdraws_sum": 252529.83999999997
+      },
+      {
+        "date": "2025-01-05",
+        "deposits_count": 4721,
+        "deposits_sum": 263298.79000000004,
+        "withdraws_count": 1014,
+        "withdraws_sum": 254279.59999999992
+      },
+      {
+        "date": "2025-01-06",
+        "deposits_count": 5381,
+        "deposits_sum": 348426.1999999999,
+        "withdraws_count": 867,
+        "withdraws_sum": 222881.17
+      },
+      {
+        "date": "2025-01-07",
+        "deposits_count": 6310,
+        "deposits_sum": 386613.7500000001,
+        "withdraws_count": 1626,
+        "withdraws_sum": 390134.2000000001
+      },
+      {
+        "date": "2025-01-08",
+        "deposits_count": 6777,
+        "deposits_sum": 381392.1199999999,
+        "withdraws_count": 1377,
+        "withdraws_sum": 334072.3500000001
+      },
+      {
+        "date": "2025-01-09",
+        "deposits_count": 6704,
+        "deposits_sum": 390283.82000000007,
+        "withdraws_count": 2213,
+        "withdraws_sum": 380120.1100000001
+      },
+      {
+        "date": "2025-01-10",
+        "deposits_count": 7641,
+        "deposits_sum": 456571.8800000001,
+        "withdraws_count": 2234,
+        "withdraws_sum": 358671.1000000001
+      },
+      {
+        "date": "2025-01-11",
+        "deposits_count": 6931,
+        "deposits_sum": 396791.8799999999,
+        "withdraws_count": 1392,
+        "withdraws_sum": 312529.55999999994
+      },
+      {
+        "date": "2025-01-12",
+        "deposits_count": 6134,
+        "deposits_sum": 352730.4700000001,
+        "withdraws_count": 1143,
+        "withdraws_sum": 246699.91
       },
       {
         "date": "2025-01-13",
@@ -724,10 +3187,17 @@
       },
       {
         "date": "2025-01-15",
-        "deposits_count": 3522,
-        "deposits_sum": 294723.85,
-        "withdraws_count": 708,
-        "withdraws_sum": 209001.11999999997
+        "deposits_count": 6539,
+        "deposits_sum": 502406.04999999993,
+        "withdraws_count": 1319,
+        "withdraws_sum": 383245.87000000005
+      },
+      {
+        "date": "2025-01-16",
+        "deposits_count": 3115,
+        "deposits_sum": 246515.99,
+        "withdraws_count": 692,
+        "withdraws_sum": 181457.47999999998
       }
     ]
   }
