@@ -1,6 +1,7 @@
 import { useState } from "react"
 import convertDates from "../../utils/convertDates.js"
 import { Bar, BarChart, CartesianGrid, LabelList, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import translate from "../../utils/translate.js";
 
 export default function CStacked({
     data,
@@ -14,7 +15,7 @@ export default function CStacked({
 
     const [currentHeader, setHeader] = useState('')
     const colors = ["#8d8d8d", "#009191", "#005151"]
-    
+
 
     return (
         <>
@@ -27,7 +28,7 @@ export default function CStacked({
             }
             <div>
                 <ResponsiveContainer
-                    width={1000}
+                    width={"100%"}
                     height={600}
                 >
                     <BarChart
@@ -43,9 +44,14 @@ export default function CStacked({
                         <CartesianGrid strokeDasharray={'3 3'} />
                         <XAxis
                             dataKey={label}
+                            tickFormatter={(date) => translate.translateDates(date)}
                         />
-                        <YAxis />
-                        <Tooltip />
+                        <YAxis 
+                             tickFormatter={(value) => translate.translateNumbers(value)}
+                        />
+                        <Tooltip 
+                             labelFormatter={(date) => translate.translateDates(date)}
+                        />
                         <Legend />
                         {
                             value?.map((itemValue, index) => (
@@ -55,6 +61,7 @@ export default function CStacked({
                                     stackId={stackId !== "pill" ? itemValue : stackId}
                                     fill={colors[index]}
                                     className="cursor-pointer"
+                                    name={translate.translateItem(itemValue)}
                                     barSize={25}
                                 >
                                     <LabelList

@@ -8,6 +8,7 @@ import docsCotroller from "../controllers/docsCotroller.js"
 import multer from '../utils/multer.js'
 import sheetsController from "../controllers/sheets-controller.js"
 import depositController from "../controllers/depositController.js"
+import transactionsController from "../controllers/transactionsController.js"
 
 const api = Router()
 
@@ -48,6 +49,7 @@ api.get('/sheets/get-mails-by-campaign/:campaignDataId/:campaignId/:factTypeId',
 //DEPOSITS
 api.get('/deposits/get-deposits-by-period/:start_date/:end_date', depositController.getDepositsByCurrentMonth)
 api.get('/deposits/get-withdrawals-by-period/:start_date/:end_date', depositController.getWhitdrawsByCurrentMonth)
+api.post('/transactions/get-transactions-today', transactionsController.getDepositsToday)
 
 cron.schedule('0 12 * * *', async () => {
     const dashId = 'hejtxd981'

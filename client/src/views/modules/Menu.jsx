@@ -25,8 +25,6 @@ export default function Menu({
     withdraws_sum: 0
   })
 
-
-
   function setItem(activeScreen, category) {
     setActiveScreen(activeScreen)
     setCategory(category)
@@ -67,8 +65,8 @@ export default function Menu({
       const splitDate = filterDate.split("/")
       const startDate = encodeURIComponent(`${splitDate[2]}-${splitDate[1]}-${splitDate[0]} 00:00:00`)
       const endDate = encodeURIComponent(`${splitDate[2]}-${splitDate[1]}-${splitDate[0]} 23:59:59`)
-
       const response = await service.getTransactionsBalance(startDate, endDate)
+
       setTransactionsValue(response)
       setIsFiltering(true)
 
@@ -88,6 +86,18 @@ export default function Menu({
     setIsFiltering(false)
 
   }
+
+  useEffect(() => {
+    
+    async function getTransactionsToday(dashId) {
+      const reponse = await service.getTransactionsToday({
+        dashId: dashId
+      })
+    }
+
+    getTransactionsToday("hejtxd982")
+
+  }, [])
 
   return (
     <>
