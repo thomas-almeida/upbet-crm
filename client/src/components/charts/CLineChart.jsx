@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import callendar from "../../utils/callendar.js"
+import translate from "../../utils/translate.js"
 
 export default function CLineChart({
     data,
@@ -119,8 +120,6 @@ export default function CLineChart({
             let selectedMonthsByYear = []
             let transactionsByMonth = []
 
-            console.log("st", currentYearReference)
-
             itemsByMonth.forEach((month, index) => {
                 if (month[index]?.date?.includes(currentYearReference)) {
                     selectedMonthsByYear.push(month)
@@ -178,6 +177,8 @@ export default function CLineChart({
             setFilteringBy('B')
         }
     }
+
+    console.log()
 
     return (
         <>
@@ -278,7 +279,7 @@ export default function CLineChart({
                                     <h2 className="text-2xl font-semibold text-[#008181]">
                                         {
                                             currentMonthReference !== ''
-                                            && filteringBy === 'A'
+                                                && filteringBy === 'A'
                                                 ? callendar?.translateMonth(currentMonthReference)
                                                 : `Ano de ${currentYearReference}`
                                         }
@@ -304,14 +305,27 @@ export default function CLineChart({
                         }}
                     >
                         <CartesianGrid strokeDasharray={"3 3"} />
-                        <XAxis dataKey={label} />
-                        <YAxis />
-                        <Tooltip />
+                        <XAxis
+                            dataKey={label}
+                            tickFormatter={(date) => translate.translateDates(date)}
+                        />
+                        <YAxis
+                            tickFormatter={(value) => translate.translateNumbers(value)}
+                        />
+                        <Tooltip
+                            labelFormatter={(date) => translate.translateDates(date)}
+                            formatter={(value, name) => {
+                                translate.translateNumbers(value)
+                                translate.translateItem(name)
+                            }}
+                        />
                         <Legend />
                         {
                             value.map((itemValue, index) => (
                                 <Line
                                     dataKey={itemValue}
+                                    name={translate.translateItem(itemValue)}
+                                    formatter={(value) => translate.translateNumbers(value)}
                                     stroke={colors[index]}
                                     activeDot={{ r: 8 }}
                                 />

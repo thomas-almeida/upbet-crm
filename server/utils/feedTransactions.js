@@ -62,6 +62,57 @@ async function getDepositsInADay(dashId) {
     fs.writeFileSync(dashDB, JSON.stringify(dashData, null, 2))
 }
 
+async function getDepositsToday(dashId) {
+
+    let dashData = JSON.parse(fs.readFileSync(dashDB, "utf8"))
+    const targetDashData = dashData.find((dash) => dash?.id === dashId)
+
+    console.log(dashId)
+
+    if (!targetDashData) {
+        console.error(`Dashboard com ID ${dashId} não encontrado.`)
+        return
+    }
+
+    const date = new Date()
+    const formatDatePart = (part) => (part < 10 ? `0${part}` : part)
+    const todayDate = `${date.getFullYear()}-${formatDatePart(date.getMonth() + 1)}-${formatDatePart(date.getDate())}`
+    const todayStartDate = `${todayDate} 00:00:00`
+    const todayEndDate = `${todayDate} 23:59:59`
+
+    try {
+
+        const response = await axios.get(`${baseUrl}?start_date=${todayStartDate}&end_date=${todayEndDate}`, {
+            headers: {
+                "x-signature": signature,
+                "Content-Type": "application/json",
+            },
+        })
+
+        const transactions = response.data
+
+        const obj = {
+            date: todayDate,
+            deposits_count: transactions?.deposits_count || 0,
+            deposits_sum: transactions?.deposits_sum || 0,
+            withdraws_count: transactions?.withdraws_count || 0,
+            withdraws_sum: transactions?.withdraws_sum || 0,
+        }
+
+        const existingIndex = targetDashData.results.findIndex((entry) => entry.date === todayDate)
+
+        if (existingIndex !== -1) {
+            targetDashData.results[existingIndex] = obj
+        } else {
+            targetDashData.results.push(obj)
+        }
+
+        fs.writeFileSync(dashDB, JSON.stringify(dashData, null, 2))
+        console.log(`Dados de ${todayDate} atualizados com sucesso.`)
+    } catch (error) {
+        console.error("Erro ao buscar ou atualizar os dados:", error.message)
+    }
+}
 
 async function getDepositsToday(dashId) {
 
@@ -113,6 +164,8 @@ async function getDepositsToday(dashId) {
     }
 }
 
+//getDepositsToday("hejtxd982")
 
-
-getDepositsToday("hejtxd982")
+export default {
+    getDepositsToday
+}
