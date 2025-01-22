@@ -2,13 +2,13 @@ import axios from "axios"
 import baseUrl from '../utils/baseUrl.js'
 
 const signIn = async (payload) => {
-  const response = await axios.post(`${baseUrl.localhost}/user/sign-in`, payload)
+  const response = await axios.post(`${baseUrl.productionUp}/user/sign-in`, payload)
   return response.data
 }
 
 const getUserById = async (userId) => {
   const response = await axios.get(
-    `${baseUrl.localhost}/user/get-user-by-id/${userId}`, {
+    `${baseUrl.productionUp}/user/get-user-by-id/${userId}`, {
     headers: {
       "ngrok-skip-browser-warning": "true"
     }
@@ -19,7 +19,7 @@ const getUserById = async (userId) => {
 
 const getDashData = async () => {
   const response = await axios.get(
-    `${baseUrl.localhost}/get-dash-data`, {
+    `${baseUrl.productionUp}/get-dash-data`, {
     headers: {
       "ngrok-skip-browser-warning": "true"
     }
@@ -30,7 +30,7 @@ const getDashData = async () => {
 
 const getDashById = async (dashId) => {
   const response = await axios.get(
-    `${baseUrl.localhost}/get-dash-by-id/${dashId}`, {
+    `${baseUrl.productionUp}/get-dash-by-id/${dashId}`, {
     headers: {
       "ngrok-skip-browser-warning": "true"
     }
@@ -41,7 +41,7 @@ const getDashById = async (dashId) => {
 
 const getKPIs = async () => {
   const response = await axios.get(
-    `${baseUrl.localhost}/kpi/get-all-kpis`, {
+    `${baseUrl.productionUp}/kpi/get-all-kpis`, {
     headers: {
       "ngrok-skip-browser-warning": "true"
     }
@@ -52,7 +52,7 @@ const getKPIs = async () => {
 
 const getAllCampaings = async () => {
   const response = await axios.get(
-    `${baseUrl.localhost}/campaigns/get-all-campaigns`, {
+    `${baseUrl.productionUp}/campaigns/get-all-campaigns`, {
     headers: {
       "ngrok-skip-browser-warning": "true"
     }
@@ -64,7 +64,7 @@ const getAllCampaings = async () => {
 
 const getDocsData = async () => {
   const response = await axios.get(
-    `${baseUrl.localhost}/docs/get-docs`, {
+    `${baseUrl.productionUp}/docs/get-docs`, {
     headers: {
       "ngrok-skip-browser-warning": "true"
     }
@@ -79,7 +79,7 @@ const uploadScriptFile = async (file) => {
   const formData = new FormData()
   formData.append('file', file)
 
-  const response = await axios.post(`${baseUrl.localhost}/docs/upload-script-file`, formData, {
+  const response = await axios.post(`${baseUrl.productionUp}/docs/upload-script-file`, formData, {
     headers: {
       'Content-Type': 'multipart/form-data',
     },
@@ -88,7 +88,7 @@ const uploadScriptFile = async (file) => {
 }
 
 const createScriptDoc = async (payload) => {
-  const response = await axios.post(`${baseUrl.localhost}/docs/create-new-script-doc`, payload)
+  const response = await axios.post(`${baseUrl.productionUp}/docs/create-new-script-doc`, payload)
   return response.data
 }
 
@@ -103,7 +103,7 @@ const getTransactionsBalance = async (start_date, end_date) => {
 }
 
 const getTransactionsToday = async (payload) => {
-  const response = await axios.post(`${baseUrl.localhost}/transactions/get-transactions-today`, payload)
+  const response = await axios.post(`${baseUrl.productionUp}/transactions/get-transactions-today`, payload)
   return response.data
 }
 
