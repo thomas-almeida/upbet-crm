@@ -76,7 +76,7 @@ export default function Category
       })
 
       setCampaigns(campaignIds)
-
+      
     }
 
     getCampaigns()
@@ -437,7 +437,7 @@ export default function Category
                       >
                         <div className="relative flex justify-start items-center">
                           <p className="text-sm font-semibold p-1">
-                            FTD
+                            FTDs
                           </p>
                           <p className="absolute right-0 cursor-pointer rotate-45"
                             data-tooltip-id={`tooltip-${data?.id}`}
