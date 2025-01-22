@@ -55,6 +55,7 @@ export default function DashChart({
                   value={chartData?.guides?.value}
                   headers={chartData?.headers}
                   stackId={chartData?.guides?.stackType}
+                  filter={chartData?.filter}
                 />
               }
               {

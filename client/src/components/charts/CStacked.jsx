@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import convertDates from "../../utils/convertDates.js"
 import { Bar, BarChart, CartesianGrid, LabelList, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import translate from "../../utils/translate.js";
+import callendar from "../../utils/callendar.js";
 
 export default function CStacked({
     data,
@@ -10,12 +11,88 @@ export default function CStacked({
     label,
     value,
     headers,
-    stackId
+    stackId,
+    filter
 }) {
 
     const [currentHeader, setHeader] = useState('')
-    const colors = ["#8d8d8d", "#009191", "#005151"]
+    const [itemsByMonth, setItemsByMonth] = useState([])
+    const [monthsToFilter, setMonthsToFilter] = useState([])
+    const [currentMonthReference, setCurrentMonthReference] = useState('')
+    const [filteredData, setFilteredData] = useState([])
+    const colors = ["#A4A4A4", "#00CC99", "#005151"]
 
+    useEffect(() => {
+
+        function filterByMonth() {
+
+            let dates = []
+            data.forEach((items) => {
+                const splitedDate = items["event_date"]?.split("-")
+                dates.push(`${splitedDate[1]}/${splitedDate[0]}`)
+            })
+
+            const uniqueMonths = [...new Set(dates)]
+            setMonthsToFilter(uniqueMonths)
+        }
+
+        filterByMonth()
+
+    }, [data])
+
+    useEffect(() => {
+
+        function itemsByFilteredMonth() {
+
+            let filter = []
+            monthsToFilter.forEach((month) => {
+                let splitDate = month.split("/")
+                filter.push(data.filter((item) => item["event_date"]?.includes(`${splitDate[1]}-${splitDate[0]}`)))
+            })
+            setItemsByMonth(filter)
+        }
+
+        itemsByFilteredMonth()
+
+    }, [monthsToFilter])
+
+    useEffect(() => {
+
+        function getMonthReference() {
+
+            if (monthsToFilter.length > 0 && itemsByMonth.length > 0) {
+                const firstMonthReferenceList = itemsByMonth[0]
+                const firstMothReference = firstMonthReferenceList[0]["event_date"]?.split("-")
+
+                setCurrentMonthReference(`${firstMothReference[1]}/${firstMothReference[0]}`)
+            }
+       
+        }
+
+        getMonthReference()
+
+    }, [itemsByMonth])
+
+    useEffect(() => {
+
+        function getListOfMonth() {
+
+            itemsByMonth.forEach((list, index) => {
+                const splitedMonthReference = currentMonthReference?.split("/")
+
+                if (list[index]["event_date"]?.includes(`${splitedMonthReference[1]}-${splitedMonthReference[0]}`)) {
+                    setFilteredData(list)
+                }
+            })
+        }
+
+
+        getListOfMonth()
+    }, [currentMonthReference, itemsByMonth])
+
+    function handleSet(e) {
+        setCurrentMonthReference(e)
+    }
 
     return (
         <>
@@ -26,13 +103,50 @@ export default function CStacked({
                     </div>
                 ) : ''
             }
+            {
+                filter ? (
+                    <div className="flex justify-start items-center relative w-full">
+                        <div
+                            className="text-left"
+                        >
+                            <div>
+                                <h2 className="font-semibold">Por Mês</h2>
+                            </div>
+                            <select
+                                className='px-4 py-1 rounded-md border-2 cursor-pointer outline-[#008181]'
+                                onChange={(e) => handleSet(e.target.value)}
+                            >
+                                <option
+                                    value={'Selecione'}
+                                    disabled
+                                    selected
+                                >
+                                    Selecione
+                                </option>
+                                {
+                                    monthsToFilter.map((month, index) => (
+                                        <option
+                                            value={month}
+                                            key={index}
+                                        >
+                                            {
+                                                callendar.translateMonth(month)
+                                            }
+                                        </option>
+                                    ))
+                                }
+                            </select>
+                        </div>
+                    </div>
+                ) : ''
+            }
             <div>
                 <ResponsiveContainer
                     width={"100%"}
                     height={600}
                 >
                     <BarChart
-                        data={data}
+                        data={filteredData}
                         barSize={25}
                         margin={{
                             top: 15,
@@ -46,11 +160,11 @@ export default function CStacked({
                             dataKey={label}
                             tickFormatter={(date) => translate.translateDates(date)}
                         />
-                        <YAxis 
-                             tickFormatter={(value) => translate.translateNumbers(value)}
+                        <YAxis
+                            tickFormatter={(value) => translate.translateNumbers(value)}
                         />
-                        <Tooltip 
-                             labelFormatter={(date) => translate.translateDates(date)}
+                        <Tooltip
+                            labelFormatter={(date) => translate.translateDates(date)}
                         />
                         <Legend />
                         {
