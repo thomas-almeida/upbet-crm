@@ -93,7 +93,7 @@ const createScriptDoc = async (payload) => {
 }
 
 const getTransactionsBalance = async (start_date, end_date) => {
-  const response = await axios.get(`${baseUrl.upsports}/transactions/balance?start_date=${start_date}&end_date=${end_date}`, {
+  const response = await axios.get(`${baseUrl.productionUp}/proxy/get-transactions-ballance?start_date=${start_date}&end_date=${end_date}`, {
     headers: {
       'x-signature': `${baseUrl.upsportsKey}`
     }
