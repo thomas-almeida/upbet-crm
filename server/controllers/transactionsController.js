@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const dashDB = path.join(__dirname, '..', 'db', 'dash-data.json')
-const baseUrl = 'https://api.originals.upsports.app:3000/sportingtech/transactions/balance'
+const baseUrl = 'https://api.originals.upbet.dev/sportingtech/transactions/balance'
 const signature = 'add2aea4982a6bca11794494a8c6d2057045787400dde7135b9d4d6f'
 
 async function getDepositsToday(req, res) {

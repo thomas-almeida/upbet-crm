@@ -9,6 +9,7 @@ import multer from '../utils/multer.js'
 import sheetsController from "../controllers/sheets-controller.js"
 import depositController from "../controllers/depositController.js"
 import transactionsController from "../controllers/transactionsController.js"
+import proxyController from "../controllers/proxyController.js"
 
 const api = Router()
 
@@ -50,6 +51,9 @@ api.get('/sheets/get-mails-by-campaign/:campaignDataId/:campaignId/:factTypeId',
 api.get('/deposits/get-deposits-by-period/:start_date/:end_date', depositController.getDepositsByCurrentMonth)
 api.get('/deposits/get-withdrawals-by-period/:start_date/:end_date', depositController.getWhitdrawsByCurrentMonth)
 api.post('/transactions/get-transactions-today', transactionsController.getDepositsToday)
+
+//Proxy
+api.get('/proxy/get-transactions-ballance', proxyController.proxyTransactionsBalance)
 
 cron.schedule('0 12 * * *', async () => {
     const dashId = 'hejtxd981'
