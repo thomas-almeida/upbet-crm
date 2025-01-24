@@ -7,3 +7,4 @@ server/utils/sheets-credentials.json
 server/queries/gamification/
 server/queries/campaign/
 server/uploads/
+server/db
