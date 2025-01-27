@@ -1,1 +1,25 @@
-[]
+[
+  {
+    "id": "xlhrwc280",
+    "name": "Teste",
+    "details": "teste",
+    "tags": [
+      "aaa"
+    ],
+    "file": {
+      "fieldname": "file",
+      "originalname": "chimpers.js",
+      "encoding": "7bit",
+      "mimetype": "text/javascript",
+      "destination": "uploads/",
+      "filename": "chimpers.js",
+      "path": "uploads\\chimpers.js",
+      "size": 1522
+    },
+    "owner": {
+      "id": "reatxp162",
+      "name": "Thomas Almeida",
+      "profile": "https://pbs.twimg.com/profile_images/1877217025937870848/szgF63NY_400x400.jpg"
+    }
+  }
+]

@@ -5,7 +5,10 @@
     "createdAt": "2024-12-16",
     "metricLabel": "journey",
     "chartType": "stacked",
-    "filter": "",
+    "filter": {
+      "type": "month",
+      "label": "date"
+    },
     "guides": {
       "label": "event_date",
       "value": [
@@ -134,12 +137,47 @@
       {
         "event_date": "2025-01-18",
         "target_users": 2210,
-        "converted_users": 521
+        "converted_users": 501
       },
       {
         "event_date": "2025-01-19",
-        "target_users": 88,
-        "converted_users": 78
+        "target_users": 2705,
+        "converted_users": 111
+      },
+      {
+        "event_date": "2025-01-20",
+        "target_users": 1764,
+        "converted_users": 542
+      },
+      {
+        "event_date": "2025-01-21",
+        "target_users": 2643,
+        "converted_users": 919
+      },
+      {
+        "event_date": "2025-01-22",
+        "target_users": 3737,
+        "converted_users": 1047
+      },
+      {
+        "event_date": "2025-01-23",
+        "target_users": 4254,
+        "converted_users": 990
+      },
+      {
+        "event_date": "2025-01-24",
+        "target_users": 4004,
+        "converted_users": 1005
+      },
+      {
+        "event_date": "2025-01-25",
+        "target_users": 2508,
+        "converted_users": 546
+      },
+      {
+        "event_date": "2025-01-26",
+        "target_users": 79,
+        "converted_users": 80
       }
     ]
   },
@@ -3237,10 +3275,59 @@
       },
       {
         "date": "2025-01-20",
-        "deposits_count": 2557,
-        "deposits_sum": 161885.87999999998,
-        "withdraws_count": 513,
-        "withdraws_sum": 143350.97
+        "deposits_count": 4807,
+        "deposits_sum": 315587.06,
+        "withdraws_count": 975,
+        "withdraws_sum": 295168.4699999999
+      },
+      {
+        "date": "2025-01-21",
+        "deposits_count": 5020,
+        "deposits_sum": 393421.37,
+        "withdraws_count": 967,
+        "withdraws_sum": 314576.00999999983
+      },
+      {
+        "date": "2025-01-22",
+        "deposits_count": 6979,
+        "deposits_sum": 505816.7599999998,
+        "withdraws_count": 1359,
+        "withdraws_sum": 395042.60999999987
+      },
+      {
+        "date": "2025-01-23",
+        "deposits_count": 4987,
+        "deposits_sum": 459699.2599999999,
+        "withdraws_count": 989,
+        "withdraws_sum": 282741.49000000005
+      },
+      {
+        "date": "2025-01-24",
+        "deposits_count": 5183,
+        "deposits_sum": 405139.32000000007,
+        "withdraws_count": 1122,
+        "withdraws_sum": 290018.9600000001
+      },
+      {
+        "date": "2025-01-25",
+        "deposits_count": 7058,
+        "deposits_sum": 470762.09999999986,
+        "withdraws_count": 1246,
+        "withdraws_sum": 408151.8199999999
+      },
+      {
+        "date": "2025-01-26",
+        "deposits_count": 5913,
+        "deposits_sum": 456639.39999999997,
+        "withdraws_count": 1227,
+        "withdraws_sum": 315379.38999999996
+      },
+      {
+        "date": "2025-01-27",
+        "deposits_count": 1451,
+        "deposits_sum": 84787.68000000001,
+        "withdraws_count": 307,
+        "withdraws_sum": 59846.73000000001
       }
     ]
   }
