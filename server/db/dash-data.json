@@ -172,12 +172,22 @@
       {
         "event_date": "2025-01-25",
         "target_users": 2508,
-        "converted_users": 546
+        "converted_users": 538
       },
       {
         "event_date": "2025-01-26",
-        "target_users": 79,
-        "converted_users": 80
+        "target_users": 2175,
+        "converted_users": 89
+      },
+      {
+        "event_date": "2025-01-27",
+        "target_users": 1673,
+        "converted_users": 519
+      },
+      {
+        "event_date": "2025-01-28",
+        "target_users": 134,
+        "converted_users": 132
       }
     ]
   },
@@ -3324,10 +3334,17 @@
       },
       {
         "date": "2025-01-27",
-        "deposits_count": 1451,
-        "deposits_sum": 84787.68000000001,
-        "withdraws_count": 307,
-        "withdraws_sum": 59846.73000000001
+        "deposits_count": 6054,
+        "deposits_sum": 410011.5700000002,
+        "withdraws_count": 1262,
+        "withdraws_sum": 305151.87999999983
+      },
+      {
+        "date": "2025-01-28",
+        "deposits_count": 2356,
+        "deposits_sum": 156339.09000000003,
+        "withdraws_count": 473,
+        "withdraws_sum": 102391.5
       }
     ]
   }

@@ -31,7 +31,6 @@ const query = `
             GROUP BY DATE(TIMESTAMP_ADD(conv.event_date, INTERVAL -3 HOUR))
             ORDER BY event_date
         `
-
 let dashes = []
 let campaigns = []
 let kpis = []
