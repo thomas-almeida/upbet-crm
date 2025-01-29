@@ -3350,6 +3350,13 @@
         "deposits_sum": 308269.18000000017,
         "withdraws_count": 850,
         "withdraws_sum": 241013.3399999999
+      },
+      {
+        "date": "2025-01-29",
+        "deposits_count": 2291,
+        "deposits_sum": 138912.84000000003,
+        "withdraws_count": 426,
+        "withdraws_sum": 99786.87000000001
       }
     ]
   }
