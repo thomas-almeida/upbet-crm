@@ -5,7 +5,7 @@ import fs, { fsync } from "fs"
 import path from "path"
 import { fileURLToPath } from "url"
 
-const depositBaseUrl = "https://api.originals.upsports.app:3000/sportingtech/misc/balance/customers"
+const depositBaseUrl = "https://api.originals.upbet.dev/sportingtech/misc/balance/customers"
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const campaignDB = path.join(__dirname, '..', 'db', 'campaign-data.json')
 
@@ -245,35 +245,47 @@ async function getUsersTargetByCampaignId(req, res) {
 // trigger
 async function getUsersImpact(campaignDataId, campaignId) {
     try {
+        // Ler os dados do arquivo JSON
+        const campaignData = JSON.parse(fs.readFileSync(campaignDB, 'utf-8'));
 
-        let campaignData = []
-        campaignData = JSON.parse(fs.readFileSync(campaignDB, 'utf-8'))
-
-        // Obtendo os customers da campanha
-        const sqlQuery = query.usrs_by_campaign_id(campaignId)
-        const queryResults = await queryExtId.executeBigQuery(String(sqlQuery))
-
-        // Mapear customers como inteiros
-        const customers = queryResults.map((result) => parseInt(result))
-
-        const chunkSize = 10000
-        const chunks = []
-
-        for (let i = 0; i < customers.length; i += chunkSize) {
-            chunks.push(customers.slice(i, i + chunkSize))
+        // Localizar a campanha principal
+        const selectedCampaignData = campaignData.find((campaign) => campaign.id === campaignDataId);
+        if (!selectedCampaignData) {
+            console.error(`Campanha principal com ID ${campaignDataId} não encontrada.`);
+            return;
         }
 
-        const selectedCampaignData = campaignData.find((campaign) => campaign.id === campaignDataId)
-        const targetCampaign = selectedCampaignData.campaigns.find((target) => target['Campaing ID'] === campaignId)
+        // Localizar a campanha alvo
+        const targetCampaign = selectedCampaignData.campaigns.find((target) => target['Campaing ID'] === campaignId);
+        if (!targetCampaign) {
+            console.error(`Campanha com ID ${campaignId} não encontrada no ID principal ${campaignDataId}.`);
+            return;
+        }
 
-        let depositsCount = 0
+        // Obter e mapear os customers da campanha
+        const sqlQuery = query.usrs_by_campaign_id(campaignId);
+        const queryResults = await queryExtId.executeBigQuery(String(sqlQuery));
+        const customers = queryResults.map((result) => parseInt(result));
 
-        const [dd, mm, yyyy] = targetCampaign['Data'].split("/")
-        const startDate = `${yyyy}-${mm}-${dd} 19:00:00`
-        const endDate = `${yyyy}-${mm}-${parseInt(dd) + 2} 19:00:00`
+        if (customers.length === 0) {
+            console.log(`Nenhum customer encontrado para a campanha ${campaignId}.`);
+            targetCampaign['Clientes impactados'] = 0;
+            return;
+        }
 
+        const chunkSize = 10000;
+        const chunks = [];
+        for (let i = 0; i < customers.length; i += chunkSize) {
+            chunks.push(customers.slice(i, i + chunkSize));
+        }
+
+        // Configurar datas de início e fim
+        const [dd, mm, yyyy] = targetCampaign['Data'].split("/");
+        const startDate = `${yyyy}-${mm}-${dd} 19:00:00`;
+        const endDate = `${yyyy}-${mm}-${parseInt(dd) + 2} 19:00:00`;
+
+        // Processar dados em chunks
         const chunkResults = await Promise.all(chunks.map(async (chunk) => {
-
             const payload = {
                 customers: chunk,
                 start_date: startDate,
@@ -291,17 +303,20 @@ async function getUsersImpact(campaignDataId, campaignId) {
 
                 return data.reduce((acc, cv) => acc + (cv.deposits_count > 0 ? 1 : 0), 0);
             } catch (err) {
-                console.error("Erro no processamento do chunk:", err.message);
-                return 0; // Retorna 0 em caso de erro para evitar inconsistência.
+                console.error(`Erro no processamento do chunk para campanha ${campaignId}:`, err.message);
+                return 0;
             }
         }));
-        depositsCount = chunkResults.reduce((acc, chunkCount) => acc + chunkCount, 0);
-        targetCampaign['Clientes impactados'] = depositsCount
-        fs.writeFileSync(campaignDB, JSON.stringify(campaignData, null, 2))
-        console.log(`Clientes Impactados ${campaignId}: ${depositsCount}`)
+
+        // Calcular o total de clientes impactados
+        const depositsCount = chunkResults.reduce((acc, chunkCount) => acc + chunkCount, 0);
+
+        // Atualizar o valor em 'Clientes impactados'
+        targetCampaign['Clientes impactados'] = depositsCount;
+        console.log(`Clientes Impactados ${campaignId}: ${depositsCount}`);
 
     } catch (err) {
-        console.error(err)
+        console.error(`Erro ao processar a campanha ${campaignId}:`, err);
     }
 }
 
@@ -387,8 +402,10 @@ async function getMailsByCampaignId(campaignDataId, campaignId, factTypeId) {
     const queryResults = await queryExtId.getTotalItems(sqlQuery)
     const totalMails = queryResults?.total
 
-    const selectedCampaignData = campaignData.find((campaign) => campaign.id === campaignDataId)
-    const targetCampaign = selectedCampaignData.campaigns.find((target) => target['Campaing ID'] === campaignId)
+    const selectedCampaignData = campaignData?.find((campaign) => campaign.id === campaignDataId)
+    const targetCampaign = selectedCampaignData?.campaigns?.find((target) => target['Campaing ID'] === campaignId)
+
+    console.log(factTypeId, targetCampaign)
 
     if (factTypeId == 2) {
         console.log(String(totalMails))

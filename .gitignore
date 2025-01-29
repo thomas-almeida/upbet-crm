@@ -8,3 +8,4 @@ server/queries/gamification/
 server/queries/campaign/
 server/uploads/
 server/db
+server/utils/run-userImpact.js
