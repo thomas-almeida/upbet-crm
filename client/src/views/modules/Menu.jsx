@@ -67,6 +67,14 @@ export default function Menu({
       const endDate = encodeURIComponent(`${splitDate[2]}-${splitDate[1]}-${splitDate[0]} 23:59:59`)
       const response = await service.getTransactionsBalance(startDate, endDate)
 
+      const payload = {
+        dashId: "hejtxd982",
+        targetDate: filterDate
+      }
+
+      const updateResponse = await service.getTransactionsByDate(payload)
+      console.log(updateResponse)
+
       setTransactionsValue(response)
       setIsFiltering(true)
 
@@ -88,7 +96,7 @@ export default function Menu({
   }
 
   useEffect(() => {
-    
+
     async function getTransactionsToday(dashId) {
       const reponse = await service.getTransactionsToday({
         dashId: dashId
