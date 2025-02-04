@@ -66,7 +66,7 @@ export default function CStacked({
 
                 setCurrentMonthReference(`${firstMothReference[1]}/${firstMothReference[0]}`)
             }
-       
+
         }
 
         getMonthReference()
@@ -78,12 +78,22 @@ export default function CStacked({
         function getListOfMonth() {
 
             itemsByMonth.forEach((list, index) => {
-                const splitedMonthReference = currentMonthReference?.split("/")
 
-                if (list[index]["event_date"]?.includes(`${splitedMonthReference[1]}-${splitedMonthReference[0]}`)) {
-                    setFilteredData(list)
+                let splitedMonthReference
+
+                if (currentMonthReference != "") {
+                    
+                    splitedMonthReference = currentMonthReference?.split("/")
+
+                    if (list[index]["event_date"]?.includes(`${splitedMonthReference[1]}-${splitedMonthReference[0]}`)) {
+                        setFilteredData(list)
+                    }
                 }
+
             })
+
+            console.log(monthsToFilter)
+
         }
 
 
