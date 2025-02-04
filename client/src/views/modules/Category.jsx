@@ -186,7 +186,7 @@ export default function Category
                   data?.referenceMonth === currentMonthReference &&
                     category === 'campaign' ? (
                     <div
-                      className="grid grid-cols-4 justify-start items-center"
+                      className="grid grid-cols-3 justify-start items-center"
                       key={data?.id}
                     >
                       <div
@@ -195,23 +195,6 @@ export default function Category
                         <div className="relative flex justify-start items-center">
                           <p className="text-sm font-semibold p-1">
                             Custo Total
-                          </p>
-                          <p className="absolute right-0 cursor-pointer rotate-45"
-                            data-tooltip-id={`tooltip-${data?.id}`}
-                          >
-                            {
-                              compareMonths(data.referenceMonth, sumAllKPI(data?.campaigns, 'Custo Total'), 'Custo Total') ?
-                                <ArrowUp
-                                  color={'#ff0000'}
-                                  height="20px"
-                                  width="20px"
-                                /> :
-                                <ArrowDown
-                                  color={'#008181'}
-                                  height="20px"
-                                  width="20px"
-                                />
-                            }
                           </p>
                         </div>
                         <h2
@@ -237,23 +220,6 @@ export default function Category
                           <p className="text-sm font-semibold p-1">
                             Clientes impactados
                           </p>
-                          <p className="absolute right-0 cursor-pointer rotate-45"
-                            data-tooltip-id={`tooltip-${data?.id}`}
-                          >
-                            {
-                              compareMonths(data.referenceMonth, sumAllKPI(data?.campaigns, 'Custo Total'), 'Custo Total') ?
-                                <ArrowUp
-                                  color={'#008181'}
-                                  height="20px"
-                                  width="20px"
-                                /> :
-                                <ArrowDown
-                                  color={'#ff0000'}
-                                  height="20px"
-                                  width="20px"
-                                />
-                            }
-                          </p>
                         </div>
                         <h2
                           className="text-3xl font-semibold p-2 fadeInUp-animation overflow-clip text-ellipsis whitespace-nowrap cursor-pointer"
@@ -274,23 +240,6 @@ export default function Category
                         <div className="relative flex justify-start items-center">
                           <p className="text-sm font-semibold p-1">
                             Custo Total de Email
-                          </p>
-                          <p className="absolute right-0 cursor-pointer rotate-45"
-                            data-tooltip-id={`tooltip-${data?.id}`}
-                          >
-                            {
-                              compareMonths(data.referenceMonth, sumAllKPI(data?.campaigns, 'Custo email'), 'Custo email') ?
-                                <ArrowUp
-                                  color={'#ff0000'}
-                                  height="20px"
-                                  width="20px"
-                                /> :
-                                <ArrowDown
-                                  color={'#008181'}
-                                  height="20px"
-                                  width="20px"
-                                />
-                            }
                           </p>
                         </div>
                         <h2
@@ -315,23 +264,6 @@ export default function Category
                         <div className="relative flex justify-start items-center">
                           <p className="text-sm font-semibold p-1">
                             Custo Total de SMS
-                          </p>
-                          <p className="absolute right-0 cursor-pointer rotate-45"
-                            data-tooltip-id={`tooltip-${data?.id}`}
-                          >
-                            {
-                              compareMonths(data.referenceMonth, sumAllKPI(data?.campaigns, 'Custo SMS'), 'Custo SMS') ?
-                                <ArrowUp
-                                  color={'#ff0000'}
-                                  height="20px"
-                                  width="20px"
-                                /> :
-                                <ArrowDown
-                                  color={'#008181'}
-                                  height="20px"
-                                  width="20px"
-                                />
-                            }
                           </p>
                         </div>
                         <h2
@@ -433,7 +365,7 @@ export default function Category
                       </div>
 
                       <div
-                        className="p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left"
+                        className="p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left hidden"
                       >
                         <div className="relative flex justify-start items-center">
                           <p className="text-sm font-semibold p-1">

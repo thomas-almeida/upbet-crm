@@ -80,15 +80,18 @@ export default function CLineChart({
 
         function getListOfMonth() {
 
-            itemsByMonth.forEach((list, index) => {
-                const splitedMonthReference = currentMonthReference?.split("/")
+            if (currentMonthReference !== '') {
 
-                if (list[index]?.date?.includes(`${splitedMonthReference[1]}-${splitedMonthReference[0]}`)) {
-                    setFilteredData(list)
-                }
-            })
+                const listOfMonths = itemsByMonth.find((list) => {
+                    const splitedMonthReference = currentMonthReference?.split("/")
+                    return list.some((item) => item?.date?.includes(`${splitedMonthReference[1]}-${splitedMonthReference[0]}`))
+                })
+
+                setFilteredData(listOfMonths || [])
+
+            }
+
         }
-
 
         getListOfMonth()
     }, [currentMonthReference, itemsByMonth])
@@ -114,59 +117,38 @@ export default function CLineChart({
     }, [monthsToFilter])
 
     useEffect(() => {
-
         function filterByYear() {
 
-            let selectedMonthsByYear = []
-            let transactionsByMonth = []
+            const selectedMonthsByYear = itemsByMonth.filter((month) => {
+                return month.some((day) => day?.date?.includes(currentYearReference))
+            })
 
-            itemsByMonth.forEach((month, index) => {
-                if (month[index]?.date?.includes(currentYearReference)) {
-                    selectedMonthsByYear.push(month)
+            const transactionsByMonth = selectedMonthsByYear.map((month) => {
+                let deposits = 0
+                let withdraws = 0
+
+                const firstValidDay = month.find((day) => day?.date)
+                if (!firstValidDay) return null
+
+                const [year, monthNumber] = firstValidDay.date.split('-')
+
+                month.forEach((day) => {
+                    deposits += day.deposits_sum || 0
+                    withdraws += day.withdraws_sum || 0
+                })
+
+                return {
+                    date: callendar.getMonthById(Number(monthNumber)),
+                    deposits_sum: deposits,
+                    withdraws_sum: withdraws,
                 }
-            })
-
-            selectedMonthsByYear.forEach((month, index) => {
-
-                let deposits = []
-                let withdraws = []
-
-                month.forEach((day) => {
-
-                    const currentMonth = index + 1
-
-                    if (day?.date?.includes(`-${isDecimal(currentMonth)}-`)) {
-                        deposits.push(day?.deposits_sum)
-                    }
-                })
-
-                month.forEach((day) => {
-
-                    const currentMonth = index + 1
-
-                    if (day?.date?.includes(`-${isDecimal(currentMonth)}-`)) {
-                        withdraws.push(day?.withdraws_sum)
-                    }
-                })
-
-                let monthId = index + 1
-
-                transactionsByMonth.push({
-                    date: callendar.getMonthById(monthId),
-                    deposits_sum: deposits.reduce((acc, cv) => acc + cv, 0),
-                    withdraws_sum: withdraws.reduce((acc, cv) => acc + cv, 0)
-                })
-
-            })
+            }).filter(Boolean)
 
             setFilteredData(transactionsByMonth)
-
         }
 
         filterByYear()
-
     }, [itemsByMonth, currentYearReference])
-
 
     function handleSet(e) {
         if (e?.includes("/")) {
@@ -177,8 +159,6 @@ export default function CLineChart({
             setFilteringBy('B')
         }
     }
-
-    console.log()
 
     return (
         <>
@@ -325,9 +305,9 @@ export default function CLineChart({
                                 <Line
                                     dataKey={itemValue}
                                     name={translate.translateItem(itemValue)}
-                                    formatter={(value) => translate.translateNumbers(value)}
+                                    formatter={(value) => `R$ ${translate.translateNumbers(value)}`}
                                     stroke={colors[index]}
-                                    activeDot={{ r: 8 }}
+                                    activeDot={{ r: 9 }}
                                 />
                             ))
                         }

@@ -103,6 +103,11 @@ const getTransactionsBalance = async (start_date, end_date) => {
   return response.data
 }
 
+const getTransactionsByDate = async (payload) => {
+  const response = await axios.post(`${baseUrl.productionHome}/transactions/get-transactions-by-date`, payload)
+  return response.data
+}
+
 const getTransactionsToday = async (payload) => {
   const response = await axios.post(`${baseUrl.productionHome}/transactions/get-transactions-today`, payload)
   return response.data
@@ -119,5 +124,6 @@ export default {
   uploadScriptFile,
   createScriptDoc,
   getTransactionsBalance,
-  getTransactionsToday
+  getTransactionsToday,
+  getTransactionsByDate
 }
