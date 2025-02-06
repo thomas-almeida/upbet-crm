@@ -76,7 +76,7 @@ export default function Category
       })
 
       setCampaigns(campaignIds)
-      
+
     }
 
     getCampaigns()
@@ -396,6 +396,47 @@ export default function Category
                           <CountUp
                             start={0}
                             end={sumAllKPI(data?.campaigns, 'FTD')}
+                            duration={2.5}
+                            separator="."
+                          />
+                        </h2>
+                      </div>
+
+                      <div
+                        className={`p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left`} 
+                      >
+                        <div className="relative flex justify-start items-center">
+                          <p className="text-sm font-semibold p-1">
+                            Custos de Voz
+                          </p>
+                          <p className="absolute right-0 cursor-pointer rotate-45 hidden"
+                            data-tooltip-id={`tooltip-${data?.id}`}
+                          >
+                            {
+                              compareMonths(data.referenceMonth, sumAllKPI(data?.campaigns, 'voiceCost'), 'voiceCost') ?
+                                <ArrowUp
+                                  color={'#008181'}
+                                  height="20px"
+                                  width="20px"
+                                /> :
+                                <ArrowDown
+                                  color={'#ff0000'}
+                                  height="20px"
+                                  width="20px"
+                                />
+                            }
+                          </p>
+                        </div>
+                        <h2
+                          className="text-3xl font-semibold p-2 fadeInUp-animation overflow-clip text-ellipsis whitespace-nowrap cursor-pointer"
+                          data-tooltip-content={`${sumAllKPI(data?.campaigns, 'voiceCost')}`}
+                        >
+                          <CountUp
+                            start={0}
+                            end={sumAllKPI(data?.campaigns, 'voiceCost')}
+                            prefix="R$"
+                            decimals={2}
+                            decimal=","
                             duration={2.5}
                             separator="."
                           />
