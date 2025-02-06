@@ -72,7 +72,10 @@ export default function Category
       const campaigns = campaignData.find((campaignData) => campaignData.referenceMonth === currentMonthReference)
 
       campaigns?.campaigns?.forEach((campaign) => {
-        campaignIds.push(campaign['Campaing ID'])
+        campaignIds.push({
+          id: campaign['Campaing ID'],
+          name: campaign['Segmentação']
+        })
       })
 
       setCampaigns(campaignIds)
