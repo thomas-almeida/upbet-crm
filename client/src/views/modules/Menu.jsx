@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { ArrowUp, ArrowDown, PersonOutline, StarOutline } from "react-ionicons"
 import options from "../../utils/options"
 import CountUp from "react-countup"
 import InputMask from 'react-input-mask'
@@ -13,6 +14,8 @@ export default function Menu({
   category,
   activeScreen,
   refreshData,
+  KYCData,
+  FTDData
 }) {
 
   const [todayDate, setTodayDate] = useState('')
@@ -73,6 +76,7 @@ export default function Menu({
       }
 
       const updateResponse = await service.getTransactionsByDate(payload)
+      //const 
       console.log(updateResponse)
 
       setTransactionsValue(response)
@@ -167,7 +171,7 @@ export default function Menu({
                           <p>Total em Depósitos</p>
                           <p className="text-slate-400 text-sm ml-2">
                             {
-                              filterDate !== '' && isFiltering ? filterDate : ''
+                              filterDate !== '' && isFiltering ? filterDate : 'Hoje'
                             }
                           </p>
                         </div>
@@ -194,7 +198,7 @@ export default function Menu({
                           <p>Total em Saques</p>
                           <p className="text-slate-400 text-sm ml-2">
                             {
-                              filterDate !== '' && isFiltering ? filterDate : ''
+                              filterDate !== '' && isFiltering ? filterDate : 'Hoje'
                             }
                           </p>
                         </div>
@@ -208,6 +212,51 @@ export default function Menu({
                             prefix="R$ "
                           />
                         </h3>
+                      </div>
+
+                    </div>
+
+                    <div className="grid grid-cols-4 justify-start items-center gap-2">
+
+                      <div className="flex justify-between items-center relative p-2 px-4 border-2 rounded-md shadow-sm mt-4">
+                        <div className="flex justify-start items-center gap-1">
+                          <PersonOutline
+                            color={'#00000'}
+                            height="17px"
+                            width="17px"
+                          />
+                          <h2 className="font-semibold mr-2">Verificação de KYC</h2>
+                        </div>
+                        <div className="flex justify-start">
+                          <h2 className="font-semibold">
+                            <CountUp
+                              end={KYCData}
+                              decimals={0}
+                              separator="."
+                              decimal=""
+                              prefix=""
+                            />
+                          </h2>
+                        </div>
+                      </div>
+
+                      <div className="flex justify-between items-center relative p-2 px-4 border-2 rounded-md shadow-sm mt-4">
+                        <div className="flex justify-start items-center gap-1">
+                          <h2 className="font-semibold mr-2">FTDs</h2>
+                        </div>
+                        <div className="flex justify-start">
+
+                          <h2 className="font-semibold">
+                            <CountUp
+                              end={FTDData}
+                              decimals={0}
+                              separator="."
+                              decimal=""
+                              prefix=""
+                            />
+                          </h2>
+
+                        </div>
                       </div>
 
                     </div>
@@ -251,7 +300,7 @@ export default function Menu({
 
           </div>
         </div>
-      </div>
+      </div >
     </>
   )
 }

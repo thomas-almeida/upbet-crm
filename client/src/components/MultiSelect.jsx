@@ -47,7 +47,7 @@ export default function MultiSelectDropdown({
             <div className='flex items-center justify-start gap-2'>
                 <div className="relative w-[300px]">
                     <button
-                        className="w-full py-2 px-3 border-2 rounded-md cursor-pointer text-left bg-white"
+                        className="w-full py-2 px-3 border-2 rounded-md cursor-pointer text-left bg-white hover:text-[#008181] hover:border-[#008181]"
                         onClick={() => toggleVisible()}
                     >
                         {selectedItems.length > 0 ? multiselectLabel(selectedItems) : `Todas`}
@@ -75,7 +75,7 @@ export default function MultiSelectDropdown({
                     onClick={() => clearFilter()}
                     className={
                         selectedItems.length > 0 ?
-                        `py-2 px-4 border-2 rounded-md cursor-pointer text-left bg-white` :
+                        `py-2 px-4 border-2 rounded-md cursor-pointer text-left bg-white hover:text-[#008181] hover:border-[#008181]` :
                         `hidden`}>
                     <p>Limpar Filtro</p>
                 </div>

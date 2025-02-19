@@ -4,6 +4,7 @@ import Screens from "./modules/Screens"
 import Breadcrumb from "../components/Breadcrumb"
 import { useNavigate } from "react-router-dom"
 import service from "../service"
+import CommentModal from "../components/CommentModal"
 
 export default function Home() {
 
@@ -16,6 +17,9 @@ export default function Home() {
   const [activeScreen, setActiveScreen] = useState('menu')
   const [category, setCategory] = useState('')
   const [transactionsBalance, setTransactionsBalance] = useState('')
+  const [commentModalVisible, setCommentModalVisible] = useState(false)
+  const [KYCData, setKYCData] = useState(0)
+  const [FTDData, setFTDData] = useState(0)
 
   async function getUserData() {
 
@@ -56,8 +60,20 @@ export default function Home() {
     setTransactionsBalance(response)
   }
 
+  async function getKYCData() {
+    const response = await service.getKYCToday()
+    setKYCData(response.data)
+  }
+
+  async function getFTDData() {
+    const response = await service.getFTDToday()
+    setFTDData(response.data)
+  }
+
   async function refreshData() {
     await getTransactionsBalance()
+    await getKYCData()
+    await getFTDData()
     await getUserData()
     await getDashData()
     await getKPIData()
@@ -66,6 +82,8 @@ export default function Home() {
   }
 
   useEffect(() => {
+    getKYCData()
+    getFTDData()
     getTransactionsBalance()
     getUserData()
     getDashData()
@@ -74,11 +92,21 @@ export default function Home() {
     getDocsData()
   }, [])
 
+  function closeCommentModal() {
+    setCommentModalVisible(false)
+  }
+
   return (
     <>
+
+      <CommentModal
+        isVisible={commentModalVisible}
+        closeModal={closeCommentModal}
+      />
+
       <div className="p-2 font-[SF Pro Display]">
         <div className="flex justify-center items-center p-2">
-          <div>
+          <div clas>
             <Sidebar
               userData={userData}
               activeScreen={activeScreen}
@@ -94,6 +122,7 @@ export default function Home() {
               activeScreen={activeScreen}
               setActiveScreen={setActiveScreen}
             />
+
             <Screens
               setActiveScreen={setActiveScreen}
               activeScreen={activeScreen}
@@ -106,6 +135,9 @@ export default function Home() {
               setCategory={setCategory}
               category={category}
               transactionsBalance={transactionsBalance}
+              setCommentModalVisible={setCommentModalVisible}
+              KYCData={KYCData}
+              FTDData={FTDData}
             />
           </div>
         </div>

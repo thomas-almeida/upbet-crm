@@ -113,6 +113,29 @@ const getTransactionsToday = async (payload) => {
   return response.data
 }
 
+const getKYCToday = async () => {
+  const response = await axios.get(`${baseUrl.productionHome}/kyc/get-kyc-today`, {
+    headers: {
+      'x-signature': `${baseUrl.upsportsKey}`,
+      "ngrok-skip-browser-warning": "true"
+    }
+  })
+ 
+  return response.data
+}
+
+const getFTDToday = async () => {
+  const response = await axios.get(`${baseUrl.productionHome}/ftd/get-ftd-today`, {
+    headers: {
+      'x-signature': `${baseUrl.upsportsKey}`,
+      "ngrok-skip-browser-warning": "true"
+    }
+  })
+ 
+  return response.data
+}
+
+
 export default {
   signIn,
   getUserById,
@@ -125,5 +148,7 @@ export default {
   createScriptDoc,
   getTransactionsBalance,
   getTransactionsToday,
-  getTransactionsByDate
+  getTransactionsByDate,
+  getKYCToday,
+  getFTDToday
 }
