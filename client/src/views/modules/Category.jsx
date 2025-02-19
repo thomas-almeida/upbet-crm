@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import CountUp from "react-countup"
-import { Tooltip as ReactTooltip } from "react-tooltip"
+import CommentModal from "../../components/CommentModal.jsx"
 import { ArrowUp, ArrowDown } from 'react-ionicons'
 import callendar from "../../utils/callendar.js"
 import MultiSelect from "../../components/MultiSelect.jsx"
@@ -17,7 +17,8 @@ export default function Category
     setCategory,
     category,
     activeScreen,
-    refreshData
+    refreshData,
+    setCommentModalVisible
   }) {
 
   const [currentMonthReference, setCurrentMonthReference] = useState('')
@@ -28,6 +29,10 @@ export default function Category
   function openChart(chartId) {
     setActiveScreen('chart')
     localStorage.setItem('chartId', chartId)
+  }
+
+  function openCommentModal() {
+    setCommentModalVisible(true)
   }
 
   function compareMonths(currentDate, value, label) {
@@ -136,7 +141,7 @@ export default function Category
 
   return (
     <>
-      <div className={visible ? 'flex items-center justify-center' : 'hidden'}>
+      <div className={visible ? 'flex items-center justify-center' : 'hidden'}>.
         <div className="w-[75vw] h-[85vh] text-center">
           <div>
             <h1 className="font-semibold text-2xl text-left mt-6 capitalize">
@@ -146,7 +151,7 @@ export default function Category
               Aqui estão todos os dashboards desta categoria
             </p>
           </div>
-          <div>
+          <div className="relative">
             <div className={category === 'campaign' ? `flex justify-start items-center mb-4` : 'hidden'}>
               <div className="p-2 text-left">
                 {
@@ -179,6 +184,13 @@ export default function Category
                   items={campaigns}
                   onSelectionChange={setSelectedCampaigns}
                 />
+              </div>
+
+              <div 
+                className="absolute right-2 rounded-md border-2 py-2 px-4  cursor-pointer w-[100px] flex justify-center items-center mt-8 hover:text-[#008181] hover:border-[#008181]"
+                onClick={() => openCommentModal()}  
+              >
+                <p className="font-semibold">Ações</p>
               </div>
 
             </div>
@@ -406,7 +418,7 @@ export default function Category
                       </div>
 
                       <div
-                        className={`p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left`} 
+                        className={`p-2 border-2 m-2 rounded-md shadow-sm bg-white text-left`}
                       >
                         <div className="relative flex justify-start items-center">
                           <p className="text-sm font-semibold p-1">
@@ -477,6 +489,7 @@ export default function Category
           </div>
         </div>
       </div>
+
     </>
   )
 }

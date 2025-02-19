@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { PersonOutline } from "react-ionicons"
 import options from "../../utils/options"
 import CountUp from "react-countup"
 import InputMask from 'react-input-mask'
@@ -13,6 +14,10 @@ export default function Menu({
   category,
   activeScreen,
   refreshData,
+  KYCData,
+  FTDData,
+  setKYCData,
+  setFTDData
 }) {
 
   const [todayDate, setTodayDate] = useState('')
@@ -67,15 +72,23 @@ export default function Menu({
       const endDate = encodeURIComponent(`${splitDate[2]}-${splitDate[1]}-${splitDate[0]} 23:59:59`)
       const response = await service.getTransactionsBalance(startDate, endDate)
 
+      const queryFilterDate = filterDate.split("/")
+
       const payload = {
         dashId: "hejtxd982",
         targetDate: filterDate
       }
 
       const updateResponse = await service.getTransactionsByDate(payload)
+
+      const filterKYC = await service.getKYCToday(`${queryFilterDate[2]}-${queryFilterDate[1]}-${queryFilterDate[0]}`)
+      const filterFTD = await service.getFTDToday(`${queryFilterDate[2]}-${queryFilterDate[1]}-${queryFilterDate[0]}`)
+
       console.log(updateResponse)
 
       setTransactionsValue(response)
+      setKYCData(filterKYC.data)
+      setFTDData(filterFTD.data)
       setIsFiltering(true)
 
     }
@@ -90,6 +103,11 @@ export default function Menu({
     const endDate = encodeURIComponent(`${splitedTodayDate[2]}-${splitedTodayDate[1]}-${splitedTodayDate[0]} 23:59:59`)
 
     const response = await service.getTransactionsBalance(startDate, endDate)
+    const responseKYC = await service.getKYCToday(`${splitedTodayDate[2]}-${splitedTodayDate[1]}-${splitedTodayDate[0]}`)
+    const responseFTD = await service.getFTDToday(`${splitedTodayDate[2]}-${splitedTodayDate[1]}-${splitedTodayDate[0]}`)
+
+    setKYCData(responseKYC.data)
+    setFTDData(responseFTD.data)
     setTransactionsValue(response)
     setIsFiltering(false)
 
@@ -167,7 +185,7 @@ export default function Menu({
                           <p>Total em Depósitos</p>
                           <p className="text-slate-400 text-sm ml-2">
                             {
-                              filterDate !== '' && isFiltering ? filterDate : ''
+                              filterDate !== '' && isFiltering ? filterDate : 'Hoje'
                             }
                           </p>
                         </div>
@@ -194,7 +212,7 @@ export default function Menu({
                           <p>Total em Saques</p>
                           <p className="text-slate-400 text-sm ml-2">
                             {
-                              filterDate !== '' && isFiltering ? filterDate : ''
+                              filterDate !== '' && isFiltering ? filterDate : 'Hoje'
                             }
                           </p>
                         </div>
@@ -208,6 +226,51 @@ export default function Menu({
                             prefix="R$ "
                           />
                         </h3>
+                      </div>
+
+                    </div>
+
+                    <div className="grid grid-cols-4 justify-start items-center gap-2">
+
+                      <div className="flex justify-between items-center relative p-2 px-4 border-2 rounded-md shadow-sm mt-4">
+                        <div className="flex justify-start items-center gap-1">
+                          <PersonOutline
+                            color={'#00000'}
+                            height="17px"
+                            width="17px"
+                          />
+                          <h2 className="font-semibold mr-2">Verificação de KYC</h2>
+                        </div>
+                        <div className="flex justify-start">
+                          <h2 className="font-semibold">
+                            <CountUp
+                              end={KYCData}
+                              decimals={0}
+                              separator="."
+                              decimal=""
+                              prefix=""
+                            />
+                          </h2>
+                        </div>
+                      </div>
+
+                      <div className="flex justify-between items-center relative p-2 px-4 border-2 rounded-md shadow-sm mt-4">
+                        <div className="flex justify-start items-center gap-1">
+                          <h2 className="font-semibold mr-2">FTDs</h2>
+                        </div>
+                        <div className="flex justify-start">
+
+                          <h2 className="font-semibold">
+                            <CountUp
+                              end={FTDData}
+                              decimals={0}
+                              separator="."
+                              decimal=""
+                              prefix=""
+                            />
+                          </h2>
+
+                        </div>
                       </div>
 
                     </div>
@@ -251,7 +314,7 @@ export default function Menu({
 
           </div>
         </div>
-      </div>
+      </div >
     </>
   )
 }

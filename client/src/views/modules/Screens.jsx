@@ -15,7 +15,12 @@ export default function Screens({
   refreshData,
   setCategory,
   category,
-  transactionsBalance
+  transactionsBalance,
+  setCommentModalVisible,
+  KYCData,
+  FTDData,
+  setKYCData,
+  setFTDData
 }) {
 
   useEffect(() => {
@@ -35,6 +40,10 @@ export default function Screens({
           setCategory={setCategory}
           category={category}
           transactionsBalance={transactionsBalance}
+          KYCData={KYCData}
+          FTDData={FTDData}
+          setFTDData={setFTDData}
+          setKYCData={setKYCData}
         />
       }
       {
@@ -50,6 +59,7 @@ export default function Screens({
           refreshData={refreshData}
           setCategory={setCategory}
           category={category}
+          setCommentModalVisible={setCommentModalVisible}
         />
       }
       {
@@ -60,6 +70,7 @@ export default function Screens({
           activeScreen={activeScreen}
           setActiveScreen={setActiveScreen}
           refreshData={refreshData}
+          setCommentModalVisible={setCommentModalVisible}
         />
       }
       {

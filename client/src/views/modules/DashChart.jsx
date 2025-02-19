@@ -5,7 +5,8 @@ import CLineChart from "../../components/charts/CLineChart"
 
 export default function DashChart({
   visible,
-  dashData
+  dashData,
+  setCommentModalVisible
 }) {
   const [chartId, setChartId] = useState("")
   const [chartData, setChartData] = useState([])
@@ -67,6 +68,7 @@ export default function DashChart({
                   value={chartData?.guides?.value}
                   headers={chartData?.headers}
                   filter={chartData?.filter}
+                  setCommentModalVisible={setCommentModalVisible}
                 />
               }
             </div>

@@ -8,7 +8,8 @@ export default function CLineChart({
     label,
     value,
     headers,
-    filter
+    filter,
+    setCommentModalVisible
 }) {
 
     const [monthsToFilter, setMonthsToFilter] = useState([])
@@ -269,6 +270,12 @@ export default function CLineChart({
                         </div>
                     ) : ''
                 }
+                <div
+                    className="rounded-md mr-6 border-2 py-2 px-4 cursor-pointer w-[100px] flex justify-center items-center mt-8 hover:text-[#008181] hover:border-[#008181]"
+                    onClick={() => setCommentModalVisible(true)}
+                >
+                    <p className="font-semibold">Ações</p>
+                </div>
             </div>
             <div className="mt-4">
                 <ResponsiveContainer
