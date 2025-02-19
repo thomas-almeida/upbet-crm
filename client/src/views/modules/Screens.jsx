@@ -18,7 +18,9 @@ export default function Screens({
   transactionsBalance,
   setCommentModalVisible,
   KYCData,
-  FTDData
+  FTDData,
+  setKYCData,
+  setFTDData
 }) {
 
   useEffect(() => {
@@ -40,6 +42,8 @@ export default function Screens({
           transactionsBalance={transactionsBalance}
           KYCData={KYCData}
           FTDData={FTDData}
+          setFTDData={setFTDData}
+          setKYCData={setKYCData}
         />
       }
       {

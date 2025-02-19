@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { ArrowUp, ArrowDown, PersonOutline, StarOutline } from "react-ionicons"
+import { PersonOutline } from "react-ionicons"
 import options from "../../utils/options"
 import CountUp from "react-countup"
 import InputMask from 'react-input-mask'
@@ -15,7 +15,9 @@ export default function Menu({
   activeScreen,
   refreshData,
   KYCData,
-  FTDData
+  FTDData,
+  setKYCData,
+  setFTDData
 }) {
 
   const [todayDate, setTodayDate] = useState('')
@@ -70,16 +72,23 @@ export default function Menu({
       const endDate = encodeURIComponent(`${splitDate[2]}-${splitDate[1]}-${splitDate[0]} 23:59:59`)
       const response = await service.getTransactionsBalance(startDate, endDate)
 
+      const queryFilterDate = filterDate.split("/")
+
       const payload = {
         dashId: "hejtxd982",
         targetDate: filterDate
       }
 
       const updateResponse = await service.getTransactionsByDate(payload)
-      //const 
+
+      const filterKYC = await service.getKYCToday(`${queryFilterDate[2]}-${queryFilterDate[1]}-${queryFilterDate[0]}`)
+      const filterFTD = await service.getFTDToday(`${queryFilterDate[2]}-${queryFilterDate[1]}-${queryFilterDate[0]}`)
+
       console.log(updateResponse)
 
       setTransactionsValue(response)
+      setKYCData(filterKYC.data)
+      setFTDData(filterFTD.data)
       setIsFiltering(true)
 
     }
@@ -94,6 +103,11 @@ export default function Menu({
     const endDate = encodeURIComponent(`${splitedTodayDate[2]}-${splitedTodayDate[1]}-${splitedTodayDate[0]} 23:59:59`)
 
     const response = await service.getTransactionsBalance(startDate, endDate)
+    const responseKYC = await service.getKYCToday(`${splitedTodayDate[2]}-${splitedTodayDate[1]}-${splitedTodayDate[0]}`)
+    const responseFTD = await service.getFTDToday(`${splitedTodayDate[2]}-${splitedTodayDate[1]}-${splitedTodayDate[0]}`)
+
+    setKYCData(responseKYC.data)
+    setFTDData(responseFTD.data)
     setTransactionsValue(response)
     setIsFiltering(false)
 

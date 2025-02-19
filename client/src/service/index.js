@@ -113,25 +113,25 @@ const getTransactionsToday = async (payload) => {
   return response.data
 }
 
-const getKYCToday = async () => {
-  const response = await axios.get(`${baseUrl.productionHome}/kyc/get-kyc-today`, {
+const getKYCToday = async (targetDate) => {
+  const response = await axios.get(`${baseUrl.productionHome}/kyc/get-kyc-today?targetDate=${targetDate}`, {
     headers: {
       'x-signature': `${baseUrl.upsportsKey}`,
       "ngrok-skip-browser-warning": "true"
     }
   })
- 
+
   return response.data
 }
 
-const getFTDToday = async () => {
-  const response = await axios.get(`${baseUrl.productionHome}/ftd/get-ftd-today`, {
+const getFTDToday = async (targetDate) => {
+  const response = await axios.get(`${baseUrl.productionHome}/ftd/get-ftd-today?targetDate=${targetDate}`, {
     headers: {
       'x-signature': `${baseUrl.upsportsKey}`,
       "ngrok-skip-browser-warning": "true"
     }
   })
- 
+
   return response.data
 }
 

@@ -5,6 +5,7 @@ import Breadcrumb from "../components/Breadcrumb"
 import { useNavigate } from "react-router-dom"
 import service from "../service"
 import CommentModal from "../components/CommentModal"
+import convertDates from "../utils/convertDates"
 
 export default function Home() {
 
@@ -61,12 +62,17 @@ export default function Home() {
   }
 
   async function getKYCData() {
-    const response = await service.getKYCToday()
+    const date = new Date()
+    console.log(date.getMonth() + 1)
+    const todayQueryDate = `${date.getFullYear()}-${convertDates.isDecimal(date.getMonth() + 1)}-${date.getDate()}`
+    const response = await service.getKYCToday(todayQueryDate)
     setKYCData(response.data)
   }
 
   async function getFTDData() {
-    const response = await service.getFTDToday()
+    const date = new Date()
+    const todayQueryDate = `${date.getFullYear()}-${convertDates.isDecimal(date.getMonth() + 1)}-${date.getDate()}`
+    const response = await service.getFTDToday(todayQueryDate)
     setFTDData(response.data)
   }
 
@@ -137,7 +143,9 @@ export default function Home() {
               transactionsBalance={transactionsBalance}
               setCommentModalVisible={setCommentModalVisible}
               KYCData={KYCData}
+              setKYCData={setKYCData}
               FTDData={FTDData}
+              setFTDData={setFTDData}
             />
           </div>
         </div>
