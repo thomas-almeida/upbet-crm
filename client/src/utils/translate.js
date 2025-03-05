@@ -9,12 +9,24 @@ const transactionsTerms = [
         translate: "Saques"
     },
     {
+        name: "crm_sum",
+        translate: "Campanhas CRM"
+    },
+    {
         name: "target_users",
         translate: "Usuários Alvo"
     },
     {
         name: "converted_users",
         translate: "Usuários Convertidos"
+    },
+    {
+        name: "users",
+        translate: "Usuários Atingidos"
+    },
+    {
+        name: "converted",
+        translate: "Depositantes"
     }
 ]
 

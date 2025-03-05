@@ -18,9 +18,9 @@ export default function CLineChart({
     const [currentYearReference, setCurrentYearReference] = useState('')
     const [filteringBy, setFilteringBy] = useState('A')
     const [filteredData, setFilteredData] = useState([])
-    const [filteredYears, setFilteredYears] = useState([])
+    const [filteredYears, setFilteredYears] = useState([]) 
 
-    const colors = ["#009191", "#ff0000e0"]
+    const colors = ["#009191", "#ff0000e0", "#462044"]
 
     const isDecimal = (value) => {
         return value < 10 ? `0${value}` : value
@@ -88,6 +88,7 @@ export default function CLineChart({
                     return list.some((item) => item?.date?.includes(`${splitedMonthReference[1]}-${splitedMonthReference[0]}`))
                 })
 
+                console.log(filteredData)
                 setFilteredData(listOfMonths || [])
 
             }
@@ -127,6 +128,7 @@ export default function CLineChart({
             const transactionsByMonth = selectedMonthsByYear.map((month) => {
                 let deposits = 0
                 let withdraws = 0
+                let crm = 0
 
                 const firstValidDay = month.find((day) => day?.date)
                 if (!firstValidDay) return null
@@ -136,12 +138,14 @@ export default function CLineChart({
                 month.forEach((day) => {
                     deposits += day.deposits_sum || 0
                     withdraws += day.withdraws_sum || 0
+                    crm != day?.crm_sum || 0
                 })
 
                 return {
                     date: callendar.getMonthById(Number(monthNumber)),
                     deposits_sum: deposits,
                     withdraws_sum: withdraws,
+                    crm_sum: crm
                 }
             }).filter(Boolean)
 
