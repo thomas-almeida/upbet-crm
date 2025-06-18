@@ -22,5 +22,21 @@
     "password": "KF25J@rst",
     "role": "FRONTEND",
     "profile": "https://public.nftstatic.com/static/nft/webp/nft-cex/S3/1677723849223_48r743majphdtv525txp9mwzrnx97piw_600x600.webp"
+  },
+  {
+    "id": "mdfsug789",
+    "name": "Ygor Lima",
+    "username": "ygorlima",
+    "password": "O7EHrst",
+    "role": "Corretor",
+    "profile": "https://public.nftstatic.com/static/nft/res/nft-cex/S3/1671355627961_p73r0zb5opjc6ba52w3szi3kqv735kcw.png"
+  },
+  {
+    "id": "rqhbmi770",
+    "name": "Filipe M.",
+    "username": "mocked",
+    "password": "CE3A54",
+    "role": "Corretor - PRO",
+    "profile": "/mocked.jpg"
   }
 ]

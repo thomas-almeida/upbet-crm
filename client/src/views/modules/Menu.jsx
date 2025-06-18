@@ -129,12 +129,7 @@ export default function Menu({
     <>
       <div className={visible ? 'flex items-center justify-center' : 'hidden'}>
         <div className="w-[75vw] text-center h-[85vh]">
-          <div >
-            <h1 className="font-semibold text-2xl text-left mt-6">
-              Bem-vindo {userData?.name}
-            </h1>
-            <p className="text-left py-2">Veja os dashboards criados e suas categorias</p>
-
+          <div>
             <div
               className="text-left mt-4"
             >
@@ -144,7 +139,7 @@ export default function Menu({
                   <div className="">
 
                     <div className="flex justify-start items-center pb-4 relative">
-                      <h2 className="font-semibold mr-2">Depósitos & Saques</h2>
+                      <h2 className="font-semibold mr-2">Contatos & Visitas</h2>
                       <div className="flex justify-start items-center absolute right-2">
                         <p className="mx-4 font-semibold">Filtrar por data</p>
                         <button
@@ -182,21 +177,22 @@ export default function Menu({
                         <div
                           className="flex justify-start items-center"
                         >
-                          <p>Total em Depósitos</p>
+                          <p>Contatos Feitos</p>
                           <p className="text-slate-400 text-sm ml-2">
                             {
                               filterDate !== '' && isFiltering ? filterDate : 'Hoje'
                             }
                           </p>
                         </div>
-                        <h3 className="font-semibold text-3xl pt-2 fadeInUp-animation flex justify-start items-center">
-                          <img src="/wallet-outline.svg" className="w-[30px] mr-1" alt="" />
+                        <h3 className="font-semibold text-6xl pt-2 fadeInUp-animation flex justify-start items-center">
+                          <PersonOutline
+                            color={'#00000'}
+                            height="30px"
+                            width="30px"
+                          />
                           <CountUp
-                            end={transactionsValue?.deposits_sum}
-                            decimals={2}
-                            separator="."
-                            decimal=","
-                            prefix="R$ "
+                            end={48}
+                            decimals={0}
                           />
                         </h3>
 
@@ -209,68 +205,21 @@ export default function Menu({
                         <div
                           className="flex justify-start items-center"
                         >
-                          <p>Total em Saques</p>
+                          <p>Conversões de Visitas</p>
                           <p className="text-slate-400 text-sm ml-2">
                             {
                               filterDate !== '' && isFiltering ? filterDate : 'Hoje'
                             }
                           </p>
                         </div>
-                        <h3 className="font-semibold text-3xl pt-2 fadeInUp-animation flex justify-start items-center">
+                        <h3 className="font-semibold text-6xl pt-2 fadeInUp-animation flex justify-start items-center">
                           <img src="/swap-outline.svg" className="w-[30px] mr-1" alt="" />
                           <CountUp
-                            end={transactionsValue?.withdraws_sum}
-                            decimals={2}
-                            separator="."
-                            decimal=","
-                            prefix="R$ "
+                            end={25}
+                            decimals={0}
+                            prefix=""
                           />
                         </h3>
-                      </div>
-
-                    </div>
-
-                    <div className="grid grid-cols-4 justify-start items-center gap-2">
-
-                      <div className="flex justify-between items-center relative p-2 px-4 border-2 rounded-md shadow-sm mt-4">
-                        <div className="flex justify-start items-center gap-1">
-                          <PersonOutline
-                            color={'#00000'}
-                            height="17px"
-                            width="17px"
-                          />
-                          <h2 className="font-semibold mr-2">Verificação de KYC</h2>
-                        </div>
-                        <div className="flex justify-start">
-                          <h2 className="font-semibold">
-                            <CountUp
-                              end={KYCData}
-                              decimals={0}
-                              separator="."
-                              decimal=""
-                              prefix=""
-                            />
-                          </h2>
-                        </div>
-                      </div>
-
-                      <div className="flex justify-between items-center relative p-2 px-4 border-2 rounded-md shadow-sm mt-4">
-                        <div className="flex justify-start items-center gap-1">
-                          <h2 className="font-semibold mr-2">FTDs</h2>
-                        </div>
-                        <div className="flex justify-start">
-
-                          <h2 className="font-semibold">
-                            <CountUp
-                              end={FTDData}
-                              decimals={0}
-                              separator="."
-                              decimal=""
-                              prefix=""
-                            />
-                          </h2>
-
-                        </div>
                       </div>
 
                     </div>
@@ -289,12 +238,12 @@ export default function Menu({
 
               <h2 className="font-semibold mr-2 pb-4">Visões</h2>
 
-              <div className="grid justify-start grid-cols-3">
+              <div className="grid justify-start grid-cols-2">
                 {
                   options.map((option, index) => (
                     <div
                       key={option[index]}
-                      className="bg-white border-2 p-4 mx-2 my-2 ml-0 text-left h-[180px] rounded-md shadow-sm relative cursor-pointer transition hover:scale-[1.02] hover:text-[#008181] hover:border-[#008181] bg-[url('/grad.png')]"
+                      className="bg-white border-2 p-4 mx-2 my-2 ml-0 text-left h-[180px] rounded-md shadow-sm relative cursor-pointer transition hover:scale-[1.02] hover:text-[#008181] hover:border-[#008181] bg-[url('/grad.png')] bg-cover"
                       onClick={() => setItem(option.activeScreen, option.category)}
                     >
                       <div className="absolute bottom-4">

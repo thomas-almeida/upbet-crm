@@ -3,6 +3,7 @@ import Menu from "./Menu"
 import Category from "./Category"
 import DashChart from "./DashChart"
 import Docs from "./Docs"
+import CustomerBase from "./CustomerBase"
 
 export default function Screens({
   activeScreen,
@@ -82,6 +83,16 @@ export default function Screens({
           refreshData={refreshData}
           userData={userData}
           docsData={docsData}
+        />
+      },
+      {
+        activeScreen === 'customerBase' &&
+        <CustomerBase
+          visible={true}
+          activeScreen={activeScreen}
+          setActiveScreen={setActiveScreen}
+          userData={userData}
+          refreshData={refreshData}
         />
       }
     </>

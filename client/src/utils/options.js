@@ -1,34 +1,27 @@
 const options = [
   {
-    name: 'Gamification',
-    activeScreen: 'category',
+    name: 'Minha Base',
+    activeScreen: 'customerBase',
     category: 'gamification',
-    icon: '/gamification.svg'
-  },
-
-  {
-    name: 'Jornadas',
-    activeScreen: 'category',
-    category: 'journey',
     icon: '/journey.svg'
   },
   {
-    name: 'Campanhas',
+    name: 'Jornadas',
     activeScreen: 'category',
     category: 'campaign',
     icon: '/campaign.svg'
   },
   {
-    name: 'Transações',
+    name: 'Empreendimentos',
     activeScreen: 'category',
     category: 'transactions',
-    icon: '/swap-outline.svg'
+    icon: '/campaign.svg'
   },
   {
-    name: 'Documentações',
+    name: 'Anotações',
     activeScreen: 'docs',
     category: 'wiki',
     icon: '/docs.svg'
-  }
+  },
 ]
 export default options

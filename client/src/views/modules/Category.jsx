@@ -141,7 +141,7 @@ export default function Category
 
   return (
     <>
-      <div className={visible ? 'flex items-center justify-center' : 'hidden'}>.
+      <div className={visible ? 'flex items-center justify-center' : 'hidden'}>
         <div className="w-[75vw] h-[85vh] text-center">
           <div>
             <h1 className="font-semibold text-2xl text-left mt-6 capitalize">
